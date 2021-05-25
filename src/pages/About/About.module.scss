@@ -1,0 +1,29 @@
+.About {
+  width: 100%;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background: gray;
+
+  .hr {
+    content: '';
+    width: 30px;
+    height: 2px;
+    background: black;
+    margin: 20px 0;
+  }
+
+  p {
+    margin-bottom: 20px;
+  }
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}

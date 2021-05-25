@@ -1,5 +1,6 @@
 import React from 'react'
 import classes from './MainMenu.module.scss'
+import { NavLink } from 'react-router-dom'
 import { ReactSVG } from 'react-svg'
 
 import vk from '../../../assets/social_icons/negative/vk/vk2.svg'
@@ -8,30 +9,75 @@ import youTube from '../../../assets/social_icons/negative/YouTube/Negative.svg'
 
 const MainMenu = (props) => {
   return (
-    <div className={classes.MainMenu}>
+    <nav className={classes.MainMenu}>
       <ul>
         <li>
-          <a href="#">Главная</a>
+          <NavLink
+            to="/"
+            exact
+            activeClassName={classes.activeLink}
+            className={classes.underline}
+          >
+            Главная
+          </NavLink>
         </li>
         <li>
-          <a href="#">О нас</a>
+          <NavLink
+            to="/about"
+            activeClassName={classes.activeLink}
+            className={classes.underline}
+          >
+            О нас
+          </NavLink>
         </li>
         <li>
-          <a href="#">Преподаватели</a>
+          <NavLink
+            to="/teachers"
+            activeClassName={classes.activeLink}
+            className={classes.underline}
+          >
+            Преподаватели
+          </NavLink>
         </li>
         <li>
-          <a href="#">Контакты</a>
+          <NavLink
+            to="/contacts"
+            activeClassName={classes.activeLink}
+            className={classes.underline}
+          >
+            Контакты
+          </NavLink>
         </li>
         <li>
-          <a href="#">Классы</a>
+          <NavLink
+            to="/time-table"
+            activeClassName={classes.activeLink}
+            className={classes.underline}
+          >
+            Рассписание
+          </NavLink>
         </li>
         <li>
-          <a href="#">Блог</a>
+          <NavLink
+            to={{
+              pathname: '/blog',
+              search: '?what',
+              hash: 'hash',
+            }}
+            activeClassName={classes.activeLink}
+            className={classes.underline}
+          >
+            Блог
+          </NavLink>
         </li>
         <li>
           <ul>
             <li>
-              <a href="https://vk.com/yogashambala74" target="_blank">
+              <a
+                href="https://vk.com/yogashambala74"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <ReactSVG src={vk} />
               </a>
             </li>
@@ -39,6 +85,7 @@ const MainMenu = (props) => {
               <a
                 href="https://www.instagram.com/shambhala_yoga/"
                 target="_blank"
+                rel="noreferrer"
               >
                 <ReactSVG src={instagram} />
               </a>
@@ -47,6 +94,7 @@ const MainMenu = (props) => {
               <a
                 href="https://www.youtube.com/channel/UCH8EG88m8-wFtm4E4Gnqs1Q"
                 target="_blank"
+                rel="noreferrer"
               >
                 <ReactSVG src={youTube} />
               </a>
@@ -54,7 +102,7 @@ const MainMenu = (props) => {
           </ul>
         </li>
       </ul>
-    </div>
+    </nav>
   )
 }
 

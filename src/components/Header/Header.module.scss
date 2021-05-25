@@ -1,6 +1,10 @@
 .Header {
   width: 100%;
+
+  background: linear-gradient(180deg, #a96f44 0%, #f2ecb6 100%);
+}
+
+.contant {
   display: flex;
   flex-direction: column;
-  background: linear-gradient(180deg, #a96f44 0%, #f2ecb6 100%);
 }

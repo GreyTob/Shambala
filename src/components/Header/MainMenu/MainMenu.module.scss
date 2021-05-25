@@ -1,25 +1,73 @@
+$LinkColor: #000;
+$linkColorHover: #ccc;
+$linkColorActive: #fff;
+
+$svgColor: #000;
+$svgColorHover: #fff;
+
 .MainMenu {
   ul {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 10px 0;
+    padding: 7px 0;
   }
 
   ul > li {
     padding: 0 6px;
+
+    //иконки социальных сетей
+    svg {
+      fill: $svgColor;
+      width: 20px;
+      height: 20px;
+      transform: scale(1);
+      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    svg:hover {
+      fill: $svgColorHover;
+      transform: scale(1.25);
+    }
   }
 
-  svg {
-    fill: #212121;
-    width: 20px;
-    height: 20px;
-    transform: scale(1);
+  a {
+    display: block;
+    position: relative;
+    color: $LinkColor;
     transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
 
-  svg:hover {
-    fill: white;
-    transform: scale(1.25);
+  //---подчеркивание
+
+  .underline,
+  .underline:after,
+  .underline:before {
+    transition: all 0.3s;
+  }
+
+  .underline:hover {
+    color: $linkColorHover;
+  }
+
+  .underline:after {
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 0%;
+    content: '.';
+    color: transparent;
+    background: $linkColorHover;
+    height: 2px;
+  }
+
+  .underline:hover:after {
+    width: 100%;
+  }
+
+  .activeLink {
+    color: $linkColorActive;
   }
 }
