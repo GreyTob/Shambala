@@ -1,8 +1,4 @@
 .Logo {
-  padding-top: 10px;
-  display: flex;
-  flex-direction: column;
-
   .picture {
     text-align: center;
     img {
@@ -12,13 +8,11 @@
 
   .figcaption {
     text-align: center;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding: 10px 0;
   }
 }
 
 //---вращение лого---
-
 @-webkit-keyframes rotating /* Safari and Chrome */ {
   from {
     -webkit-transform: rotate(0deg);
@@ -26,8 +20,8 @@
     transform: rotate(0deg);
   }
   to {
-    // -webkit-transform: rotate(360deg);
-    // -o-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
     transform: rotate(360deg);
   }
 }
@@ -55,5 +49,3 @@
   animation: rotating 100s linear infinite;
   transition: all 0.6s cubic-bezier(0.65, 0, 0.35, 1);
 }
-
-//---вращение лого---^^^

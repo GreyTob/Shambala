@@ -1,109 +1,94 @@
 import React from 'react'
 import classes from './MainMenu.module.scss'
-import { NavLink } from 'react-router-dom'
-import { ReactSVG } from 'react-svg'
+import MenuItem from './MenuItem/MenuItem'
+import MenuItemsSocial from './MenuItemsSocial/MenuItemsSocial'
 
-import vk from '../../../assets/social_icons/negative/vk/vk2.svg'
-import instagram from '../../../assets/social_icons/negative/Instagram/Negative.svg'
-import youTube from '../../../assets/social_icons/negative/YouTube/Negative.svg'
-
-const MainMenu = (props) => {
-  return (
-    <nav className={classes.MainMenu}>
-      <ul>
-        <li>
-          <NavLink
-            to="/"
-            exact
-            activeClassName={classes.activeLink}
-            className={classes.underline}
-          >
-            Главная
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to="/about"
-            activeClassName={classes.activeLink}
-            className={classes.underline}
-          >
-            О нас
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to="/teachers"
-            activeClassName={classes.activeLink}
-            className={classes.underline}
-          >
-            Преподаватели
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to="/contacts"
-            activeClassName={classes.activeLink}
-            className={classes.underline}
-          >
-            Контакты
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to="/time-table"
-            activeClassName={classes.activeLink}
-            className={classes.underline}
-          >
-            Рассписание
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to={{
-              pathname: '/blog',
-              search: '?what',
-              hash: 'hash',
-            }}
-            activeClassName={classes.activeLink}
-            className={classes.underline}
-          >
-            Блог
-          </NavLink>
-        </li>
-        <li>
+class MainMenu extends React.Component {
+  state = {
+    menu: [
+      {
+        value: 'Главная',
+        link: '/',
+        exact: true,
+      },
+      {
+        value: 'О нас',
+        link: '/about',
+        exact: false,
+      },
+      {
+        value: 'Преподаватели',
+        link: '/teachers',
+        exact: false,
+      },
+      {
+        value: 'Контакты',
+        link: '/contacts',
+        exact: false,
+      },
+      {
+        value: 'Рассписание',
+        link: '/time-table',
+        exact: false,
+      },
+      {
+        value: 'Блог',
+        link: '/blog',
+        exact: false,
+      },
+    ],
+    social: [
+      {
+        value: 'vk',
+        href: 'https://vk.com/yogashambala74',
+        target: '_blank',
+        rel: 'noreferrer',
+      },
+      {
+        value: 'inst',
+        href: 'https://www.instagram.com/shambhala_yoga/',
+        target: '_blank',
+        rel: 'noreferrer',
+      },
+      {
+        value: 'youTube',
+        href: 'https://www.youtube.com/channel/UCH8EG88m8-wFtm4E4Gnqs1Q',
+        target: '_blank',
+        rel: 'noreferrer',
+      },
+    ],
+  }
+  render() {
+    return (
+      <nav className={classes.MainMenu}>
+        <ul>
+          {this.state.menu.map((menuItem, index) => {
+            return (
+              <MenuItem
+                key={index}
+                value={menuItem.value}
+                to={menuItem.link}
+                exact={menuItem.exact}
+              />
+            )
+          })}
           <ul>
-            <li>
-              <a
-                href="https://vk.com/yogashambala74"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <ReactSVG src={vk} />
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.instagram.com/shambhala_yoga/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <ReactSVG src={instagram} />
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.youtube.com/channel/UCH8EG88m8-wFtm4E4Gnqs1Q"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <ReactSVG src={youTube} />
-              </a>
-            </li>
+            {this.state.social.map((socialItem, index) => {
+              return (
+                <MenuItemsSocial
+                  key={index}
+                  value={socialItem.value}
+                  href={socialItem.href}
+                  target={socialItem.target}
+                  rel={socialItem.rel}
+                />
+              )
+            })}
           </ul>
-        </li>
-      </ul>
-    </nav>
-  )
+        </ul>
+      </nav>
+    )
+  }
 }
 
 export default MainMenu

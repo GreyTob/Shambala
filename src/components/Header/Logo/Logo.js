@@ -1,7 +1,7 @@
 import classes from './Logo.module.scss'
 import LogoPicture from './assets/Logo.png'
 
-const Logo = (props) => {
+const Logo = () => {
   return (
     <figure className={classes.Logo}>
       <div className={classes.picture}>
