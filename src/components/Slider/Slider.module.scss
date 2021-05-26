@@ -1,12 +1,14 @@
 .Slider {
   width: 100%;
+  min-height: 400px;
   margin: 0 auto;
   overflow: hidden;
-  border: 1px solid black;
+
+  // border: 1px solid black;
 }
 
 .sliderLine {
   display: flex;
-  background: orangered;
+  background: linear-gradient(90deg, #faf0cd, #fab397);
   transition: all 1s ease;
 }
