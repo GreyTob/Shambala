@@ -6,7 +6,6 @@ import instagram from '../../../../assets/social_icons/negative/Instagram/Negati
 import youTube from '../../../../assets/social_icons/negative/YouTube/Negative.svg'
 
 const MenuItemsSocial = (props) => {
-  console.log(props)
   return (
     <li className={classes.MenuItemsSocial}>
       <a href={props.href} target={props.target} rel={props.rel}>

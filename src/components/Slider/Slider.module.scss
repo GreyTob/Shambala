@@ -1,5 +1,12 @@
 .Slider {
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  border: 1px solid black;
 }
 
 .sliderLine {
+  display: flex;
+  background: orangered;
+  transition: all 1s ease;
 }
