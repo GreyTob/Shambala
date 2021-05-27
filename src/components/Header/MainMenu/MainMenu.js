@@ -8,32 +8,32 @@ class MainMenu extends React.Component {
     menu: [
       {
         value: 'Главная',
-        link: '/',
+        to: '/',
         exact: true,
       },
       {
         value: 'О нас',
-        link: '/about',
-        exact: false,
+        to: '/about',
+        exact: true,
       },
       {
         value: 'Преподаватели',
-        link: '/teachers',
+        to: '/teachers',
         exact: false,
       },
       {
         value: 'Контакты',
-        link: '/contacts',
+        to: '/contacts',
         exact: false,
       },
       {
         value: 'Рассписание',
-        link: '/time-table',
+        to: '/time-table',
         exact: false,
       },
       {
-        value: 'Блог',
-        link: '/blog',
+        value: 'Цены',
+        to: '/cost',
         exact: false,
       },
     ],
@@ -67,8 +67,9 @@ class MainMenu extends React.Component {
               <MenuItem
                 key={index}
                 value={menuItem.value}
-                to={menuItem.link}
+                to={menuItem.to}
                 exact={menuItem.exact}
+                rout={menuItem.rout}
               />
             )
           })}

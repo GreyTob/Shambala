@@ -65,6 +65,15 @@ class Slider extends React.Component {
       sliderLine.style.transform = 'translate(-' + count * width + 'px)'
     }
 
+    //автопереключение
+    setInterval(() => {
+      count++
+      if (count >= images.length) {
+        count = 0
+      }
+      rollSlider()
+    }, 15000)
+
     //переключение слайда по свайпу
     let touchX = null
     let touchY = null
