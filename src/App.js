@@ -9,6 +9,7 @@ import Contacts from './pages/Contacts/Contacts'
 import TimeTable from './pages/TimeTable/TimeTable'
 import Blog from './pages/Blog/Blog'
 import NotFound from './pages/NotFound/NotFound'
+import ScrollUp from './components/ScrollUp/ScrollUp'
 import Footer from './components/Footer/Footer'
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
         {/* <Route render={NotFound} /> */}
         <Redirect to="/" />
       </Switch>
+      <ScrollUp />
       <Footer />
     </Layout>
   )

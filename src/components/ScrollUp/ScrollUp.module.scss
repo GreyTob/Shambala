@@ -1,0 +1,26 @@
+@import '../UI/variables.scss';
+
+.ScrollUp {
+  display: grid;
+  place-items: center;
+  padding: 10px 0;
+  background: $feta;
+  opacity: 0.6;
+
+  svg {
+    fill: $temptress;
+    width: 30px;
+    height: 30px;
+    transform: scale(1);
+    opacity: 0.7;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+}
+
+.ScrollUp:hover {
+  opacity: 1;
+  svg {
+    opacity: 1;
+    transform: scale(1.25);
+  }
+}
