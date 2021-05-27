@@ -13,15 +13,6 @@ import chevron from './assets/chevron.svg'
 import leftChevron from './assets/leftChevron.svg'
 
 class Slider extends React.Component {
-  // state = {
-  //   image: [
-  //     { src: './assets/111.jpg', alt: 'фото1' },
-  //     { src: './assets/112.jpg', alt: 'фото2' },
-  //     { src: './assets/113.jpg', alt: 'фото3' },
-  //     { src: './assets/114.jpg', alt: 'фото4' },
-  //     { src: './assets/115.jpg', alt: 'фото5' },
-  //   ],
-  // }
   componentDidMount() {
     //делаю слайдер
     const images = document.querySelectorAll('#sliderLine img')
@@ -50,44 +41,111 @@ class Slider extends React.Component {
     init()
 
     //события на кнопки
-    document
-      .querySelector('#sliderNext')
-      .addEventListener('click', function () {
-        count++
-        if (count >= images.length) {
-          count = 0
-        }
-        rollSlider()
-      })
-    document
-      .querySelector('#sliderPrev')
-      .addEventListener('click', function () {
-        count--
-        if (count < 0) {
-          count = images.length - 1
-        }
-        rollSlider()
-      })
-
-    //автопереключение
-    setInterval(() => {
+    const sliderNext = () => {
       count++
       if (count >= images.length) {
         count = 0
       }
       rollSlider()
-    }, 15000)
+    }
+    const sliderPrev = () => {
+      count--
+      if (count < 0) {
+        count = images.length - 1
+      }
+      rollSlider()
+    }
+
+    document.querySelector('#sliderNext').addEventListener('click', sliderNext)
+
+    document.querySelector('#sliderPrev').addEventListener('click', sliderPrev)
 
     function rollSlider() {
       //смещаем слайдер на 1 ширину
       sliderLine.style.transform = 'translate(-' + count * width + 'px)'
     }
+
+    //переключение слайда по свайпу
+    let touchX = null
+    let touchY = null
+
+    document
+      .querySelector('#slider')
+      .addEventListener('touchstart', handleTouchStart, false)
+
+    document
+      .querySelector('#slider')
+      .addEventListener('touchmove', handleTouchMove, false)
+
+    function handleTouchStart(e) {
+      //получаю координаты точки касания
+      touchX = e.touches[0].clientX
+      touchY = e.touches[0].clientY
+    }
+
+    function handleTouchMove(e) {
+      //если движения не было то false
+      if (!touchX) {
+        return false
+      }
+      //получаю координаты после движения
+      let touchXmove = e.touches[0].clientX
+      let touchYmove = e.touches[0].clientY
+
+      //смотрю разницу координат до и после по модулю, чтобы узнать в какую сторону движение
+      let divX = touchX - touchXmove
+      let divY = touchY - touchYmove
+      //если divX больше, то движение влево или вправо
+      if (Math.abs(divX) > Math.abs(divY)) {
+        //если divX > 0, то движение влево
+        if (divX > 0) {
+          sliderNext()
+        } else sliderPrev()
+      }
+
+      touchX = null
+      touchY = null
+    }
   }
+
+  //--------touch
+
+  // handleTouchStart = (e) => {
+  //   //получаю координаты точки касания
+  //   touchX = e.touches[0].clientX
+  //   touchY = e.touches[0].clientY
+  // }
+
+  // handleTouchMove = (e) => {
+  //   //если движения не было то false
+  //   if (!touchX) {
+  //     return false
+  //   }
+  //   //получаю координаты после движения
+  //   let touchXmove = e.touches[0].clientX
+  //   let touchYmove = e.touches[0].clientY
+
+  //   //смотрю разницу координат до и после по модулю, чтобы узнать в какую сторону движение
+  //   let divX = touchX - touchXmove
+  //   let divY = touchY - touchYmove
+  //   //если divX больше, то движение влево или вправо
+  //   if (Math.abs(divX) > Math.abs(divY)) {
+  //     //если divX > 0, то движение влево
+  //     if (divX > 0) {
+  //       console.log('elft')
+  //     } else console.log('right')
+  //   }
+  // }
 
   render() {
     return (
       <div className={container.container}>
-        <div id="slider" className={classes.Slider}>
+        <div
+          id="slider"
+          className={classes.Slider}
+          // onTouchStart={this.handleTouchStart}
+          // onTouchMove={this.handleTouchMove}
+        >
           <div id="sliderLine" className={classes.sliderLine}>
             <img src={img1} alt="img1" />
             <img src={img2} alt="img2" />
