@@ -9,7 +9,6 @@ class About extends Component {
         <div className={contain.container}>
           <div className={classes.content}>
             <h2>О нас</h2>
-            <div className={classes.hr}></div>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi
               architecto cum non eos illum odit provident, totam cumque dolorem

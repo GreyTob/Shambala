@@ -1,18 +1,30 @@
+@import '../../components/UI/variables.scss';
+
 .About {
   width: 100%;
   padding-top: 40px;
   padding-bottom: 40px;
-  background: gray;
+  background: $feta;
 
-  .hr {
+  h2 {
+    position: relative;
+    margin-bottom: 30px;
+    color: $temptress;
+  }
+
+  h2:after {
     content: '';
-    width: 30px;
+    display: block;
     height: 2px;
-    background: black;
-    margin: 20px 0;
+    background: $temptress;
+    position: absolute;
+    top: 30px;
+    left: 0;
+    right: 0;
   }
 
   p {
+    color: $temptress;
     margin-bottom: 20px;
   }
   p:last-child {
@@ -21,9 +33,6 @@
 }
 
 .content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  display: grid;
+  place-items: center;
 }

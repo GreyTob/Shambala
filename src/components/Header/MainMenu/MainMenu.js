@@ -1,7 +1,7 @@
 import React from 'react'
 import classes from './MainMenu.module.scss'
 import MenuItem from './MenuItem/MenuItem'
-import MenuItemsSocial from './MenuItemsSocial/MenuItemsSocial'
+import SocialItems from '../../SocialItems/SocialItems'
 
 class MainMenu extends React.Component {
   state = {
@@ -75,7 +75,7 @@ class MainMenu extends React.Component {
           <ul>
             {this.state.social.map((socialItem, index) => {
               return (
-                <MenuItemsSocial
+                <SocialItems
                   key={index}
                   value={socialItem.value}
                   href={socialItem.href}

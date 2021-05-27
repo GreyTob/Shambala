@@ -1,8 +1,8 @@
 import './App.module.scss'
 import Layout from './hoc/layout/Layout'
-import Header from './components/Header/Header'
 import { Route, Switch, Redirect } from 'react-router-dom'
 
+import Header from './components/Header/Header'
 import Main from './pages/Main/Main'
 import About from './pages/About/About'
 import Teachers from './pages/Teachers/Teachers'
@@ -10,6 +10,7 @@ import Contacts from './pages/Contacts/Contacts'
 import TimeTable from './pages/TimeTable/TimeTable'
 import Blog from './pages/Blog/Blog'
 import NotFound from './pages/NotFound/NotFound'
+import Footer from './components/Footer/Footer'
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         {/* <Route render={NotFound} /> */}
         <Redirect to="/" />
       </Switch>
+      <Footer />
     </Layout>
   )
 }

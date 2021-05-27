@@ -13,11 +13,20 @@ import chevron from './assets/chevron.svg'
 import leftChevron from './assets/leftChevron.svg'
 
 class Slider extends React.Component {
+  // state = {
+  //   image: [
+  //     { src: './assets/111.jpg', alt: 'фото1' },
+  //     { src: './assets/112.jpg', alt: 'фото2' },
+  //     { src: './assets/113.jpg', alt: 'фото3' },
+  //     { src: './assets/114.jpg', alt: 'фото4' },
+  //     { src: './assets/115.jpg', alt: 'фото5' },
+  //   ],
+  // }
   componentDidMount() {
     //делаю слайдер
     const images = document.querySelectorAll('#sliderLine img')
     const sliderLine = document.querySelector('#sliderLine')
-    let count = images.length - 1
+    let count = 0
     let width
 
     const init = () => {
@@ -62,9 +71,9 @@ class Slider extends React.Component {
 
     //автопереключение
     setInterval(() => {
-      count--
-      if (count < 0) {
-        count = images.length - 1
+      count++
+      if (count >= images.length) {
+        count = 0
       }
       rollSlider()
     }, 15000)
