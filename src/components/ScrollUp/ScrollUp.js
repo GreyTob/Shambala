@@ -4,7 +4,7 @@ import { ReactSVG } from 'react-svg'
 import chevronUp from './assets/chevron-up-solid.svg'
 
 const ScrollUp = () => {
-  function ScrollUp() {
+  function ScrollUpHandler() {
     let t, s
     s = document.body.scrollTop || window.pageYOffset
     t = setInterval(() => {
@@ -14,7 +14,11 @@ const ScrollUp = () => {
   }
 
   return (
-    <div className={classes.ScrollUp} onClick={ScrollUp}>
+    <div
+      className={classes.ScrollUp}
+      onClick={ScrollUpHandler}
+      onTouchStart={ScrollUpHandler}
+    >
       <ReactSVG src={chevronUp} />
       <span>Наверх</span>
     </div>
