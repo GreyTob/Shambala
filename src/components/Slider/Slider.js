@@ -1,30 +1,28 @@
 import React from 'react'
 import classes from './Slider.module.scss'
 import container from '../../index.module.scss'
+import { ReactSVG } from 'react-svg'
 
-import asd1 from './assets/111.jpg'
-import asd2 from './assets/112.jpg'
-import asd3 from './assets/113.jpg'
-import asd4 from './assets/114.jpg'
-import asd5 from './assets/115.jpg'
+import img1 from './assets/111.jpg'
+import img2 from './assets/112.jpg'
+import img3 from './assets/113.jpg'
+import img4 from './assets/114.jpg'
+import img5 from './assets/115.jpg'
+
+import chevron from './assets/chevron.svg'
+import leftChevron from './assets/leftChevron.svg'
 
 class Slider extends React.Component {
-  state = {
-    img: [{ src: 'ссылка', alt: 'текст' }],
-  }
-
   componentDidMount() {
-    //делаем слайдер
+    //делаю слайдер
     const images = document.querySelectorAll('#sliderLine img')
     const sliderLine = document.querySelector('#sliderLine')
     let count = images.length - 1
     let width
 
     const init = () => {
-      console.log('rezine')
       //получаем ширину слайдера
       width = document.querySelector('#slider').offsetWidth
-      console.log(width)
 
       //задаем общую ширину sliderLine (ширина всех картинок)
       sliderLine.getElementsByClassName.width = width * images.length + 'px'
@@ -69,11 +67,10 @@ class Slider extends React.Component {
         count = images.length - 1
       }
       rollSlider()
-    }, 5000)
+    }, 15000)
 
     function rollSlider() {
       //смещаем слайдер на 1 ширину
-      console.log('rollslider')
       sliderLine.style.transform = 'translate(-' + count * width + 'px)'
     }
   }
@@ -83,20 +80,19 @@ class Slider extends React.Component {
       <div className={container.container}>
         <div id="slider" className={classes.Slider}>
           <div id="sliderLine" className={classes.sliderLine}>
-            <img src={asd1} alt="1" />
-            <img src={asd2} alt="2" />
-            <img src={asd3} alt="3" />
-            <img src={asd4} alt="4" />
-            <img src={asd5} alt="5" />
+            <img src={img1} alt="img1" />
+            <img src={img2} alt="img2" />
+            <img src={img3} alt="img3" />
+            <img src={img4} alt="img4" />
+            <img src={img5} alt="img5" />
           </div>
+          <button id="sliderPrev" className={classes.sliderPrev}>
+            <ReactSVG src={leftChevron} />
+          </button>
+          <button id="sliderNext" className={classes.sliderNext}>
+            <ReactSVG src={chevron} />
+          </button>
         </div>
-        <button id="sliderPrev" className={classes.sliderPrev}>
-          Назад
-        </button>
-        <br />
-        <button id="sliderNext" className={classes.sliderNext}>
-          Вперед
-        </button>
       </div>
     )
   }
