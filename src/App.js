@@ -1,4 +1,3 @@
-import './App.module.scss'
 import Layout from './hoc/layout/Layout'
 import { Route, Switch, Redirect } from 'react-router-dom'
 

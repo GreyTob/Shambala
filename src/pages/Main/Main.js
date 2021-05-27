@@ -8,9 +8,9 @@ class Main extends Component {
   render() {
     return (
       <section className={classes.Main}>
-        <div className={contain.contain}>
+        <div style={{ padding: '0 0' }} className={contain.contain}>
           <Slider />
-          <SwipeR />
+          {/* <SwipeR /> */}
         </div>
       </section>
     )
