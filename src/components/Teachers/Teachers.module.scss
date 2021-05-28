@@ -1,2 +1,36 @@
+@import '../UI/variables.scss';
+
 .Teachers {
+  .content {
+    width: 100%;
+    padding: 45px 20px;
+    background: linear-gradient(90deg, #faf0cd, #fab397);
+    display: grid;
+    place-items: center;
+    opacity: 0.95;
+  }
+
+  h2 {
+    position: relative;
+    margin-bottom: 30px;
+    color: $temptress;
+  }
+
+  h2:after {
+    content: '';
+    display: block;
+    height: 2px;
+    background: $temptress;
+    position: absolute;
+    top: 30px;
+    left: 0;
+    right: 0;
+  }
+
+  .block {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-row-gap: 2vw;
+  }
 }

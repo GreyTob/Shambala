@@ -1,0 +1,47 @@
+@import '../../UI/variables.scss';
+
+.TeacherItem {
+  max-width: 200px;
+  padding: 10px;
+  text-align: center;
+  margin: 0 auto;
+  // border: 1px solid black;
+
+  .img {
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    width: 180px;
+    height: 180px;
+    margin-bottom: 20px;
+
+    img {
+      transform: scale(0.4);
+      position: absolute;
+      left: -890px;
+      top: -460px;
+    }
+  }
+
+  .name {
+    position: relative;
+    margin-bottom: 30px;
+    color: $temptress;
+    text-transform: uppercase;
+  }
+
+  .name:after {
+    content: '';
+    display: block;
+    height: 2px;
+    background: $temptress;
+    position: absolute;
+    top: 30px;
+    left: 40px;
+    right: 40px;
+  }
+
+  p {
+    padding: 5px 0;
+  }
+}

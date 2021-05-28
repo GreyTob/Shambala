@@ -4,7 +4,7 @@ import classes from './Main.module.scss'
 import About from '../../components/About/About'
 import Slider from '../../components/Slider/Slider'
 import Contacts from '../../components/Contacts/Contacts'
-// import SwipeR from '../../components/Swiper/SwipeR'
+import Teachers from '../../components/Teachers/Teachers'
 
 class Main extends Component {
   render() {
@@ -12,9 +12,8 @@ class Main extends Component {
       <section className={classes.Main}>
         <About />
         <Slider />
-        {/* <Teachers /> */}
+        <Teachers />
         <Contacts />
-        {/* <SwipeR /> */}
       </section>
     )
   }
