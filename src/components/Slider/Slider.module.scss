@@ -4,7 +4,7 @@
   position: relative;
 }
 
-.blurBackground:before {
+.blurBackground:after {
   content: '';
   position: absolute;
   left: 0;
@@ -12,8 +12,9 @@
   top: 0;
   bottom: 0;
   z-index: -1;
-  background: url(./assets/113.jpg) center center / cover no-repeat;
-  filter: blur(5px);
+  background: linear-gradient(90deg, #b9deed, #efefef) center center / cover
+    no-repeat;
+  filter: blur(6px);
 }
 
 .Slider {

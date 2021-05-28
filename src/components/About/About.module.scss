@@ -1,13 +1,14 @@
 @import '../../components/UI/variables.scss';
 
 .About {
-  width: 100%;
-  padding: 40px 10px 40px;
-  background: $feta;
-
+  margin-top: 400px;
   .content {
+    width: 100%;
+    padding: 45px 20px;
+    background: linear-gradient(90deg, #faf0cd, #fab397);
     display: grid;
     place-items: center;
+    opacity: 0.95;
   }
 
   h2 {
