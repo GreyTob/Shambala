@@ -1,0 +1,57 @@
+@import '../UI/variables.scss';
+
+.Contacts {
+  width: 100%;
+  background: linear-gradient(135deg, #e55d87 0%, #5fc3e4 100%);
+
+  .content {
+    display: grid;
+    place-items: center;
+    padding-top: 40px;
+    padding-bottom: 35px;
+  }
+
+  h2 {
+    position: relative;
+    margin-bottom: 30px;
+    color: $temptress;
+  }
+
+  h2:after {
+    content: '';
+    display: block;
+    height: 2px;
+    background: $temptress;
+    position: absolute;
+    top: 30px;
+    left: 0;
+    right: 0;
+  }
+
+  .shambala {
+    text-transform: uppercase;
+    color: mailto;
+  }
+
+  span {
+    color: $temptress;
+    padding: 5px 0;
+
+    a {
+      color: $temptress;
+    }
+
+    a:hover {
+      color: $armadillo;
+    }
+  }
+}
+
+.iframe {
+  iframe {
+    padding: 50px;
+    width: 100%;
+    min-height: 500px;
+    border: none;
+  }
+}

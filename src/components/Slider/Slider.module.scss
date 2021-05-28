@@ -1,10 +1,27 @@
 @import '../UI//variables.scss';
 
+// import img from ''
+// .blockSlide {
+//   position: relative;
+// }
+// .Slider:before {
+//   content: '';
+//   position: absolute;
+//   left: 0;
+//   right: 0;
+//   top: 0;
+//   bottom: 0;
+//   z-index: -1;
+//   background: url(./assets/113.jpg) center center / cover no-repeat;
+//   filter: blur(5px);
+// }
+
 .Slider {
   width: 100%;
   margin: 0 auto;
   overflow: hidden;
   position: relative;
+  filter: none;
 }
 
 .sliderLine {

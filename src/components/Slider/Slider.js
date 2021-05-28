@@ -148,28 +148,25 @@ class Slider extends React.Component {
 
   render() {
     return (
-      <div className={container.container}>
-        <div
-          id="slider"
-          className={classes.Slider}
-          // onTouchStart={this.handleTouchStart}
-          // onTouchMove={this.handleTouchMove}
-        >
-          <div id="sliderLine" className={classes.sliderLine}>
-            <img src={img1} alt="img1" />
-            <img src={img2} alt="img2" />
-            <img src={img3} alt="img3" />
-            <img src={img4} alt="img4" />
-            <img src={img5} alt="img5" />
+      <section className={classes.blockSlide}>
+        <div className={container.container}>
+          <div id="slider" className={classes.Slider}>
+            <div id="sliderLine" className={classes.sliderLine}>
+              <img src={img1} alt="img1" />
+              <img src={img2} alt="img2" />
+              <img src={img3} alt="img3" />
+              <img src={img4} alt="img4" />
+              <img src={img5} alt="img5" />
+            </div>
+            <button id="sliderPrev" className={classes.sliderPrev}>
+              <ReactSVG src={leftChevron} />
+            </button>
+            <button id="sliderNext" className={classes.sliderNext}>
+              <ReactSVG src={chevron} />
+            </button>
           </div>
-          <button id="sliderPrev" className={classes.sliderPrev}>
-            <ReactSVG src={leftChevron} />
-          </button>
-          <button id="sliderNext" className={classes.sliderNext}>
-            <ReactSVG src={chevron} />
-          </button>
         </div>
-      </div>
+      </section>
     )
   }
 }

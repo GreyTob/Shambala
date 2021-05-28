@@ -5,6 +5,11 @@
   padding: 40px 10px 40px;
   background: $feta;
 
+  .content {
+    display: grid;
+    place-items: center;
+  }
+
   h2 {
     position: relative;
     margin-bottom: 30px;
@@ -29,9 +34,4 @@
   p:last-child {
     margin-bottom: 0;
   }
-}
-
-.content {
-  display: grid;
-  place-items: center;
 }

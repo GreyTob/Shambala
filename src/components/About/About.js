@@ -1,10 +1,10 @@
 import classes from './About.module.scss'
-import contain from '../../index.module.scss'
+import container from '../../index.module.scss'
 
 const About = () => {
   return (
     <section id="about" className={classes.About}>
-      <div className={contain.container}>
+      <div className={container.container}>
         <div className={classes.content}>
           <h2>О нас</h2>
           <p>

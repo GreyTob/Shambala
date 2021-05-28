@@ -8,9 +8,9 @@ const ScrollUp = () => {
     let t, s
     s = document.body.scrollTop || window.pageYOffset
     t = setInterval(() => {
-      if (s > 0) window.scroll(0, (s -= 5))
+      if (s > 0) window.scroll(0, (s -= 15))
       else clearInterval(t)
-    }, 6)
+    }, 5)
   }
 
   return (

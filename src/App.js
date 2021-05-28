@@ -3,8 +3,6 @@ import { Route, Switch, Redirect } from 'react-router-dom'
 
 import Header from './components/Header/Header'
 import Main from './pages/Main/Main'
-import Teachers from './pages/Teachers/Teachers'
-import Contacts from './pages/Contacts/Contacts'
 import TimeTable from './pages/TimeTable/TimeTable'
 import Cost from './pages/Blog/Blog'
 import NotFound from './pages/NotFound/NotFound'
