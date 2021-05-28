@@ -117,53 +117,26 @@ class Slider extends React.Component {
     }
   }
 
-  //--------touch
-
-  // handleTouchStart = (e) => {
-  //   //получаю координаты точки касания
-  //   touchX = e.touches[0].clientX
-  //   touchY = e.touches[0].clientY
-  // }
-
-  // handleTouchMove = (e) => {
-  //   //если движения не было то false
-  //   if (!touchX) {
-  //     return false
-  //   }
-  //   //получаю координаты после движения
-  //   let touchXmove = e.touches[0].clientX
-  //   let touchYmove = e.touches[0].clientY
-
-  //   //смотрю разницу координат до и после по модулю, чтобы узнать в какую сторону движение
-  //   let divX = touchX - touchXmove
-  //   let divY = touchY - touchYmove
-  //   //если divX больше, то движение влево или вправо
-  //   if (Math.abs(divX) > Math.abs(divY)) {
-  //     //если divX > 0, то движение влево
-  //     if (divX > 0) {
-  //       console.log('elft')
-  //     } else console.log('right')
-  //   }
-  // }
-
   render() {
     return (
-      <section className={classes.blockSlide}>
-        <div className={container.container}>
-          <div id="slider" className={classes.Slider}>
-            <div id="sliderLine" className={classes.sliderLine}>
-              <img src={img1} alt="img1" />
-              <img src={img2} alt="img2" />
-              <img src={img3} alt="img3" />
-              <img src={img4} alt="img4" />
-              <img src={img5} alt="img5" />
+      <section className={classes.PositionBlok}>
+        <div className={classes.blurBackground}>
+          <div className={container.container}>
+            <div id="slider" className={classes.Slider}>
+              <div id="sliderLine" className={classes.sliderLine}>
+                <img src={img1} alt="img1" />
+                <img src={img2} alt="img2" loading="lazy" />
+                <img src={img3} alt="img3" loading="lazy" />
+                <img src={img4} alt="img4" loading="lazy" />
+                <img src={img5} alt="img5" loading="lazy" />
+              </div>
+              <button id="sliderPrev" className={classes.sliderPrev}>
+                <ReactSVG src={leftChevron} />
+              </button>
+              <button id="sliderNext" className={classes.sliderNext}>
+                <ReactSVG src={chevron} />
+              </button>
             </div>
-            <button id="sliderPrev" className={classes.sliderPrev}>
-              <ReactSVG src={leftChevron} />
-            </button>
-            <button id="sliderNext" className={classes.sliderNext}>
-              <ReactSVG src={chevron} />
-            </button>
           </div>
         </div>
       </section>
