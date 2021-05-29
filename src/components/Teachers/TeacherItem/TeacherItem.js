@@ -1,6 +1,8 @@
 import classes from './TeacherItem.module.scss'
 
 const TeacherItem = (props) => {
+  console.log(props)
+
   return (
     <div className={classes.TeacherItem}>
       <div className={classes.img}>
