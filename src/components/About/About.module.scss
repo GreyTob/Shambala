@@ -1,7 +1,8 @@
 @import '../../components/UI/variables.scss';
 
 .About {
-  margin-top: 400px;
+  margin-top: calc(100vh - 289px);
+
   .content {
     width: 100%;
     padding: 45px 40px;
