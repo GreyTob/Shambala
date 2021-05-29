@@ -2,9 +2,10 @@ import React, { Component } from 'react'
 import classes from './Teachers.module.scss'
 import TeacherItem from './TeacherItem/TeacherItem'
 import container from '../../index.module.scss'
+import Button from '../Button/Button'
 
 import Pepa from '../../assets/teachers/1Pepa.jpg'
-import Button from '../../assets/teachers/2Button.jpg'
+import Pugovka from '../../assets/teachers/2Button.jpg'
 import Kesha from '../../assets/teachers/3kesha.jpg'
 import Lisa from '../../assets/teachers/4Lisa.jpg'
 import Pa from '../../assets/teachers/5Pa.jpg'
@@ -26,7 +27,7 @@ class Teachers extends Component {
         name: 'Кнопка',
         direction: 'Хатха-йога',
         discription: 'Посажу на шпагатю Не встанешь',
-        src: Button,
+        src: Pugovka,
         alt: 'Кнопка',
       },
       {
@@ -70,6 +71,8 @@ class Teachers extends Component {
       },
     ],
     teachersToggle: false,
+    buttonValueOpen: 'Показать больше',
+    buttonValueClose: 'Свернуть',
   }
 
   showeTeachersToggle = () => {
@@ -78,7 +81,15 @@ class Teachers extends Component {
     })
   }
 
+  // карточки всегда перемешиваются
+  shuffle = (array) => {
+    array.sort(() => Math.random() - 0.5)
+  }
+
   render() {
+    {
+      this.shuffle(this.state.teachers)
+    }
     return (
       <section className={classes.Teachers}>
         <div className={container.container}>
@@ -86,7 +97,6 @@ class Teachers extends Component {
             <h2>Наши преподаватели</h2>
             <div className={classes.block}>
               {!this.state.teachersToggle ? (
-                // карточки всегда перемешиваются
                 <React.Fragment>
                   <TeacherItem
                     id={this.state.teachers[0].id}
@@ -126,7 +136,12 @@ class Teachers extends Component {
                 })
               )}
             </div>
-            <button onClick={this.showeTeachersToggle}>Показать больше</button>
+            <Button
+              onClick={this.showeTeachersToggle}
+              teachersToggle={this.state.teachersToggle}
+              buttonValueOpen={this.state.buttonValueOpen}
+              buttonValueClose={this.state.buttonValueClose}
+            />
           </div>
         </div>
       </section>
