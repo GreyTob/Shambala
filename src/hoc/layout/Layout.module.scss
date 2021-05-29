@@ -19,5 +19,57 @@
   bottom: 0;
   z-index: -1;
   background: url(../../assets/mainBack.jpg) center center / cover no-repeat;
+  // transform: scale(1);
   filter: blur(3px);
+  // background-size: 100% 100%, cover;
+  -webkit-animation: head_slide 25s infinite;
+  -moz-animation: head_slide 25s infinite;
+  -o-animation: head_slide 25s infinite;
+  animation: head_slide 25s infinite;
+}
+
+//сделать этот эффекто только для больших экранов
+@-webkit-keyframes head_slide {
+  0% {
+    background-size: 100%;
+  }
+  50% {
+    background-size: 105%;
+  }
+  100% {
+    background-size: 100%;
+  }
+}
+@-moz-keyframes head_slide {
+  0% {
+    background-size: 100%;
+  }
+  50% {
+    background-size: 105%;
+  }
+  100% {
+    background-size: 100%;
+  }
+}
+@keyframes head_slide {
+  0% {
+    background-size: 10%;
+  }
+  50% {
+    background-size: 105%;
+  }
+  100% {
+    background-size: 100%;
+  }
+}
+@keyframes head_slide {
+  0% {
+    background-size: 100%;
+  }
+  50% {
+    background-size: 105%;
+  }
+  100% {
+    background-size: 100%;
+  }
 }
