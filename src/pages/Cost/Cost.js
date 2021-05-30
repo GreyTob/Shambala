@@ -5,8 +5,6 @@ import container from '../../index.module.scss'
 import Abonements from '../../components/Abonements/Abonements'
 import ClubCards from '../../components/ClubCards/ClubCards'
 
-// import price from '../../assets/price.jpg'
-
 class Cost extends Component {
   state = {
     yang: 'Детский**',
@@ -27,13 +25,7 @@ class Cost extends Component {
               usually={this.state.usually}
               individual={this.state.individual}
             />
-            <ClubCards
-              yang={this.state.yang}
-              old={this.state.old}
-              morning={this.state.morning}
-              usually={this.state.usually}
-              individual={this.state.individual}
-            />
+            <ClubCards />
           </div>
         </div>
       </section>
