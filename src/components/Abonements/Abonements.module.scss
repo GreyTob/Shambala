@@ -1,0 +1,50 @@
+.Abonements {
+  min-width: 100%;
+  opacity: 0.95;
+  background: linear-gradient(90deg, #faf0cd, #fab397);
+  border-collapse: collapse;
+  text-align: center;
+  vertical-align: middle;
+  transition: all 1s ease-in;
+
+  caption {
+    background: linear-gradient(90deg, #faf0cd, #fab397);
+    text-transform: uppercase;
+    padding: 15px;
+  }
+
+  th {
+    padding: 10px;
+  }
+
+  td {
+    border: 1px solid #e55d87;
+    padding: 10px;
+  }
+
+  .none {
+    display: none;
+  }
+
+  .tfoot {
+    line-height: 20px;
+    text-align: left;
+    td {
+      border: none;
+    }
+  }
+
+  .underline {
+    text-decoration: underline;
+  }
+
+  tr:hover {
+    background: linear-gradient(135deg, #e55d87 0%, #5fc3e4 100%);
+    opacity: 0.9;
+  }
+
+  .noHover:hover {
+    background: linear-gradient(90deg, #faf0cd, #fab397);
+    opacity: 0.95;
+  }
+}
