@@ -34,3 +34,19 @@
     grid-row-gap: 2vw;
   }
 }
+
+@media (max-width: 767px) {
+  .Teachers {
+    .block {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .Teachers {
+    .block {
+      grid-template-columns: 1fr;
+    }
+  }
+}
