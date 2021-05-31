@@ -6,7 +6,7 @@ class Contacts extends Component {
   render() {
     return (
       <React.Fragment>
-        <section className={classes.Contacts}>
+        <section id="contacts" className={classes.Contacts}>
           <div className={container.container}>
             <div className={classes.content}>
               <h2>Свяжитеcь с нами</h2>

@@ -1,5 +1,6 @@
 import React from 'react'
 import classes from './MainMenu.module.scss'
+
 import MenuItem from './MenuItem/MenuItem'
 import SocialItems from '../../SocialItems/SocialItems'
 
@@ -9,32 +10,44 @@ class MainMenu extends React.Component {
       {
         value: 'Главная',
         to: '/',
-        exact: true,
+        // exact: true,
+        id: 'mainLink',
       },
       {
         value: 'О нас',
-        to: '/about',
-        exact: true,
+        to: {
+          pathname: '/',
+          hash: 'about',
+        },
+        // exact: true,
       },
       {
         value: 'Преподаватели',
-        to: '/teachers',
-        exact: false,
+        to: {
+          pathname: '/',
+          hash: 'teachers',
+        },
+        // exact: false,
       },
       {
         value: 'Контакты',
-        to: '/contacts',
-        exact: false,
+        to: {
+          pathname: '/',
+          hash: 'contacts',
+        },
+        // exact: false,
       },
       {
         value: 'Рассписание',
         to: '/time-table',
         exact: false,
+        id: 'time-tableLink',
       },
       {
         value: 'Цены',
         to: '/cost',
-        exact: false,
+        // exact: false,
+        id: 'costLink',
       },
     ],
     social: [
@@ -58,6 +71,7 @@ class MainMenu extends React.Component {
       },
     ],
   }
+
   render() {
     return (
       <nav className={classes.MainMenu}>
@@ -68,11 +82,12 @@ class MainMenu extends React.Component {
                 key={index}
                 value={menuItem.value}
                 to={menuItem.to}
-                exact={menuItem.exact}
                 rout={menuItem.rout}
+                id={menuItem.id}
               />
             )
           })}
+
           <ul>
             {this.state.social.map((socialItem, index) => {
               return (

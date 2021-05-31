@@ -14,9 +14,6 @@ function App() {
       <Header />
       <Switch>
         <Route path="/" exact component={Main} />
-        <Route path="/about" component={Main} />
-        <Route path="/teachers" exact component={Main} />
-        <Route path="/contacts" exact component={Main} />
         <Route path="/time-table" component={TimeTable} />
         <Route path="/cost" component={Cost} />
         <Redirect to="/" />

@@ -19,7 +19,7 @@ class Teachers extends Component {
         name: 'Свинка Пэпа',
         direction: 'Акро-йога',
         discription:
-          'Это текст. Нажмите один раз и выберите «Редактировать текст» или просто кликните дважды, чтобы добавить свой текст и настроить шрифт. Вы можете переместить его в любое место на странице. Расскажите посетителям сайта о себе. Здесь будет удачно смотреться текст о вашей компании и услугах.',
+          'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod labore, odio voluptatem quos nihil dolorem voluptas tenetur ea non molestias!',
         src: Pepa,
         alt: 'Pepa',
       },
@@ -34,7 +34,7 @@ class Teachers extends Component {
         name: 'Кеша',
         direction: 'Гамаки',
         discription:
-          'Это текст. Нажмите один раз и выберите «Редактировать текст» или просто кликните дважды, чтобы добавить свой текст и настроить шрифт. Вы можете переместить его в любое место на странице. Расскажите посетителям сайта о себе. Здесь будет удачно смотреться текст о вашей компании и услугах.',
+          'Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui cumque exercitationem soluta ipsum. Modi, corrupti! Repellendus, autem exercitationem maiores eos deserunt pariatur doloremque hic neque ad dolorem ipsum cumque ea? ',
         src: Kesha,
         alt: 'Кеша',
       },
@@ -42,7 +42,7 @@ class Teachers extends Component {
         name: 'Лиза',
         direction: 'Зумба',
         discription:
-          'Это текст. Нажмите один раз и выберите «Редактировать текст» или просто кликните дважды, чтобы добавить свой текст и настроить шрифт. Вы можете переместить его в любое место на странице. Расскажите посетителям сайта о себе. Здесь будет удачно смотреться текст о вашей компании и услугах.',
+          'Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis eius eaque nostrum velit aliquam repudiandae saepe nihil? Aliquid vero et iusto perspiciatis!',
         src: Lisa,
         alt: 'Лиза',
       },
@@ -57,7 +57,7 @@ class Teachers extends Component {
         name: 'Спанч Боб',
         direction: 'Растяжка',
         discription:
-          'Это текст. Нажмите один раз и выберите «Редактировать текст» или просто кликните дважды, чтобы добавить свой текст и настроить шрифт. Вы можете переместить его в любое место на странице. Расскажите посетителям сайта о себе. Здесь будет удачно смотреться текст о вашей компании и услугах.',
+          'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa, consequuntur dolorum. Hic ipsum iste vel reiciendis. Ullam, magni.',
         src: Spange,
         alt: 'Spange',
       },
@@ -65,7 +65,7 @@ class Teachers extends Component {
         name: 'Волк',
         direction: 'Табата',
         discription:
-          'Это текст. Нажмите один раз и выберите «Редактировать текст» или просто кликните дважды, чтобы добавить свой текст и настроить шрифт. Вы можете переместить его в любое место на странице. Расскажите посетителям сайта о себе. Здесь будет удачно смотреться текст о вашей компании и услугах.',
+          'Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa aperiam perferendis at itaque delectus cupiditate.',
         src: Volk,
         alt: 'Волк',
       },
@@ -91,7 +91,7 @@ class Teachers extends Component {
       this.shuffle(this.state.teachers)
     }
     return (
-      <section className={classes.Teachers}>
+      <section id="teachers" className={classes.Teachers}>
         <div className={container.container}>
           <div className={classes.content}>
             <h2>Наши преподаватели</h2>

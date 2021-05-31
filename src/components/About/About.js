@@ -3,9 +3,9 @@ import container from '../../index.module.scss'
 
 const About = () => {
   return (
-    <section id="about" className={classes.About}>
+    <section className={classes.About}>
       <div className={container.container}>
-        <div className={classes.content}>
+        <div id="about" className={classes.content}>
           <h2>О нас</h2>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi
