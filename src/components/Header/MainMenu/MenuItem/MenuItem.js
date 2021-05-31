@@ -3,9 +3,10 @@ import classes from './MenuItem.module.scss'
 import ScrollUpHandler from '../../../ScrollUp/ScrollUpHandler'
 
 import { HashLink } from 'react-router-hash-link'
-import { Link, animateScroll as scroll } from 'react-scroll'
+// import { Element, animateScroll as scroll } from 'react-scroll'
 
 const MenuItem = (props) => {
+  console.log(props)
   return (
     <li className={classes.MenuItem}>
       <HashLink
@@ -20,11 +21,11 @@ const MenuItem = (props) => {
             ? ScrollUpHandler
             : null
         }
-        // activeClass="activeLink"
-        spy={false}
-        smooth={true}
-        offset={-70}
-        duration={100}
+        // activeClass={props.activeClass}
+        // spy={props.spy}
+        // smooth={props.smooth}
+        // offset={props.offset}
+        // duration={props.duration}
       >
         {props.value}
       </HashLink>

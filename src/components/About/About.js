@@ -1,12 +1,31 @@
 import classes from './About.module.scss'
 import container from '../../index.module.scss'
 
+import { Link, animateScroll as scroll } from 'react-scroll'
+
 const About = () => {
   return (
     <section className={classes.About}>
       <div className={container.container}>
         <div id="about" className={classes.content}>
           <h2>О нас</h2>
+          <Link
+            style={{
+              cursor: 'pointer',
+              padding: 40,
+              color: 'red',
+              textTransform: 'uppercase',
+            }}
+            to="contacts"
+            spy={true}
+            smooth={true}
+            hashSpy={true}
+            offset={-55}
+            duration={500}
+            delay={1000}
+          >
+            Проверка react-scroll
+          </Link>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi
             architecto cum non eos illum odit provident, totam cumque dolorem

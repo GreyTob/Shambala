@@ -4,6 +4,8 @@ import classes from './MainMenu.module.scss'
 import MenuItem from './MenuItem/MenuItem'
 import SocialItems from '../../SocialItems/SocialItems'
 
+// import { Element, animateScroll as scroll } from 'react-scroll'
+
 class MainMenu extends React.Component {
   state = {
     menu: [
@@ -84,6 +86,12 @@ class MainMenu extends React.Component {
                 to={menuItem.to}
                 rout={menuItem.rout}
                 id={menuItem.id}
+                //
+                // activeClass={'classes.activeLink'}
+                spy={false}
+                smooth={true}
+                offset={-100}
+                duration={100}
               />
             )
           })}

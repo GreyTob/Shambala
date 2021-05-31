@@ -5,7 +5,7 @@ const Logo = () => {
   return (
     <figure className={classes.Logo}>
       <div className={classes.picture}>
-        <a href="#top">
+        <a href="/">
           <img className={classes.rotating} src={LogoPicture} alt="logo" />
         </a>
       </div>
