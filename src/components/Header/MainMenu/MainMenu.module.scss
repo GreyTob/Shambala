@@ -1,5 +1,6 @@
 .MainMenu {
   padding: 0 15px;
+  height: 25px;
 
   ul {
     display: flex;
@@ -9,5 +10,14 @@
 
   ul > li {
     padding: 0 6px;
+  }
+
+  .blur {
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .MainMenu {
+    display: none;
   }
 }

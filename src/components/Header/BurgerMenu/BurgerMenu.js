@@ -1,12 +1,13 @@
-import React from 'react'
-import classes from './MainMenu.module.scss'
-
+import classes from './BurgerMenu.module.scss'
 import MenuItem from '../MenuItem/MenuItem'
-import SocialItems from '../../SocialItems/SocialItems'
 
-const MainMenu = (props) => {
+const BurgerMenu = (props) => {
   return (
-    <nav className={classes.MainMenu}>
+    <nav
+      className={
+        props.burgerActive ? classes.BurgerMenuActive : classes.BurgerMenu
+      }
+    >
       {/* <div className={classes.blur} /> */}
       <ul>
         {props.menu.map((menuItem, index) => {
@@ -17,6 +18,7 @@ const MainMenu = (props) => {
               to={menuItem.to}
               rout={menuItem.rout}
               id={menuItem.id}
+              burgerActiveToggle={props.burgerActiveToggle}
               //
               // activeClass={'classes.activeLink'}
               spy={false}
@@ -26,23 +28,9 @@ const MainMenu = (props) => {
             />
           )
         })}
-
-        <ul>
-          {props.social.map((socialItem, index) => {
-            return (
-              <SocialItems
-                key={index}
-                value={socialItem.value}
-                href={socialItem.href}
-                target={socialItem.target}
-                rel={socialItem.rel}
-              />
-            )
-          })}
-        </ul>
       </ul>
     </nav>
   )
 }
 
-export default MainMenu
+export default BurgerMenu

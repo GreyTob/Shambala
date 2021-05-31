@@ -1,0 +1,57 @@
+.BurgerMenu {
+  position: absolute;
+  top: -180%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  // transform: translateX(-100%);
+  transition: all 0.3s ease-in;
+  ///
+  // display: none;
+  ///
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  ul > li {
+    transform: scale(1);
+    padding: 0;
+    transition: all 0.3s ease-in;
+  }
+}
+
+.BurgerMenuActive {
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  transform: translate(-50%, 0);
+
+  // transform: translateX(50%);
+  transition: all 0.3s ease-in;
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  ul > li {
+    transform: scale(1.2);
+    padding: 15px 0;
+    transition: all 0.3s ease-in;
+  }
+}
+
+@media screen and (min-width: 767px) {
+  .BurgerMenu {
+    display: none;
+  }
+
+  .BurgerMenuActive {
+    display: none;
+  }
+}

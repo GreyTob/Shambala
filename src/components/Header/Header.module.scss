@@ -7,7 +7,7 @@
   z-index: 10;
   // background: linear-gradient(360deg, $feta -50%, $dodger-blue 100%);
   background: linear-gradient(135deg, #e55d87 0%, #5fc3e4 100%);
-  padding: 5px 10px 20px;
+  padding: 5px 10px 12px;
   opacity: 0.95;
 }
 
@@ -19,5 +19,21 @@
 @media (min-width: 2000px) {
   .Header {
     top: -250px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .Header {
+    padding: 10px 20px;
+
+    width: 100%;
+    position: sticky;
+    top: -235px;
+  }
+
+  .contant {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
   }
 }
