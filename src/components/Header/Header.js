@@ -78,7 +78,6 @@ class Header extends Component {
   }
 
   burgerActiveToggle = () => {
-    console.log('click')
     this.setState({
       burgerActive: !this.state.burgerActive,
       bodyLockScroll: !this.state.bodyLockScroll,
