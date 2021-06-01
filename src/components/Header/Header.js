@@ -83,7 +83,7 @@ class Header extends Component {
       burgerActive: !this.state.burgerActive,
       bodyLockScroll: !this.state.bodyLockScroll,
     })
-    //отключаю прокрутку при раскрытом меню
+    //отключаю прокрутку экрана при раскрытом меню (само меню будет скролится))
     if (!this.state.bodyLockScroll) {
       document.body.style.overflow = 'hidden'
     } else {

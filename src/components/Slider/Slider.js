@@ -119,24 +119,22 @@ class Slider extends React.Component {
 
   render() {
     return (
-      <section className={classes.PositionBlok}>
-        <div className={classes.blurBackground}>
-          <div className={container.container}>
-            <div id="slider" className={classes.Slider}>
-              <div id="sliderLine" className={classes.sliderLine}>
-                <img src={img1} alt="img1" />
-                <img src={img2} alt="img2" loading="lazy" />
-                <img src={img3} alt="img3" loading="lazy" />
-                <img src={img4} alt="img4" loading="lazy" />
-                <img src={img5} alt="img5" loading="lazy" />
-              </div>
-              <button id="sliderPrev" className={classes.sliderPrev}>
-                <ReactSVG src={leftChevron} />
-              </button>
-              <button id="sliderNext" className={classes.sliderNext}>
-                <ReactSVG src={chevron} />
-              </button>
+      <section className={classes.Slider}>
+        <div className={container.container}>
+          <div id="slider" className={classes.SliderBlock}>
+            <div id="sliderLine" className={classes.sliderLine}>
+              <img src={img1} alt="img1" />
+              <img src={img2} alt="img2" loading="lazy" />
+              <img src={img3} alt="img3" loading="lazy" />
+              <img src={img4} alt="img4" loading="lazy" />
+              <img src={img5} alt="img5" loading="lazy" />
             </div>
+            <button id="sliderPrev" className={classes.sliderPrev}>
+              <ReactSVG src={leftChevron} />
+            </button>
+            <button id="sliderNext" className={classes.sliderNext}>
+              <ReactSVG src={chevron} />
+            </button>
           </div>
         </div>
       </section>

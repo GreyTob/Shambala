@@ -3,9 +3,13 @@ import classes from './MenuItem.module.scss'
 import ScrollUpHandler from '../../ScrollUp/ScrollUpHandler'
 
 import { HashLink } from 'react-router-hash-link'
-// import { Element, animateScroll as scroll } from 'react-scroll'
+import { Element, animateScroll as scroll } from 'react-scroll'
 
 const MenuItem = (props) => {
+  const menuBurgerClick = () => {
+    props.burgerActiveToggle()
+    ScrollUpHandler()
+  }
   return (
     <li className={classes.MenuItem}>
       <HashLink
@@ -20,10 +24,11 @@ const MenuItem = (props) => {
             ? ScrollUpHandler
             : null
         }
-        onTouchStart={props.burgerActiveToggle}
+        onClick={menuBurgerClick}
+        // onTouchStart={props.burgerActiveToggle}
         // activeClass={props.activeClass}
         // spy={props.spy}
-        // smooth={props.smooth}
+        smooth={props.smooth}
         // offset={props.offset}
         // duration={props.duration}
       >
