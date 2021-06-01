@@ -74,18 +74,30 @@ class Header extends Component {
       },
     ],
     burgerActive: false,
+    bodyLockScroll: false,
   }
 
   burgerActiveToggle = () => {
     console.log('click')
     this.setState({
       burgerActive: !this.state.burgerActive,
+      bodyLockScroll: !this.state.bodyLockScroll,
     })
+    //отключаю прокрутку при раскрытом меню
+    if (!this.state.bodyLockScroll) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'visible'
+    }
   }
 
   render() {
     return (
-      <header className={classes.Header}>
+      <header
+        className={
+          this.state.burgerActive ? classes.HeaderActive : classes.Header
+        }
+      >
         <div className={contain.container}>
           <div className={classes.contant}>
             <Logo />

@@ -1,7 +1,7 @@
 import classes from './About.module.scss'
 import container from '../../index.module.scss'
 
-import { Link, animateScroll as scroll } from 'react-scroll'
+import { Link } from 'react-scroll'
 
 const About = () => {
   return (
@@ -20,9 +20,9 @@ const About = () => {
             spy={true}
             smooth={true}
             hashSpy={true}
-            offset={-55}
+            offset={-50}
             duration={500}
-            delay={1000}
+            delay={50}
           >
             Проверка react-scroll
           </Link>

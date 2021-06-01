@@ -6,7 +6,6 @@ import { HashLink } from 'react-router-hash-link'
 // import { Element, animateScroll as scroll } from 'react-scroll'
 
 const MenuItem = (props) => {
-  console.log(props)
   return (
     <li className={classes.MenuItem}>
       <HashLink

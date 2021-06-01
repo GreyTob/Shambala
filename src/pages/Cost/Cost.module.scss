@@ -1,8 +1,15 @@
 .Cost {
   margin: 40px auto;
+  padding: 0 10px;
   .content {
     // width: 100%;
     display: grid;
     place-items: center;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .Cost {
+    margin: 50px auto;
   }
 }
