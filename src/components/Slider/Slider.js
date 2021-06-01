@@ -8,6 +8,9 @@ import img2 from './assets/112.jpg'
 import img3 from './assets/113.jpg'
 import img4 from './assets/114.jpg'
 import img5 from './assets/115.jpg'
+import img6 from './assets/116-min.jpg'
+import img7 from './assets/117-min.jpg'
+import img8 from './assets/118-min.jpg'
 
 import chevron from './assets/chevron.svg'
 import leftChevron from './assets/leftChevron.svg'
@@ -128,6 +131,9 @@ class Slider extends React.Component {
               <img src={img3} alt="img3" loading="lazy" />
               <img src={img4} alt="img4" loading="lazy" />
               <img src={img5} alt="img5" loading="lazy" />
+              <img src={img6} alt="img6" loading="lazy" />
+              <img src={img7} alt="img7" loading="lazy" />
+              <img src={img8} alt="img8" loading="lazy" />
             </div>
             <button id="sliderPrev" className={classes.sliderPrev}>
               <ReactSVG src={leftChevron} />

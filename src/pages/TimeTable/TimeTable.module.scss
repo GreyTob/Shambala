@@ -1,4 +1,9 @@
 .TimeTable {
-  margin: 0 auto;
+  margin: 40px auto;
   padding: 0 10px;
+  .content {
+    // width: 100%;
+    display: grid;
+    place-items: center;
+  }
 }

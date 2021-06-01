@@ -3,7 +3,7 @@ import classes from './ClubCards.module.scss'
 import Tippy from '@tippyjs/react'
 import 'tippy.js/dist/tippy.css'
 
-const ClubCards = (props) => (
+const ClubCards = () => (
   <table className={classes.ClubCards}>
     <caption>Клубные карты</caption>
     <thead>
