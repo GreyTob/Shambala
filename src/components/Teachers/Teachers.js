@@ -4,6 +4,8 @@ import TeacherItem from './TeacherItem/TeacherItem'
 import container from '../../index.module.scss'
 import Button from '../Button/Button'
 
+import { Parallax } from 'react-scroll-parallax'
+
 import Pepa from '../../assets/teachers/1Pepa.jpg'
 import Pugovka from '../../assets/teachers/2Button.jpg'
 import Kesha from '../../assets/teachers/3kesha.jpg'
@@ -81,6 +83,39 @@ class Teachers extends Component {
     })
   }
 
+  parallaxOneItem = () => {
+    let xOne = [-15, 15]
+    if (window.innerWidth < 767) {
+      xOne = [0, 0]
+    }
+    return xOne
+  }
+
+  parallaxTwoItem = () => {
+    let xTwo = [15, -15]
+    if (window.innerWidth < 767) {
+      xTwo = [0, 0]
+    }
+    return xTwo
+  }
+
+  fourTeacherItems = () => {
+    if (window.innerWidth < 576) {
+      return null
+    } else if (window.innerWidth < 767) {
+      return (
+        <TeacherItem
+          id={this.state.teachers[3].id}
+          name={this.state.teachers[3].name}
+          direction={this.state.teachers[3].direction}
+          discription={this.state.teachers[3].discription}
+          src={this.state.teachers[3].src}
+          alt={this.state.teachers[3].alt}
+        />
+      )
+    }
+  }
+
   // карточки всегда перемешиваются
   shuffle = (array) => {
     array.sort(() => Math.random() - 0.5)
@@ -95,17 +130,20 @@ class Teachers extends Component {
         <div className={container.container}>
           <div className={classes.content}>
             <h2>Наши преподаватели</h2>
+
             <div className={classes.block}>
               {!this.state.teachersToggle ? (
                 <React.Fragment>
-                  <TeacherItem
-                    id={this.state.teachers[0].id}
-                    name={this.state.teachers[0].name}
-                    direction={this.state.teachers[0].direction}
-                    discription={this.state.teachers[0].discription}
-                    src={this.state.teachers[0].src}
-                    alt={this.state.teachers[0].alt}
-                  />
+                  <Parallax x={this.parallaxOneItem()}>
+                    <TeacherItem
+                      id={this.state.teachers[0].id}
+                      name={this.state.teachers[0].name}
+                      direction={this.state.teachers[0].direction}
+                      discription={this.state.teachers[0].discription}
+                      src={this.state.teachers[0].src}
+                      alt={this.state.teachers[0].alt}
+                    />
+                  </Parallax>
                   <TeacherItem
                     name={this.state.teachers[1].name}
                     direction={this.state.teachers[1].direction}
@@ -113,13 +151,16 @@ class Teachers extends Component {
                     src={this.state.teachers[1].src}
                     alt={this.state.teachers[1].alt}
                   />
-                  <TeacherItem
-                    name={this.state.teachers[2].name}
-                    direction={this.state.teachers[2].direction}
-                    discription={this.state.teachers[2].discription}
-                    src={this.state.teachers[2].src}
-                    alt={this.state.teachers[2].alt}
-                  />
+                  <Parallax x={this.parallaxTwoItem()}>
+                    <TeacherItem
+                      name={this.state.teachers[2].name}
+                      direction={this.state.teachers[2].direction}
+                      discription={this.state.teachers[2].discription}
+                      src={this.state.teachers[2].src}
+                      alt={this.state.teachers[2].alt}
+                    />
+                  </Parallax>
+                  {this.fourTeacherItems()}
                 </React.Fragment>
               ) : (
                 this.state.teachers.map((teacher, index) => {
