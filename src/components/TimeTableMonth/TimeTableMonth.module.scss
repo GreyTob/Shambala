@@ -1,0 +1,85 @@
+@import '../UI//variables.scss';
+
+.TimeTableMonth {
+  min-width: 100%;
+  opacity: 0.95;
+  background: linear-gradient(90deg, #faf0cd, #fab397);
+  border-collapse: collapse;
+  text-align: center;
+  vertical-align: middle;
+  transition: all 1s ease-in;
+
+  caption {
+    background: linear-gradient(90deg, #faf0cd, #fab397);
+    text-transform: uppercase;
+    padding: 15px;
+  }
+
+  th {
+    padding: 10px;
+  }
+
+  td {
+    border: 1px solid #e55d87;
+    // padding: 10px;
+  }
+
+  a {
+    color: $armadillo;
+    font-weight: bold;
+    transition: color 0.2s ease-in;
+  }
+
+  a:hover {
+    color: $feta;
+  }
+
+  hr {
+    height: 1px;
+    width: 100%;
+
+    background-color: #e55d87;
+  }
+
+  .oneTrain {
+    display: grid;
+    place-items: center;
+    padding: 10px;
+    height: 75px;
+    border-bottom: 1px solid #e55d87;
+    background: none;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .oneTrain:last-child {
+    border-bottom: none;
+  }
+
+  .oneTrain:hover {
+    transform: scale(1.02);
+    background: #5fc3e4;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25), 0 5px 5px rgba(0, 0, 0, 0.22);
+    opacity: 0.9;
+    transition: all 0.2s ease-in-out;
+  }
+  .oneTrainEmpty {
+    height: 75px;
+    transform: none;
+    background: none;
+    box-shadow: none;
+  }
+
+  tfoot {
+    line-height: 1.5rem;
+
+    text-align: left;
+    td {
+      padding: 10px;
+      border: none;
+    }
+  }
+
+  // .underline {
+  //   text-decoration: underline;
+  // }
+}
