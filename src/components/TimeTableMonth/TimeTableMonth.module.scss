@@ -1,6 +1,7 @@
 @import '../UI//variables.scss';
 
 .TimeTableMonth {
+  position: relative;
   min-width: 100%;
   opacity: 0.95;
   background: linear-gradient(90deg, #faf0cd, #fab397);
@@ -45,7 +46,7 @@
     display: grid;
     place-items: center;
     padding: 10px;
-    height: 75px;
+    height: 100px;
     border-bottom: 1px solid #e55d87;
     background: none;
     transition: all 0.2s ease-in-out;
@@ -63,10 +64,30 @@
     transition: all 0.2s ease-in-out;
   }
   .oneTrainEmpty {
-    height: 75px;
+    background: black;
+    height: 100px;
     transform: none;
     background: none;
     box-shadow: none;
+  }
+
+  .even {
+    background: linear-gradient(90deg, #faf0cd -70%, #fab397);
+  }
+  .svg {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    svg {
+      width: 18px;
+      height: 18px;
+      transform: scale(1);
+      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    svg:hover {
+      transform: scale(1.25);
+    }
   }
 
   tfoot {

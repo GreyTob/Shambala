@@ -3,7 +3,7 @@ import classes from './MenuItem.module.scss'
 import ScrollUpHandler from '../../ScrollUp/ScrollUpHandler'
 
 import { HashLink } from 'react-router-hash-link'
-import { Element, animateScroll as scroll } from 'react-scroll'
+// import { Element, animateScroll as scroll } from 'react-scroll'
 
 const MenuItem = (props) => {
   const menuClick = () => {

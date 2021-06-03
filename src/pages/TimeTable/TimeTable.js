@@ -13,6 +13,11 @@ class TimeTable extends Component {
       hatha: 'Хатха-йога',
       hatha55: 'Хатха-йога 55+',
       slim: 'Стройнею с йогой',
+      bodyMix: 'BODY MIX',
+      helth: 'Группа здоровья',
+      eastDance: 'Восточные танцы',
+      kids: 'Детская йога',
+      acro: 'Акройога*',
     },
   }
 
