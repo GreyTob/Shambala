@@ -19,6 +19,13 @@ class TimeTable extends Component {
       kids: 'Детская йога',
       acro: 'Акройога*',
     },
+    tableToggle: true,
+  }
+
+  tableToggle = () => {
+    this.setState({
+      tableToggle: !this.state.tableToggle,
+    })
   }
 
   render() {
@@ -26,8 +33,19 @@ class TimeTable extends Component {
       <section className={classes.TimeTable}>
         <div className={container.container}>
           <div className={classes.content}>
-            <TimeTableMonth workout={this.state.workout} />
-            <TimeTableToday />
+            <select
+              name="choiseTable"
+              id="choiseTable"
+              onChange={this.tableToggle}
+            >
+              <option value="month">Рассписание на месяц</option>
+              <option value="day">Рассписание на сегодня</option>
+            </select>
+            {this.state.tableToggle ? (
+              <TimeTableMonth workout={this.state.workout} />
+            ) : (
+              <TimeTableToday />
+            )}
           </div>
         </div>
       </section>
