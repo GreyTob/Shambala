@@ -18,6 +18,9 @@ class TimeTable extends Component {
       eastDance: 'Восточные танцы',
       kids: 'Детская йога',
       acro: 'Акройога*',
+      terapy: 'Йогатерапия',
+      fitnes: 'Фитнес',
+      plastic: 'Plastic dance',
     },
     tableToggle: true,
   }
@@ -29,18 +32,39 @@ class TimeTable extends Component {
   }
 
   render() {
+    // if (window.innerWidth < 767) {
+    // } else {
+    // }
+
     return (
       <section className={classes.TimeTable}>
         <div className={container.container}>
           <div className={classes.content}>
-            <select
-              name="choiseTable"
-              id="choiseTable"
-              onChange={this.tableToggle}
-            >
-              <option value="month">Рассписание на месяц</option>
-              <option value="day">Рассписание на сегодня</option>
-            </select>
+            {window.innerWidth < 767 ? (
+              <select
+                className={classes['select-css']}
+                name="currentDay"
+                id="currentDay"
+              >
+                <option value="1">Понедельник</option>
+                <option value="2">Вторник</option>
+                <option value="1">Среда</option>
+                <option value="1">Четверг</option>
+                <option value="1">Пятница</option>
+                <option value="1">Суббота</option>
+              </select>
+            ) : (
+              <select
+                className={classes['select-css']}
+                name="choiseTable"
+                id="choiseTable"
+                onChange={this.tableToggle}
+              >
+                <option value="month">Рассписание на месяц</option>
+                <option value="day">Рассписание на сегодня</option>
+              </select>
+            )}
+
             {this.state.tableToggle ? (
               <TimeTableMonth workout={this.state.workout} />
             ) : (

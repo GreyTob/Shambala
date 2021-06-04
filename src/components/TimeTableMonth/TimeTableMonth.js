@@ -1,11 +1,12 @@
 import classes from './TimeTableMonth.module.scss'
-import currentMonth from './currentMonth'
+import { currentMonth, currentDay } from './currentDate'
 
 import { ReactSVG } from 'react-svg'
 import Tippy from '@tippyjs/react'
 // import 'tippy.js/dist/tippy.css'
 
-import list from './assets/free-icon-note-book-1170169.svg'
+import list from '../../pages/TimeTable/assets/free-icon-note-book-1170169.svg'
+import phone from '../../pages/TimeTable/assets/phone-call.svg'
 
 const TimeTableMonth = ({ workout }) => {
   const time9 = '9:00'
@@ -13,6 +14,10 @@ const TimeTableMonth = ({ workout }) => {
   const time11 = '11:00'
   const time12 = '12:00'
   const time13 = '13:00'
+  const time18 = '18:00'
+  const time183 = '18:30'
+  const time1915 = '19:15'
+  const time193 = '19:30'
 
   return (
     <table className={classes.TimeTableMonth}>
@@ -21,7 +26,7 @@ const TimeTableMonth = ({ workout }) => {
       <thead>
         <tr>
           <th>Время</th>
-          <th>Понедельник</th>
+          <th className={classes.monday}>Понедельник</th>
           <th>Вторник</th>
           <th>Среда</th>
           <th>Четверг</th>
@@ -35,15 +40,24 @@ const TimeTableMonth = ({ workout }) => {
         <tr>
           <td>{time9}</td>
           {/* понедельник */}
-          <td>
+          <td className={classes.monday}>
             <div className={classes.oneTrain}>
               {workout.zGravity}
               <br />
               <a href="">Ольга</a>
               {time9}
-              <Tippy content={<span>Предварительная запись</span>}>
+              <Tippy
+                content={
+                  <span>
+                    Предварительная запись{' '}
+                    <ReactSVG style={{ textAlign: 'center' }} src={phone} />{' '}
+                  </span>
+                }
+              >
                 <div className={classes.svg}>
-                  <ReactSVG src={list} />
+                  <a href="tel:+73519430470">
+                    <ReactSVG src={list} />
+                  </a>
                 </div>
               </Tippy>
             </div>
@@ -67,9 +81,18 @@ const TimeTableMonth = ({ workout }) => {
               <br />
               <a href="">Ольга</a>
               {time9}
-              <Tippy content={<span>Предварительная запись</span>}>
+              <Tippy
+                content={
+                  <span>
+                    Предварительная запись{' '}
+                    <ReactSVG style={{ textAlign: 'center' }} src={phone} />{' '}
+                  </span>
+                }
+              >
                 <div className={classes.svg}>
-                  <ReactSVG src={list} />
+                  <a href="tel:+73519430470">
+                    <ReactSVG src={list} />
+                  </a>
                 </div>
               </Tippy>
             </div>
@@ -92,9 +115,18 @@ const TimeTableMonth = ({ workout }) => {
               <br />
               <a href="">Ольга</a>
               {time9}
-              <Tippy content={<span>Предварительная запись</span>}>
+              <Tippy
+                content={
+                  <span>
+                    Предварительная запись{' '}
+                    <ReactSVG style={{ textAlign: 'center' }} src={phone} />{' '}
+                  </span>
+                }
+              >
                 <div className={classes.svg}>
-                  <ReactSVG src={list} />
+                  <a href="tel:+73519430470">
+                    <ReactSVG src={list} />
+                  </a>
                 </div>
               </Tippy>
             </div>
@@ -118,9 +150,18 @@ const TimeTableMonth = ({ workout }) => {
               <br />
               <a href="">Ольга</a>
               {time9}
-              <Tippy content={<span>Предварительная запись</span>}>
+              <Tippy
+                content={
+                  <span>
+                    Предварительная запись{' '}
+                    <ReactSVG style={{ textAlign: 'center' }} src={phone} />{' '}
+                  </span>
+                }
+              >
                 <div className={classes.svg}>
-                  <ReactSVG src={list} />
+                  <a href="tel:+73519430470">
+                    <ReactSVG src={list} />
+                  </a>
                 </div>
               </Tippy>
             </div>
@@ -143,9 +184,18 @@ const TimeTableMonth = ({ workout }) => {
               <br />
               <a href="">Ольга</a>
               {time9}
-              <Tippy content={<span>Предварительная запись</span>}>
+              <Tippy
+                content={
+                  <span>
+                    Предварительная запись{' '}
+                    <ReactSVG style={{ textAlign: 'center' }} src={phone} />{' '}
+                  </span>
+                }
+              >
                 <div className={classes.svg}>
-                  <ReactSVG src={list} />
+                  <a href="tel:+73519430470">
+                    <ReactSVG src={list} />
+                  </a>
                 </div>
               </Tippy>
             </div>
@@ -277,9 +327,18 @@ const TimeTableMonth = ({ workout }) => {
               <br />
               <a href="">Ольга</a>
               {time11}
-              <Tippy content={<span>Предварительная запись</span>}>
+              <Tippy
+                content={
+                  <span>
+                    Предварительная запись{' '}
+                    <ReactSVG style={{ textAlign: 'center' }} src={phone} />{' '}
+                  </span>
+                }
+              >
                 <div className={classes.svg}>
-                  <ReactSVG src={list} />
+                  <a href="tel:+73519430470">
+                    <ReactSVG src={list} />
+                  </a>
                 </div>
               </Tippy>
             </div>
@@ -315,9 +374,18 @@ const TimeTableMonth = ({ workout }) => {
               <br />
               <a href="">Ольга</a>
               {time11}
-              <Tippy content={<span>Предварительная запись</span>}>
+              <Tippy
+                content={
+                  <span>
+                    Предварительная запись{' '}
+                    <ReactSVG style={{ textAlign: 'center' }} src={phone} />{' '}
+                  </span>
+                }
+              >
                 <div className={classes.svg}>
-                  <ReactSVG src={list} />
+                  <a href="tel:+73519430470">
+                    <ReactSVG src={list} />
+                  </a>
                 </div>
               </Tippy>
             </div>
@@ -383,7 +451,7 @@ const TimeTableMonth = ({ workout }) => {
           {/* суббота */}
           <td>
             <div className={classes.oneTrain}>
-              Plastic dance
+              {workout.plastic}
               <br />
               <a href="">Лилия</a>
               {time12}
@@ -430,11 +498,388 @@ const TimeTableMonth = ({ workout }) => {
               <br />
               <a href="">Ольга</a>
               {time13}
-              <Tippy content={<span>Предварительная запись</span>}>
+              <Tippy
+                content={
+                  <span>
+                    Предварительная запись{' '}
+                    <ReactSVG style={{ textAlign: 'center' }} src={phone} />{' '}
+                  </span>
+                }
+              >
                 <div className={classes.svg}>
-                  <ReactSVG src={list} />
+                  <a href="tel:+73519430470">
+                    <ReactSVG src={list} />
+                  </a>
                 </div>
               </Tippy>
+            </div>
+          </td>
+        </tr>
+        {/* 18:00 */}
+        <tr className={classes.even}>
+          <td>{time18}</td>
+          {/* понедельник */}
+          <td>
+            <div className={classes.oneTrain}>
+              {workout.terapy}
+              <br />
+              опорно-двигательного
+              <br />
+              аппарата
+              <br />
+              <a href="">Наталья</a>
+              {time18}
+            </div>
+            <div className={classes.oneTrain}>
+              {workout.zGravity}
+              <br />
+              <a href="">Ольга</a>
+              {time18}
+              <Tippy
+                content={
+                  <span>
+                    Предварительная запись{' '}
+                    <ReactSVG style={{ textAlign: 'center' }} src={phone} />{' '}
+                  </span>
+                }
+              >
+                <div className={classes.svg}>
+                  <a href="tel:+73519430470">
+                    <ReactSVG src={list} />
+                  </a>
+                </div>
+              </Tippy>
+            </div>
+            <div className={classes.oneTrainEmpty}>
+              {/* //------empty-------------------- */}
+            </div>
+          </td>
+          {/* вторник */}
+          <td>
+            <div className={classes.oneTrainEmpty}>
+              {/* //------empty-------------------- */}
+            </div>
+            <div className={classes.oneTrainEmpty}>
+              {/* //------empty-------------------- */}
+            </div>
+            <div className={classes.oneTrainEmpty}>
+              {/* //------empty-------------------- */}
+            </div>
+          </td>
+          {/* среда */}
+          <td>
+            <div className={classes.oneTrain}>
+              {workout.terapy}
+              <br />
+              опорно-двигательного
+              <br />
+              аппарата
+              <br />
+              <a href="">Наталья</a>
+              {time18}
+            </div>
+            <div className={classes.oneTrain}>
+              {workout.zGravity}
+              <br />
+              <a href="">Ольга</a>
+              {time18}
+              <Tippy
+                content={
+                  <span>
+                    Предварительная запись{' '}
+                    <ReactSVG style={{ textAlign: 'center' }} src={phone} />{' '}
+                  </span>
+                }
+              >
+                <div className={classes.svg}>
+                  <a href="tel:+73519430470">
+                    <ReactSVG src={list} />
+                  </a>
+                </div>
+              </Tippy>
+            </div>
+            <div className={classes.oneTrain}>
+              {workout.fitnes}
+              <br />
+              по-Восточному
+              <br />
+              <a href="">Дарья</a>
+              {time18}
+            </div>
+          </td>
+          {/* четверг */}
+          <td>
+            <div className={classes.oneTrain}>
+              {workout.plastic}
+              <br />
+              <a href="">Лилия</a>
+              {time18}
+            </div>
+            <div className={classes.oneTrainEmpty}>
+              {/* //------empty-------------------- */}
+            </div>
+            <div className={classes.oneTrainEmpty}>
+              {/* //------empty-------------------- */}
+            </div>
+          </td>
+          {/* пятница */}
+          <td>
+            <div className={classes.oneTrain}>
+              {workout.terapy}
+              <br />
+              опорно-двигательного
+              <br />
+              аппарата
+              <br />
+              <a href="">Наталья</a>
+              {time18}
+            </div>
+
+            <div className={classes.oneTrain}>
+              {workout.zGravity}
+              <br />
+              <a href="">Ольга</a>
+              {time18}
+              <Tippy
+                content={
+                  <span>
+                    Предварительная запись{' '}
+                    <ReactSVG style={{ textAlign: 'center' }} src={phone} />{' '}
+                  </span>
+                }
+              >
+                <div className={classes.svg}>
+                  <a href="tel:+73519430470">
+                    <ReactSVG src={list} />
+                  </a>
+                </div>
+              </Tippy>
+            </div>
+            <div className={classes.oneTrain}>
+              {workout.fitnes}
+              <br />
+              по-Восточному
+              <br />
+              <a href="">Дарья</a>
+              {time18}
+            </div>
+          </td>
+          {/* суббота */}
+          <td>
+            <div className={classes.oneTrainEmpty}>
+              {/* //------empty-------------------- */}
+            </div>
+            <div className={classes.oneTrainEmpty}>
+              {/* //------empty-------------------- */}
+            </div>
+            <div className={classes.oneTrainEmpty}>
+              {/* //------empty-------------------- */}
+            </div>
+          </td>
+        </tr>
+        {/* 18:30 */}
+        <tr>
+          <td>{time183}</td>
+          {/* понедельник */}
+          <td>
+            <div className={classes.oneTrainEmpty}>
+              {/* //------empty-------------------- */}
+            </div>
+          </td>
+          {/* вторник */}
+          <td>
+            <div className={classes.oneTrain}>
+              {workout.hatha}
+              <br />
+              <a href="">Вероника</a>
+              {time183}
+            </div>
+          </td>
+          {/* среда */}
+          <td>
+            <div className={classes.oneTrainEmpty}>
+              {/* //------empty-------------------- */}
+            </div>
+          </td>
+          {/* четверг */}
+          <td>
+            <div className={classes.oneTrain}>
+              {workout.hatha}
+              <br />
+              <a href="">Вероника</a>
+              {time183}
+            </div>
+          </td>
+          {/* пятница */}
+          <td>
+            <div className={classes.oneTrainEmpty}>
+              {/* //------empty-------------------- */}
+            </div>
+          </td>
+          {/* суббота */}
+          <td>
+            <div className={classes.oneTrainEmpty}>
+              {/* //------empty-------------------- */}
+            </div>
+          </td>
+        </tr>
+
+        {/* 19:15 */}
+        <tr className={classes.even}>
+          <td>{time1915}</td>
+          {/* понедельник */}
+          <td>
+            <div className={classes.oneTrain}>
+              Айкидо
+              <br />
+              +6 и взрослые
+              <br />
+              <a href="">Имя тренера?</a>
+              {time1915}
+            </div>
+          </td>
+          {/* вторник */}
+          <td>
+            <div className={classes.oneTrain}>
+              {workout.slim}
+              <br />
+              <a href="">Анастасия</a>
+              {time1915}
+            </div>
+          </td>
+          {/* среда */}
+          <td>
+            <div className={classes.oneTrain}>
+              Айкидо
+              <br />
+              +6 и взрослые
+              <br />
+              <a href="">Имя тренера?</a>
+              {time1915}
+            </div>
+          </td>
+          {/* четверг */}
+          <td>
+            <div className={classes.oneTrain}>
+              {workout.slim}
+              <br />
+              <a href="">Анастасия</a>
+              {time1915}
+            </div>
+          </td>
+          {/* пятница */}
+          <td>
+            <div className={classes.oneTrain}>
+              Айкидо
+              <br />
+              +6 и взрослые
+              <br />
+              <a href="">Имя тренера?</a>
+              {time1915}
+            </div>
+          </td>
+          {/* суббота */}
+          <td>
+            <div className={classes.oneTrainEmpty}>
+              {/* //------empty-------------------- */}
+            </div>
+          </td>
+        </tr>
+
+        {/* 19:30 */}
+        <tr>
+          <td>{time193}</td>
+          {/* понедельник */}
+          <td>
+            <div className={classes.oneTrain}>
+              {workout.hatha}
+              <br />
+              <a href="">Ольга</a>
+              {time193}
+            </div>
+          </td>
+          {/* вторник */}
+          <td>
+            <div className={classes.oneTrain}>
+              {workout.zGravity}
+              <br />
+              <a href="">Ольга</a>
+              {time193}
+              <Tippy
+                content={
+                  <span>
+                    Предварительная запись{' '}
+                    <ReactSVG style={{ textAlign: 'center' }} src={phone} />{' '}
+                  </span>
+                }
+              >
+                <div className={classes.svg}>
+                  <a href="tel:+73519430470">
+                    <ReactSVG src={list} />
+                  </a>
+                </div>
+              </Tippy>
+            </div>
+          </td>
+          {/* среда */}
+          <td>
+            <div className={classes.oneTrain}>
+              {workout.acro}
+              <br />
+              <a href="">Ольга</a>
+              {time193}
+              <Tippy
+                content={
+                  <span>
+                    Предварительная запись{' '}
+                    <ReactSVG style={{ textAlign: 'center' }} src={phone} />{' '}
+                  </span>
+                }
+              >
+                <div className={classes.svg}>
+                  <a href="tel:+73519430470">
+                    <ReactSVG src={list} />
+                  </a>
+                </div>
+              </Tippy>
+            </div>
+          </td>
+          {/* четверг */}
+          <td>
+            <div className={classes.oneTrain}>
+              {workout.zGravity}
+              <br />
+              <a href="">Ольга</a>
+              {time193}
+              <Tippy
+                content={
+                  <span>
+                    Предварительная запись{' '}
+                    <ReactSVG style={{ textAlign: 'center' }} src={phone} />{' '}
+                  </span>
+                }
+              >
+                <div className={classes.svg}>
+                  <a href="tel:+73519430470">
+                    <ReactSVG src={list} />
+                  </a>
+                </div>
+              </Tippy>
+            </div>
+          </td>
+          {/* пятница */}
+          <td>
+            <div className={classes.oneTrain}>
+              {workout.hatha}
+              <br />
+              <a href="">Ольга</a>
+              {time193}
+            </div>
+          </td>
+          {/* суббота */}
+          <td>
+            <div className={classes.oneTrainEmpty}>
+              {/* //------empty-------------------- */}
             </div>
           </td>
         </tr>
@@ -445,6 +890,20 @@ const TimeTableMonth = ({ workout }) => {
           <td colSpan="7">
             Нa занятие со звездочкой нужна запись по тел.{' '}
             <a href="tel:+73519430470">+7&nbsp;(3519)&nbsp;43-04-70</a>
+            <Tippy
+              content={
+                <span>
+                  Предварительная запись{' '}
+                  <ReactSVG style={{ textAlign: 'center' }} src={phone} />{' '}
+                </span>
+              }
+            >
+              <div className={classes.svgFooter}>
+                <a href="tel:+73519430470">
+                  <ReactSVG src={list} />
+                </a>
+              </div>
+            </Tippy>
           </td>
         </tr>
       </tfoot>

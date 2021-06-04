@@ -31,4 +31,30 @@ const currentMonth = () => {
   }
 }
 
-export default currentMonth
+const currentDay = () => {
+  let date = new Date()
+
+  console.log(date.getDay())
+
+  switch (date.getDay()) {
+    case 1:
+      return 'Понедельник'
+    case 2:
+      return 'Вторник'
+    case 3:
+      return 'Среда'
+    case 4:
+      return 'Четверг'
+    case 5:
+      return 'Пятница'
+    case 6:
+      return 'Суббота'
+    case 7:
+      return 'Воскресенье'
+
+    default:
+      console.log('currentDay default')
+  }
+}
+
+export { currentMonth, currentDay }
