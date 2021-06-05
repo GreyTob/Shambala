@@ -35,6 +35,27 @@ const currentMonth = () => {
 const currentDay = () => {
   let date = new Date()
 
+  if (document.querySelector('#choiseTable').value === 'monday') {
+    date.setDate(0)
+  }
+  if (document.querySelector('#choiseTable').value === 'tuesday') {
+    date.setDate(1)
+  }
+  if (document.querySelector('#choiseTable').value === 'wednesday') {
+    date.setDate(2)
+  }
+  if (document.querySelector('#choiseTable').value === 'thursday') {
+    date.setDate(3)
+  }
+  if (document.querySelector('#choiseTable').value === 'friday') {
+    date.setDate(4)
+  }
+  if (document.querySelector('#choiseTable').value === 'saturday') {
+    date.setDate(5)
+  }
+
+  console.log(date.getDay())
+
   switch (date.getDay()) {
     case 1:
       return 'Понедельник'
@@ -81,6 +102,25 @@ const currentDayCaption = () => {
 }
 
 const showCurrentDay = () => {
+  document.getElementsByName('monday').forEach((item) => {
+    item.classList.remove('monday')
+  })
+  document.getElementsByName('tuesday').forEach((item) => {
+    item.classList.remove('tuesday')
+  })
+  document.getElementsByName('wednesday').forEach((item) => {
+    item.classList.remove('wednesday')
+  })
+  document.getElementsByName('thursday').forEach((item) => {
+    item.classList.remove('thursday')
+  })
+  document.getElementsByName('friday').forEach((item) => {
+    item.classList.remove('friday')
+  })
+  document.getElementsByName('saturday').forEach((item) => {
+    item.classList.remove('saturday')
+  })
+
   //Понедельник
   if (currentDay() === 'Понедельник') {
     document.getElementsByName('tuesday').forEach((item) => {
@@ -215,5 +255,18 @@ const showCurrentDay = () => {
     })
   }
 }
+
+// const SelectOptions = () => {
+//   let option = document.querySelector('#choiseTable').options
+//   if (window.innerWidth < 767) {
+//     console.log('work')
+//     option[option.length] = new Option('Понедельник', 'monday')
+//     option[option.length] = new Option('Вторник', 'tuesday')
+//     option[option.length] = new Option('Среда', 'wednesday')
+//     option[option.length] = new Option('Четверг', 'thursday')
+//     option[option.length] = new Option('Пятница', 'friday')
+//     option[option.length] = new Option('Суббота', 'saturday')
+//   }
+// }
 
 export { currentMonth, currentDay, currentDayCaption, showCurrentDay }

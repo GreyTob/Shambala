@@ -2,7 +2,10 @@ import React, { Component } from 'react'
 import classes from './TimeTable.module.scss'
 import container from '../../index.module.scss'
 import TimeTableMonth from '../../components/TimeTableMonth/TimeTableMonth'
-import { showCurrentDay } from '../../components/TimeTableMonth/currentDate'
+import {
+  showCurrentDay,
+  currentDay,
+} from '../../components/TimeTableMonth/currentDate'
 
 class TimeTable extends Component {
   state = {
@@ -21,13 +24,37 @@ class TimeTable extends Component {
       plastic: 'Plastic dance',
     },
     tableToggle: true,
+    // selectResizeToggle: true,
   }
 
   tableToggle = () => {
-    this.setState({
-      tableToggle: !this.state.tableToggle,
-    })
+    //если месяц то еру, если день то фолс
+    // this.setState({
+    //   tableToggle: !this.state.tableToggle,
+    // })
+    // if (document.querySelector('#choiseTable').value === 'month') {
+    //   console.log('рассписание на месяц')
+    //   // showCurrentDay()
+    // }
+    // if (document.querySelector('#choiseTable').value === 'day') {
+    //   showCurrentDay()
+    // }
     showCurrentDay()
+  }
+
+  componentDidMount() {
+    // window.addEventListener('resize', () => {
+    //   if (window.innerWidth < 767) {
+    //     this.setState({
+    //       selectResizeToggle: false,
+    //     })
+    //   } else {
+    //     this.setState({
+    //       selectResizeToggle: true,
+    //     })
+    //   }
+    // })
+    // SelectOptions()
   }
 
   render() {
@@ -35,30 +62,25 @@ class TimeTable extends Component {
       <section className={classes.TimeTable}>
         <div className={container.container}>
           <div className={classes.content}>
-            {window.innerWidth < 767 ? (
-              <select
-                className={classes['select-css']}
-                name="currentDay"
-                id="currentDay"
-              >
-                <option value="1">Понедельник</option>
-                <option value="2">Вторник</option>
-                <option value="1">Среда</option>
-                <option value="1">Четверг</option>
-                <option value="1">Пятница</option>
-                <option value="1">Суббота</option>
-              </select>
-            ) : (
-              <select
-                className={classes['select-css']}
-                name="choiseTable"
-                id="choiseTable"
-                onChange={this.tableToggle}
-              >
-                <option value="month">Рассписание на месяц</option>
-                <option value="day">Рассписание на сегодня</option>
-              </select>
-            )}
+            <select
+              className={classes['select-css']}
+              name="choiseTable"
+              id="choiseTable"
+              onChange={this.tableToggle}
+            >
+              <option value="month" name="desktop" defaultValue>
+                Рассписание на месяц
+              </option>
+              <option value="day" name="desktop">
+                Рассписание на сегодня
+              </option>
+              <option value="monday">Понедельник</option>
+              <option value="tuesday">Вторник</option>
+              <option value="wednesday">Среда</option>
+              <option value="thursday">Четверг</option>
+              <option value="friday">Пятница</option>
+              <option value="saturday">Суббота</option>
+            </select>
 
             <TimeTableMonth
               workout={this.state.workout}
