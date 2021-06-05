@@ -1,5 +1,6 @@
 import classes from './TimeTableMonth.module.scss'
-import { currentMonth, currentDay } from './currentDate'
+import './days.scss'
+import { currentMonth, currentDayCaption } from './currentDate'
 
 import { ReactSVG } from 'react-svg'
 import Tippy from '@tippyjs/react'
@@ -8,7 +9,7 @@ import Tippy from '@tippyjs/react'
 import list from '../../pages/TimeTable/assets/free-icon-note-book-1170169.svg'
 import phone from '../../pages/TimeTable/assets/phone-call.svg'
 
-const TimeTableMonth = ({ workout }) => {
+const TimeTableMonth = ({ workout, tableToggle }) => {
   const time9 = '9:00'
   const time103 = '10:30'
   const time11 = '11:00'
@@ -21,17 +22,20 @@ const TimeTableMonth = ({ workout }) => {
 
   return (
     <table className={classes.TimeTableMonth}>
-      <caption>Рассписание занятий на {currentMonth()} </caption>
+      <caption>
+        Рассписание занятий на{' '}
+        {tableToggle ? currentMonth() : currentDayCaption()}{' '}
+      </caption>
 
       <thead>
         <tr>
           <th>Время</th>
-          <th className={classes.monday}>Понедельник</th>
-          <th>Вторник</th>
-          <th>Среда</th>
-          <th>Четверг</th>
-          <th>Пятница</th>
-          <th>Суббота</th>
+          <th name="monday">Понедельник</th>
+          <th name="tuesday">Вторник</th>
+          <th name="wednesday">Среда</th>
+          <th name="thursday">Четверг</th>
+          <th name="friday">Пятница</th>
+          <th name="saturday">Суббота</th>
         </tr>
       </thead>
 
@@ -40,7 +44,7 @@ const TimeTableMonth = ({ workout }) => {
         <tr>
           <td>{time9}</td>
           {/* понедельник */}
-          <td className={classes.monday}>
+          <td name="monday">
             <div className={classes.oneTrain}>
               {workout.zGravity}
               <br />
@@ -75,7 +79,7 @@ const TimeTableMonth = ({ workout }) => {
             </div>
           </td>
           {/* вторник */}
-          <td>
+          <td name="tuesday">
             <div className={classes.oneTrain}>
               {workout.zGravity}
               <br />
@@ -109,7 +113,7 @@ const TimeTableMonth = ({ workout }) => {
             </div>
           </td>
           {/* среда */}
-          <td>
+          <td name="wednesday">
             <div className={classes.oneTrain}>
               {workout.zGravity}
               <br />
@@ -144,7 +148,7 @@ const TimeTableMonth = ({ workout }) => {
             </div>
           </td>
           {/* четверг */}
-          <td>
+          <td name="thursday">
             <div className={classes.oneTrain}>
               {workout.zGravity}
               <br />
@@ -178,7 +182,7 @@ const TimeTableMonth = ({ workout }) => {
             </div>
           </td>
           {/* пятница */}
-          <td>
+          <td name="friday">
             <div className={classes.oneTrain}>
               {workout.zGravity}
               <br />
@@ -213,7 +217,7 @@ const TimeTableMonth = ({ workout }) => {
             </div>
           </td>
           {/* суббота */}
-          <td>
+          <td name="saturday">
             <div className={classes.oneTrain}>
               {workout.hatha}
               <br />
@@ -237,7 +241,7 @@ const TimeTableMonth = ({ workout }) => {
         <tr className={classes.even}>
           <td>{time103}</td>
           {/* понедельник */}
-          <td>
+          <td name="monday">
             <div className={classes.oneTrainEmpty}>
               {/* //------empty-------------------- */}
             </div>
@@ -246,7 +250,7 @@ const TimeTableMonth = ({ workout }) => {
             </div>
           </td>
           {/* вторник */}
-          <td>
+          <td name="tuesday">
             <div className={classes.oneTrainEmpty}>
               {/* //------empty-------------------- */}
             </div>
@@ -255,7 +259,7 @@ const TimeTableMonth = ({ workout }) => {
             </div>
           </td>
           {/* среда */}
-          <td>
+          <td name="wednesday">
             <div className={classes.oneTrainEmpty}>
               {/* //------empty-------------------- */}
             </div>
@@ -264,7 +268,7 @@ const TimeTableMonth = ({ workout }) => {
             </div>
           </td>
           {/* четверг */}
-          <td>
+          <td name="thursday">
             <div className={classes.oneTrainEmpty}>
               {/* //------empty-------------------- */}
             </div>
@@ -273,7 +277,7 @@ const TimeTableMonth = ({ workout }) => {
             </div>
           </td>
           {/* пятница */}
-          <td>
+          <td name="friday">
             <div className={classes.oneTrainEmpty}>
               {/* //------empty-------------------- */}
             </div>
@@ -282,7 +286,7 @@ const TimeTableMonth = ({ workout }) => {
             </div>
           </td>
           {/* суббота */}
-          <td>
+          <td name="saturday">
             <div className={classes.oneTrain}>
               {workout.hatha}
               <br />
@@ -303,7 +307,7 @@ const TimeTableMonth = ({ workout }) => {
         <tr>
           <td>{time11}</td>
           {/* понедельник */}
-          <td>
+          <td name="monday">
             <div className={classes.oneTrain}>
               {workout.bodyMix}
               <br />
@@ -319,7 +323,7 @@ const TimeTableMonth = ({ workout }) => {
             </div>
           </td>
           {/* вторник */}
-          <td>
+          <td name="tuesday">
             <div className={classes.oneTrain}>
               {workout.helth}
               <br />
@@ -347,7 +351,7 @@ const TimeTableMonth = ({ workout }) => {
             </div>
           </td>
           {/* среда */}
-          <td>
+          <td name="wednesday">
             <div className={classes.oneTrain}>
               {workout.bodyMix}
               <br />
@@ -366,7 +370,7 @@ const TimeTableMonth = ({ workout }) => {
             </div>
           </td>
           {/* четверг */}
-          <td>
+          <td name="thursday">
             <div className={classes.oneTrain}>
               {workout.helth}
               <br />
@@ -394,7 +398,7 @@ const TimeTableMonth = ({ workout }) => {
             </div>
           </td>
           {/* пятница */}
-          <td>
+          <td name="friday">
             <div className={classes.oneTrain}>
               {workout.eastDance}
               <br />
@@ -406,7 +410,7 @@ const TimeTableMonth = ({ workout }) => {
             </div>
           </td>
           {/* суббота */}
-          <td>
+          <td name="saturday">
             <div className={classes.oneTrainEmpty}>
               {/* //------empty-------------------- */}
             </div>
@@ -419,37 +423,37 @@ const TimeTableMonth = ({ workout }) => {
         <tr className={classes.even}>
           <td>{time12}</td>
           {/* понедельник */}
-          <td>
+          <td name="monday">
             <div className={classes.oneTrainEmpty}>
               {/* //------empty-------------------- */}
             </div>
           </td>
           {/* вторник */}
-          <td>
+          <td name="tuesday">
             <div className={classes.oneTrainEmpty}>
               {/* //------empty-------------------- */}
             </div>
           </td>
           {/* среда */}
-          <td>
+          <td name="wednesday">
             <div className={classes.oneTrainEmpty}>
               {/* //------empty-------------------- */}
             </div>
           </td>
           {/* четверг */}
-          <td>
+          <td name="thursday">
             <div className={classes.oneTrainEmpty}>
               {/* //------empty-------------------- */}
             </div>
           </td>
           {/* пятница */}
-          <td>
+          <td name="friday">
             <div className={classes.oneTrainEmpty}>
               {/* //------empty-------------------- */}
             </div>
           </td>
           {/* суббота */}
-          <td>
+          <td name="saturday">
             <div className={classes.oneTrain}>
               {workout.plastic}
               <br />
@@ -462,37 +466,37 @@ const TimeTableMonth = ({ workout }) => {
         <tr>
           <td>{time13}</td>
           {/* понедельник */}
-          <td>
+          <td name="monday">
             <div className={classes.oneTrainEmpty}>
               {/* //------empty-------------------- */}
             </div>
           </td>
           {/* вторник */}
-          <td>
+          <td name="tuesday">
             <div className={classes.oneTrainEmpty}>
               {/* //------empty-------------------- */}
             </div>
           </td>
           {/* среда */}
-          <td>
+          <td name="wednesday">
             <div className={classes.oneTrainEmpty}>
               {/* //------empty-------------------- */}
             </div>
           </td>
           {/* четверг */}
-          <td>
+          <td name="thursday">
             <div className={classes.oneTrainEmpty}>
               {/* //------empty-------------------- */}
             </div>
           </td>
           {/* пятница */}
-          <td>
+          <td name="friday">
             <div className={classes.oneTrainEmpty}>
               {/* //------empty-------------------- */}
             </div>
           </td>
           {/* суббота */}
-          <td>
+          <td name="saturday">
             <div className={classes.oneTrain}>
               {workout.acro}
               <br />
@@ -519,7 +523,7 @@ const TimeTableMonth = ({ workout }) => {
         <tr className={classes.even}>
           <td>{time18}</td>
           {/* понедельник */}
-          <td>
+          <td name="monday">
             <div className={classes.oneTrain}>
               {workout.terapy}
               <br />
@@ -555,7 +559,7 @@ const TimeTableMonth = ({ workout }) => {
             </div>
           </td>
           {/* вторник */}
-          <td>
+          <td name="tuesday">
             <div className={classes.oneTrainEmpty}>
               {/* //------empty-------------------- */}
             </div>
@@ -567,7 +571,7 @@ const TimeTableMonth = ({ workout }) => {
             </div>
           </td>
           {/* среда */}
-          <td>
+          <td name="wednesday">
             <div className={classes.oneTrain}>
               {workout.terapy}
               <br />
@@ -608,7 +612,7 @@ const TimeTableMonth = ({ workout }) => {
             </div>
           </td>
           {/* четверг */}
-          <td>
+          <td name="thursday">
             <div className={classes.oneTrain}>
               {workout.plastic}
               <br />
@@ -623,7 +627,7 @@ const TimeTableMonth = ({ workout }) => {
             </div>
           </td>
           {/* пятница */}
-          <td>
+          <td name="friday">
             <div className={classes.oneTrain}>
               {workout.terapy}
               <br />
@@ -665,7 +669,7 @@ const TimeTableMonth = ({ workout }) => {
             </div>
           </td>
           {/* суббота */}
-          <td>
+          <td name="saturday">
             <div className={classes.oneTrainEmpty}>
               {/* //------empty-------------------- */}
             </div>
@@ -681,13 +685,13 @@ const TimeTableMonth = ({ workout }) => {
         <tr>
           <td>{time183}</td>
           {/* понедельник */}
-          <td>
+          <td name="monday">
             <div className={classes.oneTrainEmpty}>
               {/* //------empty-------------------- */}
             </div>
           </td>
           {/* вторник */}
-          <td>
+          <td name="tuesday">
             <div className={classes.oneTrain}>
               {workout.hatha}
               <br />
@@ -696,13 +700,13 @@ const TimeTableMonth = ({ workout }) => {
             </div>
           </td>
           {/* среда */}
-          <td>
+          <td name="wednesday">
             <div className={classes.oneTrainEmpty}>
               {/* //------empty-------------------- */}
             </div>
           </td>
           {/* четверг */}
-          <td>
+          <td name="thursday">
             <div className={classes.oneTrain}>
               {workout.hatha}
               <br />
@@ -711,7 +715,7 @@ const TimeTableMonth = ({ workout }) => {
             </div>
           </td>
           {/* пятница */}
-          <td>
+          <td name="friday">
             <div className={classes.oneTrainEmpty}>
               {/* //------empty-------------------- */}
             </div>
@@ -728,7 +732,7 @@ const TimeTableMonth = ({ workout }) => {
         <tr className={classes.even}>
           <td>{time1915}</td>
           {/* понедельник */}
-          <td>
+          <td name="monday">
             <div className={classes.oneTrain}>
               Айкидо
               <br />
@@ -739,7 +743,7 @@ const TimeTableMonth = ({ workout }) => {
             </div>
           </td>
           {/* вторник */}
-          <td>
+          <td name="tuesday">
             <div className={classes.oneTrain}>
               {workout.slim}
               <br />
@@ -748,7 +752,7 @@ const TimeTableMonth = ({ workout }) => {
             </div>
           </td>
           {/* среда */}
-          <td>
+          <td name="wednesday">
             <div className={classes.oneTrain}>
               Айкидо
               <br />
@@ -759,7 +763,7 @@ const TimeTableMonth = ({ workout }) => {
             </div>
           </td>
           {/* четверг */}
-          <td>
+          <td name="thursday">
             <div className={classes.oneTrain}>
               {workout.slim}
               <br />
@@ -768,7 +772,7 @@ const TimeTableMonth = ({ workout }) => {
             </div>
           </td>
           {/* пятница */}
-          <td>
+          <td name="friday">
             <div className={classes.oneTrain}>
               Айкидо
               <br />
@@ -790,7 +794,7 @@ const TimeTableMonth = ({ workout }) => {
         <tr>
           <td>{time193}</td>
           {/* понедельник */}
-          <td>
+          <td name="monday">
             <div className={classes.oneTrain}>
               {workout.hatha}
               <br />
@@ -799,7 +803,7 @@ const TimeTableMonth = ({ workout }) => {
             </div>
           </td>
           {/* вторник */}
-          <td>
+          <td name="tuesday">
             <div className={classes.oneTrain}>
               {workout.zGravity}
               <br />
@@ -822,7 +826,7 @@ const TimeTableMonth = ({ workout }) => {
             </div>
           </td>
           {/* среда */}
-          <td>
+          <td name="wednesday">
             <div className={classes.oneTrain}>
               {workout.acro}
               <br />
@@ -845,7 +849,7 @@ const TimeTableMonth = ({ workout }) => {
             </div>
           </td>
           {/* четверг */}
-          <td>
+          <td name="thursday">
             <div className={classes.oneTrain}>
               {workout.zGravity}
               <br />
@@ -868,7 +872,7 @@ const TimeTableMonth = ({ workout }) => {
             </div>
           </td>
           {/* пятница */}
-          <td>
+          <td name="friday">
             <div className={classes.oneTrain}>
               {workout.hatha}
               <br />

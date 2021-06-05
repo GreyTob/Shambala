@@ -1,7 +1,7 @@
 const currentMonth = () => {
   let date = new Date()
 
-  switch (date.getMonth() + 1) {
+  switch (date.getMonth()) {
     case 1:
       return 'январь'
     case 2:
@@ -34,8 +34,6 @@ const currentMonth = () => {
 const currentDay = () => {
   let date = new Date()
 
-  console.log(date.getDay())
-
   switch (date.getDay()) {
     case 1:
       return 'Понедельник'
@@ -57,4 +55,141 @@ const currentDay = () => {
   }
 }
 
-export { currentMonth, currentDay }
+const currentDayCaption = () => {
+  let date = new Date()
+
+  switch (date.getDay()) {
+    case 1:
+      return 'Понедельник'
+    case 2:
+      return 'Вторник'
+    case 3:
+      return 'Среду'
+    case 4:
+      return 'Четверг'
+    case 5:
+      return 'Пятницу'
+    case 6:
+      return 'Субботу'
+    case 7:
+      return 'Воскресенье'
+
+    default:
+      console.log('currentDay default')
+  }
+}
+
+const showCurrentDay = () => {
+  console.log(currentDay())
+  //Понедельник
+  if (currentDay() === 'Понедельник') {
+    document.getElementsByName('tuesday').forEach((item) => {
+      item.classList.toggle('tuesday')
+    })
+    document.getElementsByName('wednesday').forEach((item) => {
+      item.classList.toggle('wednesday')
+    })
+    document.getElementsByName('thursday').forEach((item) => {
+      item.classList.toggle('thursday')
+    })
+    document.getElementsByName('friday').forEach((item) => {
+      item.classList.toggle('friday')
+    })
+    document.getElementsByName('saturday').forEach((item) => {
+      item.classList.toggle('saturday')
+    })
+  }
+
+  //Вторник
+  if (currentDay() === 'Вторник') {
+    document.getElementsByName('monday').forEach((item) => {
+      item.classList.toggle('monday')
+    })
+    document.getElementsByName('wednesday').forEach((item) => {
+      item.classList.toggle('wednesday')
+    })
+    document.getElementsByName('thursday').forEach((item) => {
+      item.classList.toggle('thursday')
+    })
+    document.getElementsByName('friday').forEach((item) => {
+      item.classList.toggle('friday')
+    })
+    document.getElementsByName('saturday').forEach((item) => {
+      item.classList.toggle('saturday')
+    })
+  }
+  //Среда
+  if (currentDay() === 'Среда') {
+    document.getElementsByName('monday').forEach((item) => {
+      item.classList.toggle('monday')
+    })
+    document.getElementsByName('tuesday').forEach((item) => {
+      item.classList.toggle('tuesday')
+    })
+    document.getElementsByName('thursday').forEach((item) => {
+      item.classList.toggle('thursday')
+    })
+    document.getElementsByName('friday').forEach((item) => {
+      item.classList.toggle('friday')
+    })
+    document.getElementsByName('saturday').forEach((item) => {
+      item.classList.toggle('saturday')
+    })
+  }
+  //Четверг
+  if (currentDay() === 'Четверг') {
+    document.getElementsByName('monday').forEach((item) => {
+      item.classList.toggle('monday')
+    })
+    document.getElementsByName('tuesday').forEach((item) => {
+      item.classList.toggle('tuesday')
+    })
+    document.getElementsByName('wednesday').forEach((item) => {
+      item.classList.toggle('wednesday')
+    })
+    document.getElementsByName('friday').forEach((item) => {
+      item.classList.toggle('friday')
+    })
+    document.getElementsByName('saturday').forEach((item) => {
+      item.classList.toggle('saturday')
+    })
+  }
+  //пятница
+  if (currentDay() === 'Пятница') {
+    document.getElementsByName('monday').forEach((item) => {
+      item.classList.toggle('monday')
+    })
+    document.getElementsByName('tuesday').forEach((item) => {
+      item.classList.toggle('tuesday')
+    })
+    document.getElementsByName('wednesday').forEach((item) => {
+      item.classList.toggle('wednesday')
+    })
+    document.getElementsByName('thursday').forEach((item) => {
+      item.classList.toggle('thursday')
+    })
+    document.getElementsByName('saturday').forEach((item) => {
+      item.classList.toggle('saturday')
+    })
+  }
+  //суббота
+  if (currentDay() === 'Суббота') {
+    document.getElementsByName('monday').forEach((item) => {
+      item.classList.toggle('monday')
+    })
+    document.getElementsByName('tuesday').forEach((item) => {
+      item.classList.toggle('tuesday')
+    })
+    document.getElementsByName('wednesday').forEach((item) => {
+      item.classList.toggle('wednesday')
+    })
+    document.getElementsByName('thursday').forEach((item) => {
+      item.classList.toggle('thursday')
+    })
+    document.getElementsByName('friday').forEach((item) => {
+      item.classList.toggle('friday')
+    })
+  }
+}
+
+export { currentMonth, currentDay, currentDayCaption, showCurrentDay }

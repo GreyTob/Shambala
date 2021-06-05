@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import classes from './TimeTable.module.scss'
 import container from '../../index.module.scss'
 import TimeTableMonth from '../../components/TimeTableMonth/TimeTableMonth'
-import TimeTableToday from '../../components/TimeTableToday/TimeTableToday'
+import { showCurrentDay } from '../../components/TimeTableMonth/currentDate'
 
 // import pic from '../../assets/time_table.jpg'
 
@@ -29,6 +29,7 @@ class TimeTable extends Component {
     this.setState({
       tableToggle: !this.state.tableToggle,
     })
+    showCurrentDay()
   }
 
   render() {
@@ -65,11 +66,7 @@ class TimeTable extends Component {
               </select>
             )}
 
-            {this.state.tableToggle ? (
-              <TimeTableMonth workout={this.state.workout} />
-            ) : (
-              <TimeTableToday />
-            )}
+            <TimeTableMonth workout={this.state.workout} />
           </div>
         </div>
       </section>
