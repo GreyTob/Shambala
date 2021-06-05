@@ -4,8 +4,6 @@ import container from '../../index.module.scss'
 import TimeTableMonth from '../../components/TimeTableMonth/TimeTableMonth'
 import { showCurrentDay } from '../../components/TimeTableMonth/currentDate'
 
-// import pic from '../../assets/time_table.jpg'
-
 class TimeTable extends Component {
   state = {
     workout: {
@@ -33,10 +31,6 @@ class TimeTable extends Component {
   }
 
   render() {
-    // if (window.innerWidth < 767) {
-    // } else {
-    // }
-
     return (
       <section className={classes.TimeTable}>
         <div className={container.container}>
@@ -66,7 +60,10 @@ class TimeTable extends Component {
               </select>
             )}
 
-            <TimeTableMonth workout={this.state.workout} />
+            <TimeTableMonth
+              workout={this.state.workout}
+              tableToggle={this.state.tableToggle}
+            />
           </div>
         </div>
       </section>

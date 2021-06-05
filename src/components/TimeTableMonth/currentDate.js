@@ -2,30 +2,31 @@ const currentMonth = () => {
   let date = new Date()
 
   switch (date.getMonth()) {
-    case 1:
+    case 0:
       return 'январь'
-    case 2:
+    case 1:
       return 'февраль'
-    case 3:
+    case 2:
       return 'март'
-    case 4:
+    case 3:
       return 'апрель'
-    case 5:
+    case 4:
       return 'май'
-    case 6:
+    case 5:
       return 'июнь'
-    case 7:
+    case 6:
       return 'июль'
-    case 8:
+    case 7:
       return 'август'
-    case 9:
+    case 8:
       return 'сентябрь'
-    case 10:
+    case 9:
       return 'октябрь'
-    case 11:
+    case 10:
       return 'ноябрь'
-    case 12:
+    case 11:
       return 'декабрь'
+
     default:
       console.log('currentMonth default')
   }
@@ -80,7 +81,6 @@ const currentDayCaption = () => {
 }
 
 const showCurrentDay = () => {
-  console.log(currentDay())
   //Понедельник
   if (currentDay() === 'Понедельник') {
     document.getElementsByName('tuesday').forEach((item) => {
@@ -188,6 +188,30 @@ const showCurrentDay = () => {
     })
     document.getElementsByName('friday').forEach((item) => {
       item.classList.toggle('friday')
+    })
+  }
+  //воскресенье
+  if (currentDay() === 'Воскресенье') {
+    document.getElementsByName('monday').forEach((item) => {
+      item.classList.toggle('monday')
+    })
+    document.getElementsByName('tuesday').forEach((item) => {
+      item.classList.toggle('tuesday')
+    })
+    document.getElementsByName('wednesday').forEach((item) => {
+      item.classList.toggle('wednesday')
+    })
+    document.getElementsByName('thursday').forEach((item) => {
+      item.classList.toggle('thursday')
+    })
+    document.getElementsByName('friday').forEach((item) => {
+      item.classList.toggle('friday')
+    })
+    document.getElementsByName('saturday').forEach((item) => {
+      item.classList.toggle('saturday')
+    })
+    document.getElementsByName('sunday').forEach((item) => {
+      item.classList.toggle('sunday')
     })
   }
 }
