@@ -31,16 +31,13 @@ class TimeTable extends Component {
   monthTodayToggle = () => {
     console.log('monthTodayToggle')
     if (document.querySelector('#choiseTable').value === 'month') {
-      console.log('месяц')
       this.setState({
         isMonth: true,
-        isToday: false,
       })
     } else {
       console.log('сегодня')
       this.setState({
         isMonth: false,
-        isToday: true,
       })
     }
 
