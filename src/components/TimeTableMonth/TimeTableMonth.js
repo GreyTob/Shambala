@@ -1,7 +1,7 @@
 import React from 'react'
 import classes from './TimeTableMonth.module.scss'
 import './days.scss'
-import { currentMonth, currentDayCaption } from './currentDate'
+import { currentMonth } from './currentDate'
 
 import { ReactSVG } from 'react-svg'
 import Tippy from '@tippyjs/react'
@@ -11,7 +11,7 @@ import list from '../../pages/TimeTable/assets/free-icon-note-book-1170169.svg'
 import phone from '../../pages/TimeTable/assets/phone-call.svg'
 import sunbed from '../../pages/TimeTable/assets/sunbed.svg'
 
-const TimeTableMonth = ({ workout, tableToggle, telephoneSize }) => {
+const TimeTableMonth = ({ workout, tableToggle }) => {
   const time9 = '9:00'
   const time103 = '10:30'
   const time11 = '11:00'
@@ -36,9 +36,7 @@ const TimeTableMonth = ({ workout, tableToggle, telephoneSize }) => {
     //     </div>
     //   ) : (
     <table className={classes.TimeTableMonth}>
-      <caption>
-        Рассписание занятий {tableToggle ? 'на ' + currentMonth() : null}
-      </caption>
+      <caption>Рассписание занятий {currentMonth()}</caption>
 
       <thead>
         <tr>
@@ -49,6 +47,9 @@ const TimeTableMonth = ({ workout, tableToggle, telephoneSize }) => {
           <th name="thursday">Четверг</th>
           <th name="friday">Пятница</th>
           <th name="saturday">Суббота</th>
+          <th name="sunday" className="sunday">
+            Воскресенье
+          </th>
         </tr>
       </thead>
 
@@ -247,6 +248,18 @@ const TimeTableMonth = ({ workout, tableToggle, telephoneSize }) => {
             </div>
             <div className={classes.oneTrainEmpty}>
               {/* //------empty-------------------- */}
+            </div>
+          </td>
+          {/* воскресенье */}
+          <td name="sunday" rowSpan="9" className="sunday">
+            <div className={classes.weekend}>
+              <h2>Сегодня воскресенье!</h2>
+              <ReactSVG src={sunbed} />
+              <p>
+                Шамбала сегодня не работает,
+                <br /> приходи завтра!
+              </p>
+              <p>Хороших выходных!</p>
             </div>
           </td>
         </tr>
