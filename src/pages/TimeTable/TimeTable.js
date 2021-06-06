@@ -25,6 +25,7 @@ class TimeTable extends Component {
       plastic: 'Plastic dance',
     },
     isMonth: true,
+    isMobile: false,
     isToday: false,
   }
 
@@ -48,9 +49,20 @@ class TimeTable extends Component {
   //   console.log('dayToggle')
   // }
 
-  shouldComponentUpdate(nextProps, nextState) {
-    console.log('shouldComponentUpdate', nextProps, nextState)
-    return true
+  componentDidMount() {
+    window.addEventListener('resize', () => {
+      console.log('изменение размера страницы')
+      console.log(this.state.isMobile)
+      if (window.innerWidth < 767) {
+        this.setState({
+          isMobile: true,
+        })
+      } else {
+        this.setState({
+          isMobile: false,
+        })
+      }
+    })
   }
 
   render() {

@@ -78,7 +78,7 @@ const currentDay = () => {
   //   })
   // }
 
-  switch (date.getDay() + 2) {
+  switch (date.getDay()) {
     case 1:
       return 'Понедельник'
     case 2:
