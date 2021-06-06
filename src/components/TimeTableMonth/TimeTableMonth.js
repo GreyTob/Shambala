@@ -23,18 +23,6 @@ const TimeTableMonth = ({ workout, tableToggle }) => {
   const time193 = '19:30'
 
   return (
-    // <React.Fragment>
-    //   {currentDayCaption() === 'Воскресенье' && !tableToggle ? (
-    //     <div className={classes.weekend}>
-    //       <h2>Сегодня воскресенье!</h2>
-    //       <ReactSVG src={sunbed} />
-    //       <p>
-    //         Шамбала сегодня не работает,
-    //         <br /> приходи завтра!
-    //       </p>
-    //       <p>Хороших выходных!</p>
-    //     </div>
-    //   ) : (
     <table className={classes.TimeTableMonth}>
       <caption>Рассписание занятий {currentMonth()}</caption>
 
@@ -938,8 +926,6 @@ const TimeTableMonth = ({ workout, tableToggle }) => {
         </tr>
       </tfoot>
     </table>
-    //   )}
-    // </React.Fragment>
   )
 }
 

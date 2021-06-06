@@ -5,7 +5,7 @@ import TimeTableMonth from '../../components/TimeTableMonth/TimeTableMonth'
 import {
   showMonthToday,
   showCurrentDay,
-  currentDay,
+  dayHandler,
 } from '../../components/TimeTableMonth/currentDate'
 
 class TimeTable extends Component {
@@ -28,31 +28,34 @@ class TimeTable extends Component {
     isMobile: false,
     isToday: false,
   }
-
+  //для desktop
   monthTodayToggle = () => {
-    console.log('monthTodayToggle')
     if (document.querySelector('#choiseTable').value === 'month') {
       this.setState({
         isMonth: true,
       })
     } else {
-      console.log('сегодня')
       this.setState({
         isMonth: false,
       })
     }
-
     showMonthToday(this.state.isMonth)
   }
 
-  // dayToggle = () => {
-  //   console.log('dayToggle')
-  // }
+  //для телефона
+  dayToggle = () => {
+    let value = document.querySelector('#choiseDayTable').value
+    if (value === 'currentDay') {
+      showCurrentDay(value)
+    } else {
+      showCurrentDay(value)
+    }
+  }
 
   componentDidMount() {
+    //перерендеринг таблицы и section при изменении размера экрана
     window.addEventListener('resize', () => {
-      console.log('изменение размера страницы')
-      console.log(this.state.isMobile)
+      // console.log('isMobile', this.state.isMobile)
       if (window.innerWidth < 767) {
         this.setState({
           isMobile: true,
@@ -74,20 +77,20 @@ class TimeTable extends Component {
             {window.innerWidth < 767 ? (
               <select
                 className={classes['select-css']}
-                name="choiseTable"
-                id="choiseTable"
+                name="choiseDayTable"
+                id="choiseDayTable"
                 onChange={this.dayToggle}
               >
                 <option value="currentDay" defaultValue>
                   Рассписание на сегодня
                 </option>
 
-                <option value="monday">Понедельник</option>
-                <option value="tuesday">Вторник</option>
-                <option value="wednesday">Среда</option>
-                <option value="thursday">Четверг</option>
-                <option value="friday">Пятница</option>
-                <option value="saturday">Суббота</option>
+                <option value="1">Понедельник</option>
+                <option value="2">Вторник</option>
+                <option value="3">Среда</option>
+                <option value="4">Четверг</option>
+                <option value="5">Пятница</option>
+                <option value="6">Суббота</option>
               </select>
             ) : (
               <select
@@ -104,7 +107,7 @@ class TimeTable extends Component {
             )}
             <TimeTableMonth
               workout={this.state.workout}
-              tableToggle={this.state.tableToggle}
+              isToday={this.state.isToday}
             />
           </div>
         </div>
