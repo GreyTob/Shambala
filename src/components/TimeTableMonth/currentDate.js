@@ -54,9 +54,30 @@ const currentDay = () => {
     date.setDate(5)
   }
 
+  if (document.querySelector('#choiseTable').value === 'month') {
+    document.getElementsByName('monday').forEach((item) => {
+      item.classList.remove('monday')
+    })
+    document.getElementsByName('tuesday').forEach((item) => {
+      item.classList.remove('tuesday')
+    })
+    document.getElementsByName('wednesday').forEach((item) => {
+      item.classList.remove('wednesday')
+    })
+    document.getElementsByName('thursday').forEach((item) => {
+      item.classList.remove('thursday')
+    })
+    document.getElementsByName('friday').forEach((item) => {
+      item.classList.remove('friday')
+    })
+    document.getElementsByName('saturday').forEach((item) => {
+      item.classList.remove('saturday')
+    })
+  }
+
   console.log(date.getDay())
 
-  switch (date.getDay()) {
+  switch (date.getDay() + 1) {
     case 1:
       return 'Понедельник'
     case 2:
@@ -69,7 +90,7 @@ const currentDay = () => {
       return 'Пятница'
     case 6:
       return 'Суббота'
-    case 7:
+    case 0:
       return 'Воскресенье'
 
     default:
@@ -80,7 +101,7 @@ const currentDay = () => {
 const currentDayCaption = () => {
   let date = new Date()
 
-  switch (date.getDay()) {
+  switch (date.getDay() + 1) {
     case 1:
       return 'Понедельник'
     case 2:
@@ -93,7 +114,7 @@ const currentDayCaption = () => {
       return 'Пятницу'
     case 6:
       return 'Субботу'
-    case 7:
+    case 0:
       return 'Воскресенье'
 
     default:
@@ -102,24 +123,25 @@ const currentDayCaption = () => {
 }
 
 const showCurrentDay = () => {
-  document.getElementsByName('monday').forEach((item) => {
-    item.classList.remove('monday')
-  })
-  document.getElementsByName('tuesday').forEach((item) => {
-    item.classList.remove('tuesday')
-  })
-  document.getElementsByName('wednesday').forEach((item) => {
-    item.classList.remove('wednesday')
-  })
-  document.getElementsByName('thursday').forEach((item) => {
-    item.classList.remove('thursday')
-  })
-  document.getElementsByName('friday').forEach((item) => {
-    item.classList.remove('friday')
-  })
-  document.getElementsByName('saturday').forEach((item) => {
-    item.classList.remove('saturday')
-  })
+  //сбрасываю классы
+  // document.getElementsByName('monday').forEach((item) => {
+  //   item.classList.remove('monday')
+  // })
+  // document.getElementsByName('tuesday').forEach((item) => {
+  //   item.classList.remove('tuesday')
+  // })
+  // document.getElementsByName('wednesday').forEach((item) => {
+  //   item.classList.remove('wednesday')
+  // })
+  // document.getElementsByName('thursday').forEach((item) => {
+  //   item.classList.remove('thursday')
+  // })
+  // document.getElementsByName('friday').forEach((item) => {
+  //   item.classList.remove('friday')
+  // })
+  // document.getElementsByName('saturday').forEach((item) => {
+  //   item.classList.remove('saturday')
+  // })
 
   //Понедельник
   if (currentDay() === 'Понедельник') {
@@ -231,42 +253,29 @@ const showCurrentDay = () => {
     })
   }
   //воскресенье
-  if (currentDay() === 'Воскресенье') {
-    document.getElementsByName('monday').forEach((item) => {
-      item.classList.toggle('monday')
-    })
-    document.getElementsByName('tuesday').forEach((item) => {
-      item.classList.toggle('tuesday')
-    })
-    document.getElementsByName('wednesday').forEach((item) => {
-      item.classList.toggle('wednesday')
-    })
-    document.getElementsByName('thursday').forEach((item) => {
-      item.classList.toggle('thursday')
-    })
-    document.getElementsByName('friday').forEach((item) => {
-      item.classList.toggle('friday')
-    })
-    document.getElementsByName('saturday').forEach((item) => {
-      item.classList.toggle('saturday')
-    })
-    document.getElementsByName('sunday').forEach((item) => {
-      item.classList.toggle('sunday')
-    })
-  }
+  // if (currentDay() === 'Воскресенье') {
+  //   document.getElementsByName('monday').forEach((item) => {
+  //     item.classList.toggle('monday')
+  //   })
+  //   document.getElementsByName('tuesday').forEach((item) => {
+  //     item.classList.toggle('tuesday')
+  //   })
+  //   document.getElementsByName('wednesday').forEach((item) => {
+  //     item.classList.toggle('wednesday')
+  //   })
+  //   document.getElementsByName('thursday').forEach((item) => {
+  //     item.classList.toggle('thursday')
+  //   })
+  //   document.getElementsByName('friday').forEach((item) => {
+  //     item.classList.toggle('friday')
+  //   })
+  //   document.getElementsByName('saturday').forEach((item) => {
+  //     item.classList.toggle('saturday')
+  //   })
+  //   document.getElementsByName('sunday').forEach((item) => {
+  //     item.classList.toggle('sunday')
+  //   })
+  // }
 }
 
-// const SelectOptions = () => {
-//   let option = document.querySelector('#choiseTable').options
-//   if (window.innerWidth < 767) {
-//     console.log('work')
-//     option[option.length] = new Option('Понедельник', 'monday')
-//     option[option.length] = new Option('Вторник', 'tuesday')
-//     option[option.length] = new Option('Среда', 'wednesday')
-//     option[option.length] = new Option('Четверг', 'thursday')
-//     option[option.length] = new Option('Пятница', 'friday')
-//     option[option.length] = new Option('Суббота', 'saturday')
-//   }
-// }
-
-export { currentMonth, currentDay, currentDayCaption, showCurrentDay }
+export { currentMonth, currentDay, showCurrentDay, currentDayCaption }
