@@ -28,7 +28,7 @@ class Footer extends Component {
   }
   render() {
     return (
-      <div className={classes.Footer}>
+      <footer className={classes.Footer}>
         <div className={container.container}>
           <div className={classes.content}>
             <h2>Мы в соцсетях</h2>
@@ -50,7 +50,7 @@ class Footer extends Component {
             <p>Йога в Магнитогорске. Студия йоги "Шамбала"</p>
           </div>
         </div>
-      </div>
+      </footer>
     )
   }
 }

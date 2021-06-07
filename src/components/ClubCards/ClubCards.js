@@ -62,7 +62,7 @@ const ClubCards = () => (
     {/* подвал */}
     <tfoot className={classes.tfoot}>
       <tr className={classes.noHover}>
-        <td colSpan="3">
+        <td colSpan="4">
           Клубная карта позволяет посещать&nbsp;
           <span className={classes.underline}>не более одного</span>&nbsp;
           посещения в день
