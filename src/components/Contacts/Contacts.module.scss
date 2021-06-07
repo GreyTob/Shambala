@@ -47,20 +47,3 @@
     }
   }
 }
-
-.iframe {
-  iframe {
-    padding: 50px 0;
-    width: 100%;
-    min-height: 500px;
-    border: none;
-  }
-}
-
-@media (max-width: 1180px) {
-  .iframe {
-    iframe {
-      padding: 50px 10px;
-    }
-  }
-}

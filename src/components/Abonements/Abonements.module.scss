@@ -45,7 +45,8 @@
   }
 
   .noHover:hover {
-    background: linear-gradient(90deg, #faf0cd, #fab397);
+    // background: linear-gradient(90deg, #faf0cd, #fab397);
+    background: inherit;
     opacity: 0.95;
   }
 }

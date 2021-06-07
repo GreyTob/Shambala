@@ -8,10 +8,10 @@ const ClubCards = () => (
     <caption>Клубные карты</caption>
     <thead>
       <tr className={classes.noHover}>
-        <th>Срок действия</th>
-        <th>Вариант оплаты</th>
-        <th>Первый взнос/последующие</th>
-        <th>Стоимость, руб</th>
+        <th className={classes.noHover}>Срок действия</th>
+        <th className={classes.noHover}>Вариант оплаты</th>
+        <th className={classes.noHover}>Первый взнос/последующие</th>
+        <th className={classes.noHover}>Стоимость, руб</th>
       </tr>
     </thead>
     {/* тело */}

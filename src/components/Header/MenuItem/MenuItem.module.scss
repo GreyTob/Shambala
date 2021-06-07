@@ -18,16 +18,16 @@
     transition: all 0.3s;
   }
 
-  .underline:focus {
-    color: $feta;
-  }
-  .underline:hover {
-    color: $feta;
-  }
+  // .underline:focus {
+  //   color: $feta;
+  // }
+  // .underline:hover {
+  //   color: $feta;
+  // }
 
-  .activeLink {
-    color: $feta;
-  }
+  // .activeLink {
+  //   color: $feta;
+  // }
 
   #aboutHandler:focus {
     color: $feta;
@@ -48,5 +48,8 @@
 
   .underline:hover:after {
     width: 100%;
+  }
+  .activeLink {
+    color: $feta;
   }
 }

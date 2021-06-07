@@ -1,8 +1,6 @@
 import classes from './About.module.scss'
 import container from '../../index.module.scss'
 
-import { Link } from 'react-scroll'
-
 const About = () => {
   return (
     <section className={classes.About}>

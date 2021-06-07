@@ -8,9 +8,9 @@ const Abonements = (props) => (
     <caption>Абонементы</caption>
     <thead>
       <tr className={classes.noHover}>
-        <th>Количество посещений</th>
-        <th>Тип абонемента</th>
-        <th>Стоимость, руб</th>
+        <th className={classes.noHover}>Количество посещений</th>
+        <th className={classes.noHover}>Тип абонемента</th>
+        <th className={classes.noHover}>Стоимость, руб</th>
       </tr>
     </thead>
 
