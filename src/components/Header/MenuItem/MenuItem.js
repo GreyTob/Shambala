@@ -2,7 +2,7 @@
 import classes from './MenuItem.module.scss'
 import ScrollUpHandler from '../../ScrollUp/ScrollUpHandler'
 
-import { HashLink } from 'react-router-hash-link'
+import { NavHashLink } from 'react-router-hash-link'
 
 const MenuItem = (props) => {
   const menuClick = () => {
@@ -17,17 +17,19 @@ const MenuItem = (props) => {
       ScrollUpHandler()
     }
   }
+
   return (
     <li className={classes.MenuItem}>
-      <HashLink
+      <NavHashLink
+        smooth
         to={props.to}
-        activeClassName={classes.activeLink}
+        // activeClassName={classes.activeLink}
         className={classes.underline}
         id={props.id}
         onClick={menuClick}
       >
         {props.value}
-      </HashLink>
+      </NavHashLink>
     </li>
   )
 }
