@@ -1,0 +1,15 @@
+.Form {
+  margin-bottom: 20px;
+  .content {
+    width: 100%;
+    background: linear-gradient(135deg, #e55d87 0%, #5fc3e4 100%);
+    display: grid;
+    place-items: center;
+    padding: 55px 20px;
+    opacity: 0.95;
+  }
+  input {
+    display: block;
+    margin: 10px 0;
+  }
+}

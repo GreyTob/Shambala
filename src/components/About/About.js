@@ -9,34 +9,32 @@ const About = () => {
       <div className={container.container}>
         <div id="about" className={classes.content}>
           <h2>О нас</h2>
-          <Link
-            style={{
-              cursor: 'pointer',
-              padding: 40,
-              color: 'red',
-              textTransform: 'uppercase',
-            }}
-            to="contacts"
-            spy={true}
-            smooth={true}
-            hashSpy={true}
-            offset={-50}
-            duration={500}
-            delay={50}
-          >
-            Проверка react-scroll
-          </Link>
+
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi
-            architecto cum non eos illum odit provident, totam cumque dolorem
-            quidem.
+            Наша студия для тех кто следит за своим здоровьем (или только
+            собирается им заняться), для тех кто увлечен ЙОГОЙ, для тех кто
+            любит двигаться и ТАНЦЕВАТЬ, для тех кто за позитивное ОБЩЕНИЕ и
+            вкусные чаепития! ПРИХОДИ, открой свою Шамбалу! ;)
           </p>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium
-            quibusdam quas, officia, deleniti cumque ea molestiae perspiciatis
-            illo animi tempore corrupti voluptas! Autem, quidem neque
-            perspiciatis, modi ipsa dolorem a fugiat dolore qui maxime expedita
-            eum explicabo cum minus. Aspernatur.
+            Йога представлена следующими направлениями:
+            <br />- Антигравитационная йога (йога в гамаках)
+            <br />- Акройога/акробаланс <br />- Табата
+            <br />- Шпагаты
+            <br />- Стройнею с йогой
+            <br />- Группа здоровья 55+
+            <br />- Мамина йога ( мама с малышом +3м) - Хатха-йога для
+            начинающих
+            <br />- Хатха-йога для продолжающих
+            <br />- Суставная гимнастика по Бубновскому
+            <br />- Табата (фитнес)
+            <br />- Power-yoga (Силовая йога)
+            <br />- Детская йога в гамаках
+            <br />- Секция Реального айкидо ( с 4 лет до 99 :)
+          </p>
+          <p>
+            Сдаем студию в аренду под детские или взрослые ТРЕЗВЫЕ праздники! :
+            )
           </p>
         </div>
       </div>

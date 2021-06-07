@@ -5,12 +5,6 @@ const Button = (props) => {
     <button className={classes.buttonns} onClick={props.onClick}>
       {props.teachersToggle ? props.buttonValueClose : props.buttonValueOpen}
     </button>
-
-    // <div className={classes.wrap}>
-    //   <button className={classes.button}>
-    //     {props.teachersToggle ? props.buttonValueClose : props.buttonValueOpen}
-    //   </button>
-    // </div>
   )
 }
 

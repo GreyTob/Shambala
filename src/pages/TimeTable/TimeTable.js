@@ -5,7 +5,6 @@ import TimeTableMonth from '../../components/TimeTableMonth/TimeTableMonth'
 import {
   showMonthToday,
   showCurrentDay,
-  dayHandler,
 } from '../../components/TimeTableMonth/currentDate'
 
 class TimeTable extends Component {
@@ -51,6 +50,19 @@ class TimeTable extends Component {
 
   componentDidMount() {
     //перерендеринг таблицы и section при изменении размера экрана
+
+    if (window.innerWidth < 767) {
+      this.setState({
+        isMobile: false,
+      })
+      showCurrentDay('currentDay')
+    } else {
+      this.setState({
+        isMobile: true,
+      })
+      showMonthToday(false)
+    }
+
     window.addEventListener('resize', () => {
       if (window.innerWidth < 767) {
         this.setState({
@@ -103,7 +115,6 @@ class TimeTable extends Component {
                 <option value="today">Рассписание на сегодня</option>
               </select>
             )}
-            {}
             <TimeTableMonth workout={this.state.workout} />
           </div>
         </div>

@@ -5,7 +5,7 @@
 
   .content {
     width: 100%;
-    padding: 55px 40px;
+    padding: 55px 20px;
     background: linear-gradient(90deg, #faf0cd, #fab397);
     display: grid;
     place-items: center;
@@ -32,6 +32,7 @@
   p {
     color: $temptress;
     margin-bottom: 20px;
+    line-height: 1.2rem;
   }
   p:last-child {
     margin-bottom: 0;
