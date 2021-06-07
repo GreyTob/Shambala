@@ -5,8 +5,8 @@ import Header from './components/Header/Header'
 import Main from './pages/Main/Main'
 import TimeTable from './pages/TimeTable/TimeTable'
 import Cost from './pages/Cost/Cost'
-import ScrollUp from './components/ScrollUp/ScrollUp'
 import Footer from './components/Footer/Footer'
+import ScrollUp from './components/ScrollUp/ScrollUp'
 
 function App() {
   return (
