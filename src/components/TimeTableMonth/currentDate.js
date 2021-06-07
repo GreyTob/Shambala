@@ -32,36 +32,14 @@ const currentMonth = () => {
   }
 }
 
-//для desktop
-const currentDay = () => {
+//для  desktop
+const showMonthToday = (props) => {
   let date = new Date()
 
-  switch (date.getDay()) {
-    case 1:
-      return 'Понедельник'
-    case 2:
-      return 'Вторник'
-    case 3:
-      return 'Среда'
-    case 4:
-      return 'Четверг'
-    case 5:
-      return 'Пятница'
-    case 6:
-      return 'Суббота'
-    case 0:
-      return 'Воскресенье'
-
-    default:
-      console.log('currentDay default')
-  }
-}
-//для select desktop
-const showMonthToday = (props) => {
   if (props) {
     //показывает текущий день
     // //Понедельник
-    if (currentDay() === 'Понедельник') {
+    if (date.getDay() === 1) {
       document.getElementsByName('monday').forEach((item) => {
         item.classList.remove('monday')
       })
@@ -83,10 +61,8 @@ const showMonthToday = (props) => {
       document.getElementsByName('sunday').forEach((item) => {
         item.classList.add('sunday')
       })
-    }
-
-    //Вторник
-    if (currentDay() === 'Вторник') {
+    } else if (date.getDay() === 2) {
+      //Вторник
       document.getElementsByName('monday').forEach((item) => {
         item.classList.add('monday')
       })
@@ -108,9 +84,8 @@ const showMonthToday = (props) => {
       document.getElementsByName('sunday').forEach((item) => {
         item.classList.add('sunday')
       })
-    }
-    //Среда
-    if (currentDay() === 'Среда') {
+    } else if (date.getDay() === 3) {
+      //Среда
       document.getElementsByName('monday').forEach((item) => {
         item.classList.add('monday')
       })
@@ -132,9 +107,8 @@ const showMonthToday = (props) => {
       document.getElementsByName('sunday').forEach((item) => {
         item.classList.add('sunday')
       })
-    }
-    //Четверг
-    if (currentDay() === 'Четверг') {
+    } else if (date.getDay() === 4) {
+      //Четверг
       document.getElementsByName('monday').forEach((item) => {
         item.classList.add('monday')
       })
@@ -156,9 +130,8 @@ const showMonthToday = (props) => {
       document.getElementsByName('sunday').forEach((item) => {
         item.classList.add('sunday')
       })
-    }
-    //пятница
-    if (currentDay() === 'Пятница') {
+    } else if (date.getDay() === 5) {
+      //пятница
       document.getElementsByName('monday').forEach((item) => {
         item.classList.add('monday')
       })
@@ -180,9 +153,8 @@ const showMonthToday = (props) => {
       document.getElementsByName('sunday').forEach((item) => {
         item.classList.add('sunday')
       })
-    }
-    //суббота
-    if (currentDay() === 'Суббота') {
+    } else if (date.getDay() === 6) {
+      //суббота
       document.getElementsByName('monday').forEach((item) => {
         item.classList.add('monday')
       })
@@ -204,9 +176,8 @@ const showMonthToday = (props) => {
       document.getElementsByName('sunday').forEach((item) => {
         item.classList.add('sunday')
       })
-    }
-    //воскресенье
-    if (currentDay() === 'Воскресенье') {
+    } else {
+      //воскресенье
       document.getElementsByName('monday').forEach((item) => {
         item.classList.add('monday')
       })

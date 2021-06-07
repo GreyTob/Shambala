@@ -11,7 +11,24 @@ import list from '../../pages/TimeTable/assets/free-icon-note-book-1170169.svg'
 import phone from '../../pages/TimeTable/assets/phone-call.svg'
 import sunbed from '../../pages/TimeTable/assets/sunbed.svg'
 
-const TimeTableMonth = ({ workout, tableToggle }) => {
+const TimeTableMonth = ({ workout, isToday }) => {
+  const iconTel = (
+    <Tippy
+      content={
+        <span>
+          Предварительная запись{' '}
+          <ReactSVG style={{ textAlign: 'center' }} src={phone} />{' '}
+        </span>
+      }
+    >
+      <div className={classes.svg}>
+        <a href="tel:+73519430470">
+          <ReactSVG src={list} />
+        </a>
+      </div>
+    </Tippy>
+  )
+
   const time9 = '9:00'
   const time103 = '10:30'
   const time11 = '11:00'
@@ -25,7 +42,6 @@ const TimeTableMonth = ({ workout, tableToggle }) => {
   return (
     <table className={classes.TimeTableMonth}>
       <caption>Рассписание занятий {currentMonth()}</caption>
-
       <thead>
         <tr>
           <th>Время</th>
@@ -52,20 +68,7 @@ const TimeTableMonth = ({ workout, tableToggle }) => {
               <br />
               <a href="">Ольга</a>
               {time9}
-              <Tippy
-                content={
-                  <span>
-                    Предварительная запись{' '}
-                    <ReactSVG style={{ textAlign: 'center' }} src={phone} />{' '}
-                  </span>
-                }
-              >
-                <div className={classes.svg}>
-                  <a href="tel:+73519430470">
-                    <ReactSVG src={list} />
-                  </a>
-                </div>
-              </Tippy>
+              {iconTel}
             </div>
             <div className={classes.oneTrain}>
               {workout.hatha55}
@@ -87,20 +90,7 @@ const TimeTableMonth = ({ workout, tableToggle }) => {
               <br />
               <a href="">Ольга</a>
               {time9}
-              <Tippy
-                content={
-                  <span>
-                    Предварительная запись{' '}
-                    <ReactSVG style={{ textAlign: 'center' }} src={phone} />{' '}
-                  </span>
-                }
-              >
-                <div className={classes.svg}>
-                  <a href="tel:+73519430470">
-                    <ReactSVG src={list} />
-                  </a>
-                </div>
-              </Tippy>
+              {iconTel}
             </div>
             <div className={classes.oneTrain}>
               {workout.hatha}
@@ -121,20 +111,7 @@ const TimeTableMonth = ({ workout, tableToggle }) => {
               <br />
               <a href="">Ольга</a>
               {time9}
-              <Tippy
-                content={
-                  <span>
-                    Предварительная запись{' '}
-                    <ReactSVG style={{ textAlign: 'center' }} src={phone} />{' '}
-                  </span>
-                }
-              >
-                <div className={classes.svg}>
-                  <a href="tel:+73519430470">
-                    <ReactSVG src={list} />
-                  </a>
-                </div>
-              </Tippy>
+              {iconTel}
             </div>
             <div className={classes.oneTrain}>
               {workout.hatha55}
@@ -156,20 +133,7 @@ const TimeTableMonth = ({ workout, tableToggle }) => {
               <br />
               <a href="">Ольга</a>
               {time9}
-              <Tippy
-                content={
-                  <span>
-                    Предварительная запись{' '}
-                    <ReactSVG style={{ textAlign: 'center' }} src={phone} />{' '}
-                  </span>
-                }
-              >
-                <div className={classes.svg}>
-                  <a href="tel:+73519430470">
-                    <ReactSVG src={list} />
-                  </a>
-                </div>
-              </Tippy>
+              {iconTel}
             </div>
             <div className={classes.oneTrain}>
               {workout.hatha}
@@ -190,20 +154,7 @@ const TimeTableMonth = ({ workout, tableToggle }) => {
               <br />
               <a href="">Ольга</a>
               {time9}
-              <Tippy
-                content={
-                  <span>
-                    Предварительная запись{' '}
-                    <ReactSVG style={{ textAlign: 'center' }} src={phone} />{' '}
-                  </span>
-                }
-              >
-                <div className={classes.svg}>
-                  <a href="tel:+73519430470">
-                    <ReactSVG src={list} />
-                  </a>
-                </div>
-              </Tippy>
+              {iconTel}
             </div>
             <div className={classes.oneTrain}>
               {workout.hatha55}
@@ -314,6 +265,7 @@ const TimeTableMonth = ({ workout, tableToggle }) => {
               <br />
               <a href="">Наталья</a>
               {time103}
+              {iconTel}
             </div>
           </td>
         </tr>
@@ -326,9 +278,7 @@ const TimeTableMonth = ({ workout, tableToggle }) => {
               {workout.bodyMix}
               <br />
               Пилатес+стрейчинг
-              <br />
-              +МФР
-              <br />
+              <br />+<abbr title="Миофасциальный релиз">МФР</abbr>
               <a href="">Анастасия</a>
               {time11}
             </div>
@@ -345,20 +295,7 @@ const TimeTableMonth = ({ workout, tableToggle }) => {
               <br />
               <a href="">Ольга</a>
               {time11}
-              <Tippy
-                content={
-                  <span>
-                    Предварительная запись{' '}
-                    <ReactSVG style={{ textAlign: 'center' }} src={phone} />{' '}
-                  </span>
-                }
-              >
-                <div className={classes.svg}>
-                  <a href="tel:+73519430470">
-                    <ReactSVG src={list} />
-                  </a>
-                </div>
-              </Tippy>
+              {iconTel}
             </div>
             <div className={classes.oneTrainEmpty}>
               {/* //------empty-------------------- */}
@@ -370,9 +307,7 @@ const TimeTableMonth = ({ workout, tableToggle }) => {
               {workout.bodyMix}
               <br />
               Пилатес+стрейчинг
-              <br />
-              +МФР
-              <br />
+              <br />+<abbr title="Миофасциальный релиз">МФР</abbr>
               <a href="">Анастасия</a>
               {time11}
             </div>
@@ -392,20 +327,7 @@ const TimeTableMonth = ({ workout, tableToggle }) => {
               <br />
               <a href="">Ольга</a>
               {time11}
-              <Tippy
-                content={
-                  <span>
-                    Предварительная запись{' '}
-                    <ReactSVG style={{ textAlign: 'center' }} src={phone} />{' '}
-                  </span>
-                }
-              >
-                <div className={classes.svg}>
-                  <a href="tel:+73519430470">
-                    <ReactSVG src={list} />
-                  </a>
-                </div>
-              </Tippy>
+              {iconTel}
             </div>
             <div className={classes.oneTrainEmpty}>
               {/* //------empty-------------------- */}
@@ -516,20 +438,7 @@ const TimeTableMonth = ({ workout, tableToggle }) => {
               <br />
               <a href="">Ольга</a>
               {time13}
-              <Tippy
-                content={
-                  <span>
-                    Предварительная запись{' '}
-                    <ReactSVG style={{ textAlign: 'center' }} src={phone} />{' '}
-                  </span>
-                }
-              >
-                <div className={classes.svg}>
-                  <a href="tel:+73519430470">
-                    <ReactSVG src={list} />
-                  </a>
-                </div>
-              </Tippy>
+              {iconTel}
             </div>
           </td>
         </tr>
@@ -553,20 +462,7 @@ const TimeTableMonth = ({ workout, tableToggle }) => {
               <br />
               <a href="">Ольга</a>
               {time18}
-              <Tippy
-                content={
-                  <span>
-                    Предварительная запись{' '}
-                    <ReactSVG style={{ textAlign: 'center' }} src={phone} />{' '}
-                  </span>
-                }
-              >
-                <div className={classes.svg}>
-                  <a href="tel:+73519430470">
-                    <ReactSVG src={list} />
-                  </a>
-                </div>
-              </Tippy>
+              {iconTel}
             </div>
             <div className={classes.oneTrainEmpty}>
               {/* //------empty-------------------- */}
@@ -601,20 +497,7 @@ const TimeTableMonth = ({ workout, tableToggle }) => {
               <br />
               <a href="">Ольга</a>
               {time18}
-              <Tippy
-                content={
-                  <span>
-                    Предварительная запись{' '}
-                    <ReactSVG style={{ textAlign: 'center' }} src={phone} />{' '}
-                  </span>
-                }
-              >
-                <div className={classes.svg}>
-                  <a href="tel:+73519430470">
-                    <ReactSVG src={list} />
-                  </a>
-                </div>
-              </Tippy>
+              {iconTel}
             </div>
             <div className={classes.oneTrain}>
               {workout.fitnes}
@@ -658,20 +541,7 @@ const TimeTableMonth = ({ workout, tableToggle }) => {
               <br />
               <a href="">Ольга</a>
               {time18}
-              <Tippy
-                content={
-                  <span>
-                    Предварительная запись{' '}
-                    <ReactSVG style={{ textAlign: 'center' }} src={phone} />{' '}
-                  </span>
-                }
-              >
-                <div className={classes.svg}>
-                  <a href="tel:+73519430470">
-                    <ReactSVG src={list} />
-                  </a>
-                </div>
-              </Tippy>
+              {iconTel}
             </div>
             <div className={classes.oneTrain}>
               {workout.fitnes}
@@ -823,20 +693,7 @@ const TimeTableMonth = ({ workout, tableToggle }) => {
               <br />
               <a href="">Ольга</a>
               {time193}
-              <Tippy
-                content={
-                  <span>
-                    Предварительная запись{' '}
-                    <ReactSVG style={{ textAlign: 'center' }} src={phone} />{' '}
-                  </span>
-                }
-              >
-                <div className={classes.svg}>
-                  <a href="tel:+73519430470">
-                    <ReactSVG src={list} />
-                  </a>
-                </div>
-              </Tippy>
+              {iconTel}
             </div>
           </td>
           {/* среда */}
@@ -846,20 +703,7 @@ const TimeTableMonth = ({ workout, tableToggle }) => {
               <br />
               <a href="">Ольга</a>
               {time193}
-              <Tippy
-                content={
-                  <span>
-                    Предварительная запись{' '}
-                    <ReactSVG style={{ textAlign: 'center' }} src={phone} />{' '}
-                  </span>
-                }
-              >
-                <div className={classes.svg}>
-                  <a href="tel:+73519430470">
-                    <ReactSVG src={list} />
-                  </a>
-                </div>
-              </Tippy>
+              {iconTel}
             </div>
           </td>
           {/* четверг */}
@@ -869,20 +713,7 @@ const TimeTableMonth = ({ workout, tableToggle }) => {
               <br />
               <a href="">Ольга</a>
               {time193}
-              <Tippy
-                content={
-                  <span>
-                    Предварительная запись{' '}
-                    <ReactSVG style={{ textAlign: 'center' }} src={phone} />{' '}
-                  </span>
-                }
-              >
-                <div className={classes.svg}>
-                  <a href="tel:+73519430470">
-                    <ReactSVG src={list} />
-                  </a>
-                </div>
-              </Tippy>
+              {iconTel}
             </div>
           </td>
           {/* пятница */}
@@ -908,20 +739,7 @@ const TimeTableMonth = ({ workout, tableToggle }) => {
           <td colSpan="7">
             Нa занятие со звездочкой нужна запись по тел.{' '}
             <a href="tel:+73519430470">+7&nbsp;(3519)&nbsp;43-04-70</a>
-            <Tippy
-              content={
-                <span>
-                  Предварительная запись{' '}
-                  <ReactSVG style={{ textAlign: 'center' }} src={phone} />{' '}
-                </span>
-              }
-            >
-              <div className={classes.svgFooter}>
-                <a href="tel:+73519430470">
-                  <ReactSVG src={list} />
-                </a>
-              </div>
-            </Tippy>
+            {iconTel}
           </td>
         </tr>
       </tfoot>

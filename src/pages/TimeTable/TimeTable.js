@@ -45,31 +45,29 @@ class TimeTable extends Component {
   //для телефона
   dayToggle = () => {
     let value = document.querySelector('#choiseDayTable').value
-    if (value === 'currentDay') {
-      showCurrentDay(value)
-    } else {
-      showCurrentDay(value)
-    }
+
+    showCurrentDay(value)
   }
 
   componentDidMount() {
     //перерендеринг таблицы и section при изменении размера экрана
     window.addEventListener('resize', () => {
-      // console.log('isMobile', this.state.isMobile)
       if (window.innerWidth < 767) {
-        this.setState({
-          isMobile: true,
-        })
-      } else {
         this.setState({
           isMobile: false,
         })
+        showCurrentDay('currentDay')
+      } else {
+        this.setState({
+          isMobile: true,
+        })
+        showMonthToday(false)
       }
     })
   }
 
   render() {
-    console.log('TimeTable render')
+    // console.log('TimeTable render')
     return (
       <section className={classes.TimeTable}>
         <div className={container.container}>
@@ -105,10 +103,8 @@ class TimeTable extends Component {
                 <option value="today">Рассписание на сегодня</option>
               </select>
             )}
-            <TimeTableMonth
-              workout={this.state.workout}
-              isToday={this.state.isToday}
-            />
+            {}
+            <TimeTableMonth workout={this.state.workout} />
           </div>
         </div>
       </section>
