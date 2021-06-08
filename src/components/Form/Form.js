@@ -1,17 +1,14 @@
 import classes from './Form.module.scss'
 import container from '../../index.module.scss'
 import Button from '../UI/Button/Button'
+import is from 'is_js'
 
 const Form = () => {
-  //   var frmvalidator  = new Validator("contactform");
-  // frmvalidator.addValidation("name","req","Please provide your name");
-  // frmvalidator.addValidation("email","req","Please provide your email");
-  // frmvalidator.addValidation("email","email",
-  //   "Please enter a valid email address");
-
   function submitHandler(event) {
+    console.log('preventDefault')
     event.preventDefault()
   }
+
   return (
     <section className={classes.Form}>
       <div className={container.container}>
@@ -21,27 +18,34 @@ const Form = () => {
             method="post"
             name="contact_form"
             action="contact-form-handler.php"
-            onSubmit={submitHandler}
+            onSubmit={(Event) => submitHandler(Event)}
           >
-            <div class={classes.group}>
+            <div className={classes.group}>
               <input type="text" name="name" id="formName" required />
-              <span class={classes.bar}></span>
-              <label htmlFor="formName">Как Вас зовут?</label>
+              <span className={classes.bar}></span>
+              <label htmlFor="formName">Как Вас зовут? </label>
+              {/* <span className={classes.error}>Имя слишком короткое!</span> */}
             </div>
 
-            <div class={classes.group}>
+            <div className={classes.group}>
               <input type="email" name="name" id="formEmail" required />
-              <span class={classes.bar}></span>
-              <label htmlFor="formEmail">Ваш E-mail:&nbsp;</label>
+              <span className={classes.bar}></span>
+              <label htmlFor="formEmail">
+                Ваш E-mail:&nbsp;
+                {/* <span className={classes.error}>E-mail некорректный!</span> */}
+              </label>
             </div>
 
-            <div class={classes.group}>
+            <div className={classes.group}>
               <input type="tel" name="name" id="formTel" required />
-              <span class={classes.bar}></span>
-              <label htmlFor="formTel">Ваш телефон:&nbsp;</label>
+              <span className={classes.bar}></span>
+              <label htmlFor="formTel">
+                Ваш телефон:&nbsp;
+                {/* <span className={classes.error}>Телефон некорректный!</span> */}
+              </label>
             </div>
 
-            <div class={classes.group}>
+            <div className={classes.group}>
               <textarea
                 name="message"
                 id="formMessage"
@@ -49,9 +53,11 @@ const Form = () => {
                 resize="vertical"
                 required
               ></textarea>
-              <span class={classes.bar}></span>
+              <span className={classes.bar}></span>
+              {/* <span className={classes.error}>
+                Сообщение должно быть длиннее трех символов
+              </span> */}
             </div>
-            {/* <input type="submit" value="Отправить" /> */}
             <Button value={'Отправить'} />
           </form>
         </div>

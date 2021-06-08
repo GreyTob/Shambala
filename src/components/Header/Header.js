@@ -93,6 +93,7 @@ class Header extends Component {
   render() {
     return (
       <header
+        id="header"
         className={
           this.state.burgerActive ? classes.HeaderActive : classes.Header
         }
