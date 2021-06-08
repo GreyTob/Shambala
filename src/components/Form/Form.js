@@ -1,5 +1,6 @@
 import classes from './Form.module.scss'
 import container from '../../index.module.scss'
+import Button from '../UI/Button/Button'
 
 const Form = () => {
   //   var frmvalidator  = new Validator("contactform");
@@ -22,13 +23,36 @@ const Form = () => {
             action="contact-form-handler.php"
             onSubmit={submitHandler}
           >
-            <label htmlFor="formName">Как Вас зовут?</label>
-            <input type="text" name="name" id="formName" />
-            <label htmlFor="formEmail">Ваш E-mail: </label>
-            <input type="text" name="email" id="formEmail" />
-            <label htmlFor="formMessage"></label>
-            <textarea name="message" id="formMessage"></textarea>
-            <input type="submit" value="Отправить" />
+            <div class={classes.group}>
+              <input type="text" name="name" id="formName" required />
+              <span class={classes.bar}></span>
+              <label htmlFor="formName">Как Вас зовут?</label>
+            </div>
+
+            <div class={classes.group}>
+              <input type="email" name="name" id="formEmail" required />
+              <span class={classes.bar}></span>
+              <label htmlFor="formEmail">Ваш E-mail:&nbsp;</label>
+            </div>
+
+            <div class={classes.group}>
+              <input type="tel" name="name" id="formTel" required />
+              <span class={classes.bar}></span>
+              <label htmlFor="formTel">Ваш телефон:&nbsp;</label>
+            </div>
+
+            <div class={classes.group}>
+              <textarea
+                name="message"
+                id="formMessage"
+                placeholder="Текст сообщения"
+                resize="vertical"
+                required
+              ></textarea>
+              <span class={classes.bar}></span>
+            </div>
+            {/* <input type="submit" value="Отправить" /> */}
+            <Button value={'Отправить'} />
           </form>
         </div>
       </div>

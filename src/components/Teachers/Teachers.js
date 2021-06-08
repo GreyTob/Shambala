@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import classes from './Teachers.module.scss'
 import TeacherItem from './TeacherItem/TeacherItem'
 import container from '../../index.module.scss'
-import Button from '../Button/Button'
+import Button from '../UI/Button/Button'
 
 import { Parallax } from 'react-scroll-parallax'
 
@@ -84,7 +84,7 @@ class Teachers extends Component {
   }
 
   parallaxOneItem = () => {
-    let xOne = [-15, 15]
+    let xOne = [-10, 10]
     if (window.innerWidth < 767) {
       xOne = [0, 0]
     }
@@ -92,7 +92,7 @@ class Teachers extends Component {
   }
 
   parallaxTwoItem = () => {
-    let xTwo = [15, -15]
+    let xTwo = [10, -10]
     if (window.innerWidth < 767) {
       xTwo = [0, 0]
     }
