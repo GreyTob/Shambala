@@ -107,7 +107,7 @@ class Slider extends React.Component {
       //смотрю разницу координат до и после по модулю, чтобы узнать в какую сторону движение
       let divX = touchX - touchXmove
       let divY = touchY - touchYmove
-      //если divX больше, то движение влево или вправо
+      //если divX больше, то движение влево иначе вправо
       if (Math.abs(divX) > Math.abs(divY)) {
         //если divX > 0, то движение влево
         if (divX > 0) {

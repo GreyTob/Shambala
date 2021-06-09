@@ -17,7 +17,9 @@ const Abonements = (props) => (
     <tbody>
       {/* 1 занятие */}
       <tr>
-        <td rowSpan="6">1</td>
+        <td rowSpan="6" className={classes.noHover}>
+          1
+        </td>
         <td className={classes.none}></td>
         <td className={classes.none}></td>
       </tr>
@@ -43,7 +45,9 @@ const Abonements = (props) => (
       </tr>
       {/* 4 занятия */}
       <tr className={classes.even}>
-        <td rowSpan="4">4</td>
+        <td rowSpan="4" className={classes.noHover}>
+          4
+        </td>
         <td className={classes.none}></td>
         <td className={classes.none}></td>
       </tr>
@@ -69,7 +73,9 @@ const Abonements = (props) => (
       </Tippy>
       {/* 8 занятий */}
       <tr>
-        <td rowSpan="4">8</td>
+        <td rowSpan="4" className={classes.noHover}>
+          8
+        </td>
         <td className={classes.none}></td>
         <td className={classes.none}></td>
       </tr>
@@ -93,7 +99,9 @@ const Abonements = (props) => (
       </Tippy>
       {/* 10 занятий */}
       <tr className={classes.even}>
-        <td rowSpan="6">10</td>
+        <td rowSpan="6" className={classes.noHover}>
+          10
+        </td>
         <td className={classes.none}></td>
         <td className={classes.none}></td>
       </tr>
@@ -129,7 +137,9 @@ const Abonements = (props) => (
       </Tippy>
       {/* 12 занятий */}
       <tr>
-        <td rowSpan="4">12</td>
+        <td rowSpan="4" className={classes.noHover}>
+          12
+        </td>
         <td className={classes.none}></td>
         <td className={classes.none}></td>
       </tr>
