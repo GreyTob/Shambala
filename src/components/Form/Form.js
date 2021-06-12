@@ -1,25 +1,70 @@
 import classes from './Form.module.scss'
 import container from '../../index.module.scss'
 import Button from '../UI/Button/Button'
-import is from 'is_js'
+import $ from 'jquery'
+// import is from 'is_js'
 
 const Form = () => {
   function submitHandler(event) {
-    console.log('preventDefault')
     event.preventDefault()
+
+    // let th = $(this)
+
+    // $.ajax({
+    //   type: 'POST',
+    //   url: 'mail.php',
+    //   data: th.serialize(),
+    // }).done(function () {
+    //   alert('Thank you!')
+    //   setTimeout(function () {
+    //     // Done Functions
+    //     console.log('ну все нормас же')
+    //     th.trigger('reset')
+    //   }, 1000)
+    // })
+    // // return false
   }
+
+  $(document).ready(function () {
+    //E-mail Ajax Send
+    $('form').submit(function () {
+      //Change
+      var th = $(this)
+      $.ajax({
+        type: 'POST',
+        url: 'mail.php', //Change
+        data: th.serialize(),
+      }).done(function () {
+        alert('Thank you!')
+        setTimeout(function () {
+          // Done Functions
+          th.trigger('reset')
+        }, 1000)
+      })
+      return false
+    })
+  })
 
   return (
     <section className={classes.Form}>
       <div className={container.container}>
         <div className={classes.content}>
-          <h2>Отправте сообщение</h2>
+          <h2>Отправьте сообщение</h2>
           <form
-            method="post"
             name="contact_form"
             action="#"
             onSubmit={(Event) => submitHandler(Event)}
           >
+            {/* Hidden Required Fields ДЛЯ ОТПРАВКИ ФОРМЫ НА ПОЧТУ  */}
+            <input type="hidden" name="project_name" value="Shambala" />
+            <input
+              type="hidden"
+              name="admin_email"
+              value="greytob@icloud.com"
+            />
+            <input type="hidden" name="form_subject" value="Form Subject" />
+            {/* END Hidden Required Fields */}
+
             <div className={classes.group}>
               <input type="text" name="name" id="formName" required />
               <span className={classes.bar}></span>
@@ -28,7 +73,7 @@ const Form = () => {
             </div>
 
             <div className={classes.group}>
-              <input type="email" name="name" id="formEmail" required />
+              <input type="email" name="email" id="formEmail" required />
               <span className={classes.bar}></span>
               <label htmlFor="formEmail">
                 Ваш E-mail:&nbsp;
@@ -37,7 +82,7 @@ const Form = () => {
             </div>
 
             <div className={classes.group}>
-              <input type="tel" name="name" id="formTel" required />
+              <input type="tel" name="tel" id="formTel" required />
               <span className={classes.bar}></span>
               <label htmlFor="formTel">
                 Ваш телефон:&nbsp;
@@ -58,8 +103,11 @@ const Form = () => {
                 Сообщение должно быть длиннее трех символов
               </span> */}
             </div>
-            <Button type="submit" value={'Отправить'} />
+            <Button value={'Отправить'} />
           </form>
+          <div>
+            <h3>Сообщение отправлено</h3>
+          </div>
         </div>
       </div>
     </section>
