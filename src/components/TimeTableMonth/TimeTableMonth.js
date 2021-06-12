@@ -739,7 +739,7 @@ const TimeTableMonth = ({ workout, isToday }) => {
           <td colSpan="7">
             Нa занятие со звездочкой нужна запись по тел.{' '}
             <a href="tel:+73519430470">+7&nbsp;(3519)&nbsp;43-04-70</a>
-            {iconTel}
+            <div className={classes.svgFooter}> {iconTel}</div>
           </td>
         </tr>
       </tfoot>

@@ -12,6 +12,7 @@
     background: linear-gradient(90deg, #faf0cd, #fab397);
     text-transform: uppercase;
     padding: 15px;
+    caption-side: top;
   }
 
   th {
@@ -45,6 +46,12 @@
     // box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25), 0 5px 5px rgba(0, 0, 0, 0.22);
     opacity: 0.9;
     transition: all 0.2s ease-in-out;
+  }
+
+  @media screen and (max-width: 767px) {
+    .tr:hover {
+      transform: scale(1);
+    }
   }
 
   // .noHover:hover {

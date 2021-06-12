@@ -91,8 +91,9 @@
 
   .svgFooter {
     position: absolute;
-    right: 8px;
-    bottom: 7px;
+    right: -1px;
+    bottom: -4px;
+    z-index: 100;
     svg {
       width: 20px;
       height: 20px;
