@@ -41,14 +41,17 @@
     color: red;
   }
 
-  tr:hover {
-    background: linear-gradient(135deg, #e55d87 0%, #5fc3e4 100%);
+  .tr:hover {
+    transform: scale(1.012);
+    background: #5fc3e4;
+    // box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25), 0 5px 5px rgba(0, 0, 0, 0.22);
     opacity: 0.9;
+    transition: all 0.2s ease-in-out;
   }
 
-  .noHover:hover {
-    // background: linear-gradient(90deg, #faf0cd, #fab397);
-    background: inherit;
-    opacity: 0.95;
-  }
+  // .noHover:hover {
+  //   // background: linear-gradient(90deg, #faf0cd, #fab397);
+  //   background: inherit;
+  //   opacity: 0.95;
+  // }
 }

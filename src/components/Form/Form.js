@@ -17,7 +17,7 @@ const Form = () => {
           <form
             method="post"
             name="contact_form"
-            action="contact-form-handler.php"
+            action="#"
             onSubmit={(Event) => submitHandler(Event)}
           >
             <div className={classes.group}>
@@ -58,7 +58,7 @@ const Form = () => {
                 Сообщение должно быть длиннее трех символов
               </span> */}
             </div>
-            <Button value={'Отправить'} />
+            <Button type="submit" value={'Отправить'} />
           </form>
         </div>
       </div>

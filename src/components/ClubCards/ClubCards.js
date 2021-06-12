@@ -16,14 +16,14 @@ const ClubCards = () => (
     </thead>
     {/* тело */}
     <tbody>
-      <tr>
+      <tr className={classes.tr}>
         <td>1 месяц</td>
         <td>100%</td>
         <td>3500/-</td>
         <td>3500</td>
       </tr>
       <Tippy content={<span>Стоимость месяца 2500</span>}>
-        <tr>
+        <tr className={classes.tr}>
           <td>3 месяца</td>
           <td>50% + рассрочка 2 месяца</td>
           <td>3750/1875</td>
@@ -31,7 +31,7 @@ const ClubCards = () => (
         </tr>
       </Tippy>
       <Tippy content={<span>Стоимость месяца 2000</span>}>
-        <tr>
+        <tr className={classes.tr}>
           <td>6 месяцев</td>
           <td>50% + рассрочка 4 месяца</td>
           <td>6000/1500</td>
@@ -39,7 +39,7 @@ const ClubCards = () => (
         </tr>
       </Tippy>
       <Tippy content={<span>Стоимость месяца 1670</span>}>
-        <tr>
+        <tr className={classes.tr}>
           <td>12 месяцев</td>
           <td>50% + рассрочка 6 месяца</td>
           <td>10000/1667</td>
@@ -47,7 +47,7 @@ const ClubCards = () => (
         </tr>
       </Tippy>
       <Tippy content={<span>Стоимость месяца 2500</span>}>
-        <tr>
+        <tr className={classes.tr}>
           <td>
             12 месяцев
             <br />
