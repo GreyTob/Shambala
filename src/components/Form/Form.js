@@ -16,14 +16,14 @@ const Form = () => {
     $('form').submit(function () {
       //Change
       var th = $(this)
+      $('.formSend').css('visibility', 'visible')
       $.ajax({
-        type: 'POST',
-        url: 'mail.php', //Change
-        data: th.serialize(),
+        // type: 'POST',
+        // url: 'mail.php', //Change
+        // data: th.serialize(),
       }).done(function () {
         // alert('Сообщение отправлено')
-        $('.formSend').css('visibility', 'visible')
-
+        $('.formSend').html('<h3>Отправлено</h3>')
         setTimeout(function () {
           // Done Functions
           $('.formSend').css('visibility', 'hidden')
@@ -94,6 +94,7 @@ const Form = () => {
               </span> */}
             </div>
             <Button value={'Отправить'} />
+
             <div className="formSend">
               <h3>Отправка</h3>
             </div>
