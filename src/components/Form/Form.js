@@ -18,9 +18,9 @@ const Form = () => {
       var th = $(this)
       $('.formSend').css('visibility', 'visible')
       $.ajax({
-        // type: 'POST',
-        // url: 'mail.php', //Change
-        // data: th.serialize(),
+        type: 'POST',
+        url: 'mail.php', //Change
+        data: th.serialize(),
       }).done(function () {
         // alert('Сообщение отправлено')
         $('.formSend').html('<h3>Отправлено</h3>')
