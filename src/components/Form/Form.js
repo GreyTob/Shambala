@@ -1,4 +1,5 @@
 import classes from './Form.module.scss'
+import './formSend.scss'
 import container from '../../index.module.scss'
 import Button from '../UI/Button/Button'
 import $ from 'jquery'
@@ -7,24 +8,9 @@ import $ from 'jquery'
 const Form = () => {
   function submitHandler(event) {
     event.preventDefault()
-
-    // let th = $(this)
-
-    // $.ajax({
-    //   type: 'POST',
-    //   url: 'mail.php',
-    //   data: th.serialize(),
-    // }).done(function () {
-    //   alert('Thank you!')
-    //   setTimeout(function () {
-    //     // Done Functions
-    //     console.log('ну все нормас же')
-    //     th.trigger('reset')
-    //   }, 1000)
-    // })
-    // // return false
   }
 
+  //отправка
   $(document).ready(function () {
     //E-mail Ajax Send
     $('form').submit(function () {
@@ -35,11 +21,14 @@ const Form = () => {
         url: 'mail.php', //Change
         data: th.serialize(),
       }).done(function () {
-        alert('Thank you!')
+        // alert('Сообщение отправлено')
+        $('.formSend').css('visibility', 'visible')
+
         setTimeout(function () {
           // Done Functions
+          $('.formSend').css('visibility', 'hidden')
           th.trigger('reset')
-        }, 1000)
+        }, 1500)
       })
       return false
     })
@@ -51,6 +40,7 @@ const Form = () => {
         <div className={classes.content}>
           <h2>Отправьте сообщение</h2>
           <form
+            id="formModal"
             name="contact_form"
             action="#"
             onSubmit={(Event) => submitHandler(Event)}
@@ -104,10 +94,10 @@ const Form = () => {
               </span> */}
             </div>
             <Button value={'Отправить'} />
+            <div className="formSend">
+              <h3>Отправка</h3>
+            </div>
           </form>
-          <div>
-            <h3>Сообщение отправлено</h3>
-          </div>
         </div>
       </div>
     </section>
