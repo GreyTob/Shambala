@@ -254,7 +254,165 @@ const dayHandler = () => {
 //для select на экране телефона
 const showCurrentDay = (props) => {
   //"расспиание на сегодня"
-  if (props === 'currentDay') {
+  if (props !== 'currentDay') {
+    //отдельные дни(пон, вт, ср, чт, пт, сб)
+    if (props === '1') {
+      document.getElementsByName('monday').forEach((item) => {
+        item.classList.remove('monday')
+      })
+      document.getElementsByName('tuesday').forEach((item) => {
+        item.classList.add('tuesday')
+      })
+      document.getElementsByName('wednesday').forEach((item) => {
+        item.classList.add('wednesday')
+      })
+      document.getElementsByName('thursday').forEach((item) => {
+        item.classList.add('thursday')
+      })
+      document.getElementsByName('friday').forEach((item) => {
+        item.classList.add('friday')
+      })
+      document.getElementsByName('saturday').forEach((item) => {
+        item.classList.add('saturday')
+      })
+      document.getElementsByName('sunday').forEach((item) => {
+        item.classList.add('sunday')
+      })
+    } else if (props === '2') {
+      document.getElementsByName('monday').forEach((item) => {
+        item.classList.add('monday')
+      })
+      document.getElementsByName('tuesday').forEach((item) => {
+        item.classList.remove('tuesday')
+      })
+      document.getElementsByName('wednesday').forEach((item) => {
+        item.classList.add('wednesday')
+      })
+      document.getElementsByName('thursday').forEach((item) => {
+        item.classList.add('thursday')
+      })
+      document.getElementsByName('friday').forEach((item) => {
+        item.classList.add('friday')
+      })
+      document.getElementsByName('saturday').forEach((item) => {
+        item.classList.add('saturday')
+      })
+      document.getElementsByName('sunday').forEach((item) => {
+        item.classList.add('sunday')
+      })
+    } else if (props === '3') {
+      document.getElementsByName('monday').forEach((item) => {
+        item.classList.add('monday')
+      })
+      document.getElementsByName('tuesday').forEach((item) => {
+        item.classList.add('tuesday')
+      })
+      document.getElementsByName('wednesday').forEach((item) => {
+        item.classList.remove('wednesday')
+      })
+      document.getElementsByName('thursday').forEach((item) => {
+        item.classList.add('thursday')
+      })
+      document.getElementsByName('friday').forEach((item) => {
+        item.classList.add('friday')
+      })
+      document.getElementsByName('saturday').forEach((item) => {
+        item.classList.add('saturday')
+      })
+      document.getElementsByName('sunday').forEach((item) => {
+        item.classList.add('sunday')
+      })
+    } else if (props === '4') {
+      document.getElementsByName('monday').forEach((item) => {
+        item.classList.add('monday')
+      })
+      document.getElementsByName('tuesday').forEach((item) => {
+        item.classList.add('tuesday')
+      })
+      document.getElementsByName('wednesday').forEach((item) => {
+        item.classList.add('wednesday')
+      })
+      document.getElementsByName('thursday').forEach((item) => {
+        item.classList.remove('thursday')
+      })
+      document.getElementsByName('friday').forEach((item) => {
+        item.classList.add('friday')
+      })
+      document.getElementsByName('saturday').forEach((item) => {
+        item.classList.add('saturday')
+      })
+      document.getElementsByName('sunday').forEach((item) => {
+        item.classList.add('sunday')
+      })
+    } else if (props === '5') {
+      document.getElementsByName('monday').forEach((item) => {
+        item.classList.add('monday')
+      })
+      document.getElementsByName('tuesday').forEach((item) => {
+        item.classList.add('tuesday')
+      })
+      document.getElementsByName('wednesday').forEach((item) => {
+        item.classList.add('wednesday')
+      })
+      document.getElementsByName('thursday').forEach((item) => {
+        item.classList.add('thursday')
+      })
+      document.getElementsByName('friday').forEach((item) => {
+        item.classList.remove('friday')
+      })
+      document.getElementsByName('saturday').forEach((item) => {
+        item.classList.add('saturday')
+      })
+      document.getElementsByName('sunday').forEach((item) => {
+        item.classList.add('sunday')
+      })
+    } else if (props === '6') {
+      document.getElementsByName('monday').forEach((item) => {
+        item.classList.add('monday')
+      })
+      document.getElementsByName('tuesday').forEach((item) => {
+        item.classList.add('tuesday')
+      })
+      document.getElementsByName('wednesday').forEach((item) => {
+        item.classList.add('wednesday')
+      })
+      document.getElementsByName('thursday').forEach((item) => {
+        item.classList.add('thursday')
+      })
+      document.getElementsByName('friday').forEach((item) => {
+        item.classList.add('friday')
+      })
+      document.getElementsByName('saturday').forEach((item) => {
+        item.classList.remove('saturday')
+      })
+      document.getElementsByName('sunday').forEach((item) => {
+        item.classList.add('sunday')
+      })
+    } else {
+      document.getElementsByName('monday').forEach((item) => {
+        item.classList.add('monday')
+      })
+      document.getElementsByName('tuesday').forEach((item) => {
+        item.classList.add('tuesday')
+      })
+      document.getElementsByName('wednesday').forEach((item) => {
+        item.classList.add('wednesday')
+      })
+      document.getElementsByName('thursday').forEach((item) => {
+        item.classList.add('thursday')
+      })
+      document.getElementsByName('friday').forEach((item) => {
+        item.classList.add('friday')
+      })
+      document.getElementsByName('saturday').forEach((item) => {
+        item.classList.add('saturday')
+      })
+      document.getElementsByName('sunday').forEach((item) => {
+        item.classList.remove('sunday')
+      })
+    }
+    //////////////////////
+  } else {
     //Понедельник
     if (dayHandler() === 'Понедельник') {
       document.getElementsByName('monday').forEach((item) => {
@@ -402,163 +560,6 @@ const showCurrentDay = (props) => {
     }
     //воскресенье
     if (dayHandler() === 'Воскресенье') {
-      document.getElementsByName('monday').forEach((item) => {
-        item.classList.add('monday')
-      })
-      document.getElementsByName('tuesday').forEach((item) => {
-        item.classList.add('tuesday')
-      })
-      document.getElementsByName('wednesday').forEach((item) => {
-        item.classList.add('wednesday')
-      })
-      document.getElementsByName('thursday').forEach((item) => {
-        item.classList.add('thursday')
-      })
-      document.getElementsByName('friday').forEach((item) => {
-        item.classList.add('friday')
-      })
-      document.getElementsByName('saturday').forEach((item) => {
-        item.classList.add('saturday')
-      })
-      document.getElementsByName('sunday').forEach((item) => {
-        item.classList.remove('sunday')
-      })
-    }
-  } else {
-    //отдельные дни(пон, вт, ср, чт, пт, сб)
-    if (props === '1') {
-      document.getElementsByName('monday').forEach((item) => {
-        item.classList.remove('monday')
-      })
-      document.getElementsByName('tuesday').forEach((item) => {
-        item.classList.add('tuesday')
-      })
-      document.getElementsByName('wednesday').forEach((item) => {
-        item.classList.add('wednesday')
-      })
-      document.getElementsByName('thursday').forEach((item) => {
-        item.classList.add('thursday')
-      })
-      document.getElementsByName('friday').forEach((item) => {
-        item.classList.add('friday')
-      })
-      document.getElementsByName('saturday').forEach((item) => {
-        item.classList.add('saturday')
-      })
-      document.getElementsByName('sunday').forEach((item) => {
-        item.classList.add('sunday')
-      })
-    } else if (props === '2') {
-      document.getElementsByName('monday').forEach((item) => {
-        item.classList.add('monday')
-      })
-      document.getElementsByName('tuesday').forEach((item) => {
-        item.classList.remove('tuesday')
-      })
-      document.getElementsByName('wednesday').forEach((item) => {
-        item.classList.add('wednesday')
-      })
-      document.getElementsByName('thursday').forEach((item) => {
-        item.classList.add('thursday')
-      })
-      document.getElementsByName('friday').forEach((item) => {
-        item.classList.add('friday')
-      })
-      document.getElementsByName('saturday').forEach((item) => {
-        item.classList.add('saturday')
-      })
-      document.getElementsByName('sunday').forEach((item) => {
-        item.classList.add('sunday')
-      })
-    } else if (props === '3') {
-      document.getElementsByName('monday').forEach((item) => {
-        item.classList.add('monday')
-      })
-      document.getElementsByName('tuesday').forEach((item) => {
-        item.classList.add('tuesday')
-      })
-      document.getElementsByName('wednesday').forEach((item) => {
-        item.classList.remove('wednesday')
-      })
-      document.getElementsByName('thursday').forEach((item) => {
-        item.classList.add('thursday')
-      })
-      document.getElementsByName('friday').forEach((item) => {
-        item.classList.add('friday')
-      })
-      document.getElementsByName('saturday').forEach((item) => {
-        item.classList.add('saturday')
-      })
-      document.getElementsByName('sunday').forEach((item) => {
-        item.classList.add('sunday')
-      })
-    } else if (props === '4') {
-      document.getElementsByName('monday').forEach((item) => {
-        item.classList.add('monday')
-      })
-      document.getElementsByName('tuesday').forEach((item) => {
-        item.classList.add('tuesday')
-      })
-      document.getElementsByName('wednesday').forEach((item) => {
-        item.classList.add('wednesday')
-      })
-      document.getElementsByName('thursday').forEach((item) => {
-        item.classList.remove('thursday')
-      })
-      document.getElementsByName('friday').forEach((item) => {
-        item.classList.add('friday')
-      })
-      document.getElementsByName('saturday').forEach((item) => {
-        item.classList.add('saturday')
-      })
-      document.getElementsByName('sunday').forEach((item) => {
-        item.classList.add('sunday')
-      })
-    } else if (props === '5') {
-      document.getElementsByName('monday').forEach((item) => {
-        item.classList.add('monday')
-      })
-      document.getElementsByName('tuesday').forEach((item) => {
-        item.classList.add('tuesday')
-      })
-      document.getElementsByName('wednesday').forEach((item) => {
-        item.classList.add('wednesday')
-      })
-      document.getElementsByName('thursday').forEach((item) => {
-        item.classList.add('thursday')
-      })
-      document.getElementsByName('friday').forEach((item) => {
-        item.classList.remove('friday')
-      })
-      document.getElementsByName('saturday').forEach((item) => {
-        item.classList.add('saturday')
-      })
-      document.getElementsByName('sunday').forEach((item) => {
-        item.classList.add('sunday')
-      })
-    } else if (props === '6') {
-      document.getElementsByName('monday').forEach((item) => {
-        item.classList.add('monday')
-      })
-      document.getElementsByName('tuesday').forEach((item) => {
-        item.classList.add('tuesday')
-      })
-      document.getElementsByName('wednesday').forEach((item) => {
-        item.classList.add('wednesday')
-      })
-      document.getElementsByName('thursday').forEach((item) => {
-        item.classList.add('thursday')
-      })
-      document.getElementsByName('friday').forEach((item) => {
-        item.classList.add('friday')
-      })
-      document.getElementsByName('saturday').forEach((item) => {
-        item.classList.remove('saturday')
-      })
-      document.getElementsByName('sunday').forEach((item) => {
-        item.classList.add('sunday')
-      })
-    } else {
       document.getElementsByName('monday').forEach((item) => {
         item.classList.add('monday')
       })
