@@ -41,7 +41,7 @@ const TimeTableMonth = ({ workout, isToday }) => {
 
   return (
     <table className={classes.TimeTableMonth}>
-      <caption>Рассписание занятий {currentMonth()}</caption>
+      <caption>Расписание занятий {currentMonth()}</caption>
       <thead>
         <tr>
           <th>Время</th>

@@ -6,6 +6,7 @@ import {
   showMonthToday,
   showCurrentDay,
 } from '../../components/TimeTableMonth/currentDate'
+let date = new Date()
 
 class TimeTable extends Component {
   state = {
@@ -25,7 +26,7 @@ class TimeTable extends Component {
     },
     isMonth: true,
     isMobile: false,
-    isToday: false,
+    // isToday: false,
   }
   //для desktop
   monthTodayToggle = () => {
@@ -50,12 +51,12 @@ class TimeTable extends Component {
 
   componentDidMount() {
     //перерендеринг таблицы и section при изменении размера экрана
-
     if (window.innerWidth < 767) {
       this.setState({
         isMobile: false,
       })
-      showCurrentDay('currentDay')
+
+      showCurrentDay(String(date.getDay()))
     } else {
       this.setState({
         isMobile: true,
@@ -64,12 +65,17 @@ class TimeTable extends Component {
     }
 
     window.addEventListener('resize', () => {
+      console.log('resize')
       if (window.innerWidth < 767) {
+        console.log('if resize', window.innerWidth)
+
         this.setState({
           isMobile: false,
         })
-        showCurrentDay('currentDay')
+        // showCurrentDay(String(date.getDay()))
       } else {
+        console.log('else resize', window.innerWidth)
+
         this.setState({
           isMobile: true,
         })
@@ -92,7 +98,7 @@ class TimeTable extends Component {
                 onChange={this.dayToggle}
               >
                 <option value="currentDay" defaultValue>
-                  Рассписание на сегодня
+                  Расписание на сегодня
                 </option>
 
                 <option value="1">Понедельник</option>
@@ -110,7 +116,7 @@ class TimeTable extends Component {
                 onChange={this.monthTodayToggle}
               >
                 <option value="month" defaultValue>
-                  Рассписание на месяц
+                  Расписание на месяц
                 </option>
                 <option value="today">Рассписание на сегодня</option>
               </select>

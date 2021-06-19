@@ -6,6 +6,7 @@
 
 .SliderBlock {
   width: 100%;
+  height: auto;
   margin: 0 auto;
   overflow: hidden;
   position: relative;
@@ -14,8 +15,15 @@
 
 .sliderLine {
   display: flex;
-  background: linear-gradient(90deg, #faf0cd, #fab397);
+  // background: linear-gradient(90deg, #faf0cd, #fab397);
+  // background-position: center;
+  // background-size: cover;
+  // background-repeat: no-repeat;
   transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+  img {
+    object-fit: cover;
+    object-position: center;
+  }
 }
 
 .sliderPrev,

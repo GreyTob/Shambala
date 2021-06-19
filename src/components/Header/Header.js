@@ -41,7 +41,7 @@ class Header extends Component {
         // exact: false,
       },
       {
-        value: 'Рассписание',
+        value: 'Расписание',
         to: '/time-table',
         exact: false,
         id: 'time-tableLink',

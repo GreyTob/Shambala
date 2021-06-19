@@ -253,7 +253,7 @@ const dayHandler = () => {
 
 //для select на экране телефона
 const showCurrentDay = (props) => {
-  //"расспиание на сегодня"
+  //"распиание на сегодня"
   if (props !== 'currentDay') {
     //отдельные дни(пон, вт, ср, чт, пт, сб)
     if (props === '1') {
