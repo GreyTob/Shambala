@@ -46,6 +46,7 @@
   height: 30px;
   position: relative;
   cursor: pointer;
+  z-index: 10;
 }
 
 .BurgerActive:before {
