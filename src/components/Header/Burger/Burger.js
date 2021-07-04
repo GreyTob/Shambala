@@ -1,13 +1,12 @@
 import classes from './Burger.module.scss'
 
-const Burger = (props) => {
-  return (
-    <div
-      className={props.burgerActive ? classes.BurgerActive : classes.Burger}
-      onClick={props.burgerActiveToggle}
-    >
-      <span />
-    </div>
-  )
-}
+const Burger = ({ burgerActive, handlerBurgerActiveToggle }) => (
+  <div
+    className={burgerActive ? classes.BurgerActive : classes.Burger}
+    onClick={handlerBurgerActiveToggle}
+  >
+    <span />
+  </div>
+)
+
 export default Burger

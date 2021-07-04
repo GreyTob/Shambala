@@ -1,18 +1,17 @@
-// import { NavLink } from 'react-router-dom'
 import classes from './MenuItem.module.scss'
 import ScrollUpHandler from '../../ScrollUp/ScrollUpHandler'
 
 import { NavHashLink } from 'react-router-hash-link'
 
-const MenuItem = (props) => {
+const MenuItem = ({ to, value, id, handlerBurgerActiveToggle }) => {
   const menuClick = () => {
     if (window.innerWidth < 767) {
-      props.burgerActiveToggle()
+      handlerBurgerActiveToggle()
       ScrollUpHandler()
     } else if (
-      props.id === 'mainLink' ||
-      props.id === 'time-tableLink' ||
-      props.id === 'costLink'
+      id === 'mainLink' ||
+      id === 'time-tableLink' ||
+      id === 'costLink'
     ) {
       ScrollUpHandler()
     }
@@ -22,13 +21,12 @@ const MenuItem = (props) => {
     <li className={classes.MenuItem}>
       <NavHashLink
         smooth
-        to={props.to}
-        // activeClassName={classes.activeLink}
+        to={to}
         className={classes.underline}
-        id={props.id}
+        id={id}
         onClick={menuClick}
       >
-        {props.value}
+        {value}
       </NavHashLink>
     </li>
   )
