@@ -25,7 +25,11 @@ class Slider extends React.Component {
 
     const init = () => {
       //получаем ширину слайдера
-      width = document.querySelector('#slider').offsetWidth
+      try {
+        width = document.querySelector('#slider').offsetWidth
+      } catch (e) {
+        console.log(e)
+      }
 
       //задаем общую ширину sliderLine (ширина всех картинок)
       sliderLine.getElementsByClassName.width = width * images.length + 'px'
