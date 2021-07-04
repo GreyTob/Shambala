@@ -65,16 +65,15 @@ class TimeTable extends Component {
     }
 
     window.addEventListener('resize', () => {
-      console.log('resize')
       if (window.innerWidth < 767) {
-        console.log('if resize', window.innerWidth)
+        // console.log('if resize', window.innerWidth)
 
         this.setState({
           isMobile: false,
         })
         // showCurrentDay(String(date.getDay()))
       } else {
-        console.log('else resize', window.innerWidth)
+        // console.log('else resize', window.innerWidth)
 
         this.setState({
           isMobile: true,
