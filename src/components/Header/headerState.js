@@ -11,7 +11,6 @@ export const menu = [
       pathname: '/',
       hash: 'about',
     },
-    id: 'about',
     // exact: true,
   },
   {
@@ -20,7 +19,6 @@ export const menu = [
       pathname: '/',
       hash: 'teachers',
     },
-    id: 'teachers',
     // exact: false,
   },
   {
@@ -29,7 +27,6 @@ export const menu = [
       pathname: '/',
       hash: 'contacts',
     },
-    id: 'contacts',
     // exact: false,
   },
   {
@@ -52,20 +49,17 @@ export const social = [
     href: 'https://vk.com/yogashambala74',
     target: '_blank',
     rel: 'noreferrer',
-    id: 'social_vk',
   },
   {
     value: 'inst',
     href: 'https://www.instagram.com/shambhala_yoga/',
     target: '_blank',
     rel: 'noreferrer',
-    id: 'social_inst',
   },
   {
     value: 'youTube',
     href: 'https://www.youtube.com/channel/UCH8EG88m8-wFtm4E4Gnqs1Q',
     target: '_blank',
     rel: 'noreferrer',
-    id: 'social_youTube',
   },
 ]

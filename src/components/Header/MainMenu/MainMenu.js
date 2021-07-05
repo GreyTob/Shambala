@@ -7,24 +7,23 @@ import SocialItems from '../../SocialItems/SocialItems'
 const MainMenu = ({ menu, social }) => (
   <nav className={classes.MainMenu}>
     <ul>
-      {menu.map((menuItem) => (
+      {menu.map((menuItem, index) => (
         <MenuItem
-          key={menuItem.id}
+          key={index}
           value={menuItem.value}
           to={menuItem.to}
-          // rout={menuItem.rout}
           id={menuItem.id}
-          spy={true}
+          // spy={true}
           smooth={true}
-          offset={-100}
-          duration={100}
+          // offset={-100}
+          // duration={100}
         />
       ))}
 
       <ul>
-        {social.map((socialItem) => (
+        {social.map((socialItem, index) => (
           <SocialItems
-            key={socialItem.id}
+            key={index}
             value={socialItem.value}
             href={socialItem.href}
             target={socialItem.target}
