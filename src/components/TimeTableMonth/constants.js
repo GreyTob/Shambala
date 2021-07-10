@@ -32,3 +32,18 @@ export const time18 = '18:00'
 export const time183 = '18:30'
 export const time1915 = '19:15'
 export const time193 = '19:30'
+
+export const workout = {
+  zGravity: 'zGravity (Гамаки)*',
+  hatha: 'Хатха-йога',
+  hatha55: 'Хатха-йога 55+',
+  slim: 'Стройнею с йогой',
+  bodyMix: 'BODY MIX',
+  helth: 'Группа здоровья',
+  eastDance: 'Восточные танцы',
+  kids: 'Детская йога',
+  acro: 'Акройога*',
+  terapy: 'Йогатерапия',
+  fitnes: 'Фитнес',
+  plastic: 'Plastic dance',
+}

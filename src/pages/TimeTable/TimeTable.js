@@ -10,20 +10,6 @@ let date = new Date()
 
 class TimeTable extends Component {
   state = {
-    workout: {
-      zGravity: 'zGravity (Гамаки)*',
-      hatha: 'Хатха-йога',
-      hatha55: 'Хатха-йога 55+',
-      slim: 'Стройнею с йогой',
-      bodyMix: 'BODY MIX',
-      helth: 'Группа здоровья',
-      eastDance: 'Восточные танцы',
-      kids: 'Детская йога',
-      acro: 'Акройога*',
-      terapy: 'Йогатерапия',
-      fitnes: 'Фитнес',
-      plastic: 'Plastic dance',
-    },
     isMonth: true,
     isMobile: false,
     // isToday: false,
@@ -120,7 +106,8 @@ class TimeTable extends Component {
                 <option value="today">Рассписание на сегодня</option>
               </select>
             )}
-            <TimeTableMonth workout={this.state.workout} />
+
+            <TimeTableMonth />
           </div>
         </div>
       </section>

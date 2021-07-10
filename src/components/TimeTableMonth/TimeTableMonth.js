@@ -13,12 +13,13 @@ import {
   time183,
   time1915,
   time193,
+  workout,
 } from './constants'
 //
 import { ReactSVG } from 'react-svg'
 import sunbed from '../../pages/TimeTable/assets/sunbed.svg'
 
-const TimeTableMonth = ({ workout }) => {
+const TimeTableMonth = () => {
   return (
     <table className={classes.TimeTableMonth}>
       <caption>Расписание занятий {currentMonth()}</caption>
