@@ -2,43 +2,23 @@ import React from 'react'
 import classes from './TimeTableMonth.module.scss'
 import './days.scss'
 import { currentMonth } from './currentDate'
-
+import {
+  iconTel,
+  time9,
+  time103,
+  time11,
+  time12,
+  time13,
+  time18,
+  time183,
+  time1915,
+  time193,
+} from './constants'
+//
 import { ReactSVG } from 'react-svg'
-import Tippy from '@tippyjs/react'
-// import 'tippy.js/dist/tippy.css'
-
-import list from '../../pages/TimeTable/assets/free-icon-note-book-1170169.svg'
-import phone from '../../pages/TimeTable/assets/phone-call.svg'
 import sunbed from '../../pages/TimeTable/assets/sunbed.svg'
 
-const TimeTableMonth = ({ workout, isToday }) => {
-  const iconTel = (
-    <Tippy
-      content={
-        <span>
-          Предварительная запись{' '}
-          <ReactSVG style={{ textAlign: 'center' }} src={phone} />{' '}
-        </span>
-      }
-    >
-      <div className={classes.svg}>
-        <a href="tel:+73519430470">
-          <ReactSVG src={list} />
-        </a>
-      </div>
-    </Tippy>
-  )
-
-  const time9 = '9:00'
-  const time103 = '10:30'
-  const time11 = '11:00'
-  const time12 = '12:00'
-  const time13 = '13:00'
-  const time18 = '18:00'
-  const time183 = '18:30'
-  const time1915 = '19:15'
-  const time193 = '19:30'
-
+const TimeTableMonth = ({ workout }) => {
   return (
     <table className={classes.TimeTableMonth}>
       <caption>Расписание занятий {currentMonth()}</caption>
