@@ -1,15 +1,9 @@
 import classes from './Button.module.scss'
 
-const Button = (props) => {
+const Button = ({ onClick, value }) => {
   return (
-    <button
-      className={classes.buttonns}
-      onClick={props.onClick}
-      type={props.type}
-    >
-      {props.teachersToggle
-        ? props.buttonValueClose
-        : props.buttonValueOpen || props.value}
+    <button className={classes.buttonns} onClick={onClick}>
+      {value}
     </button>
   )
 }

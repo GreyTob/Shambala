@@ -66,7 +66,7 @@ const TimeTableMonth = ({ workout, isToday }) => {
             <div className={classes.oneTrain}>
               {workout.zGravity}
               <br />
-              <a href="">Ольга</a>
+              <a href="#">Ольга</a>
               {time9}
               {iconTel}
             </div>
