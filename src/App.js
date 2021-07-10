@@ -8,6 +8,8 @@ import Cost from './pages/Cost/Cost'
 import Footer from './components/Footer/Footer'
 import ScrollUp from './components/ScrollUp/ScrollUp'
 
+import TeacherGallery from './pages/Gallery/Gallery'
+
 function App() {
   return (
     <Layout>
@@ -15,8 +17,9 @@ function App() {
       <Switch>
         <Route path="/" exact component={Main} />
         <Route path="/time-table" component={TimeTable} />
+        <Route path="/teachers/:name" component={TeacherGallery} />
         <Route path="/cost" component={Cost} />
-        <Redirect path="/" />
+        <Redirect path="/" component={Main} />
       </Switch>
       <ScrollUp />
       <Footer />
