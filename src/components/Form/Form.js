@@ -3,7 +3,6 @@ import './formSend.scss'
 import container from '../../index.module.scss'
 import Button from '../UI/Button/Button'
 import $ from 'jquery'
-// import is from 'is_js'
 
 const Form = () => {
   function submitHandler(event) {

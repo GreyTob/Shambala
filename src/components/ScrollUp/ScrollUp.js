@@ -4,17 +4,16 @@ import ScrollUpHandler from './ScrollUpHandler'
 
 import chevronUp from './assets/chevron-up-solid.svg'
 
-const ScrollUp = () => {
-  return (
-    <div
-      className={classes.ScrollUp}
-      onClick={ScrollUpHandler}
-      onTouchStart={ScrollUpHandler}
-    >
-      <ReactSVG src={chevronUp} />
-      <span>Наверх</span>
-    </div>
-  )
-}
+const ScrollUp = () => (
+  <div
+    className={classes.ScrollUp}
+    onClick={ScrollUpHandler}
+    onTouchStart={ScrollUpHandler}
+  >
+    <ReactSVG src={chevronUp} />
+
+    <span>Наверх</span>
+  </div>
+)
 
 export default ScrollUp
