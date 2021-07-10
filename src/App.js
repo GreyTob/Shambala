@@ -16,7 +16,7 @@ function App() {
         <Route path="/" exact component={Main} />
         <Route path="/time-table" component={TimeTable} />
         <Route path="/cost" component={Cost} />
-        <Redirect to="/" />
+        <Redirect path="/" />
       </Switch>
       <ScrollUp />
       <Footer />

@@ -36,7 +36,7 @@ const currentMonth = () => {
 const showMonthToday = (props) => {
   let date = new Date()
 
-  if (props) {
+  if (props == 'today') {
     //показывает текущий день
     // //Понедельник
     if (date.getDay() === 1) {
