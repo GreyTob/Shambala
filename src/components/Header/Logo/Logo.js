@@ -5,7 +5,12 @@ const Logo = () => (
   <figure className={classes.Logo}>
     <div className={classes.picture}>
       <a href="/">
-        <img className={classes.rotating} src={LogoPicture} alt="logo" />
+        <img
+          className={classes.rotating}
+          src={LogoPicture}
+          alt="logo"
+          loading="lazy"
+        />
       </a>
     </div>
 

@@ -139,10 +139,21 @@ class Slider extends React.Component {
               <img src={img7} alt="img7" loading="lazy" />
               <img src={img8} alt="img8" loading="lazy" />
             </div>
-            <button id="sliderPrev" className={classes.sliderPrev}>
+
+            <button
+              id="sliderPrev"
+              className={classes.sliderPrev}
+              aria-label="prev"
+            >
               <ReactSVG src={leftChevron} />
+              {''}
             </button>
-            <button id="sliderNext" className={classes.sliderNext}>
+
+            <button
+              id="sliderNext"
+              className={classes.sliderNext}
+              aria-label="next"
+            >
               <ReactSVG src={chevron} />
             </button>
           </div>

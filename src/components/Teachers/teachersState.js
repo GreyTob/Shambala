@@ -1,5 +1,5 @@
 import Pepa from '../../assets/teachers/1Pepa.jpg'
-import Pugovka from '../../assets/teachers/2Button.jpg'
+import Knopka from '../../assets/teachers/2Button.jpg'
 import Kesha from '../../assets/teachers/3kesha.jpg'
 import Lisa from '../../assets/teachers/4Lisa.jpg'
 import Pa from '../../assets/teachers/5Pa.jpg'
@@ -14,12 +14,59 @@ export const teachers = [
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod labore, odio voluptatem quos nihil dolorem voluptas tenetur ea non molestias!',
     src: Pepa,
     alt: 'Pepa',
+    photos: [
+      {
+        src: 'https://source.unsplash.com/2ShvY8Lf6l0/800x599',
+        width: 4,
+        height: 3,
+      },
+      {
+        src: 'https://source.unsplash.com/Dm-qxdynoEc/800x799',
+        width: 1,
+        height: 1,
+      },
+      {
+        src: 'https://source.unsplash.com/qDkso9nvCg0/600x799',
+        width: 3,
+        height: 4,
+      },
+      {
+        src: 'https://source.unsplash.com/iecJiKe_RNg/600x799',
+        width: 3,
+        height: 4,
+      },
+      {
+        src: 'https://source.unsplash.com/epcsn8Ed8kY/600x799',
+        width: 3,
+        height: 4,
+      },
+      {
+        src: 'https://source.unsplash.com/NQSWvyVRIJk/800x599',
+        width: 4,
+        height: 3,
+      },
+      {
+        src: 'https://source.unsplash.com/zh7GEuORbUw/600x799',
+        width: 3,
+        height: 4,
+      },
+      {
+        src: 'https://source.unsplash.com/PpOHJezOalU/800x599',
+        width: 4,
+        height: 3,
+      },
+      {
+        src: 'https://source.unsplash.com/I1ASdgphUH4/800x599',
+        width: 4,
+        height: 3,
+      },
+    ],
   },
   {
     name: 'Кнопка',
     direction: 'Хатха-йога',
     discription: 'Посажу на шпагатю Не встанешь',
-    src: Pugovka,
+    src: Knopka,
     alt: 'Кнопка',
   },
   {

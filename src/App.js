@@ -19,7 +19,7 @@ function App() {
         <Route path="/time-table" component={TimeTable} />
         <Route path="/teachers/:name" component={TeacherGallery} />
         <Route path="/cost" component={Cost} />
-        <Redirect path="/" component={Main} />
+        <Redirect to="/" component={Main} />
       </Switch>
       <ScrollUp />
       <Footer />

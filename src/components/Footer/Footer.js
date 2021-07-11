@@ -16,6 +16,7 @@ const Footer = () => (
           {social.map((socialItem) => {
             return (
               <SocialItems
+                aria-label={socialItem.value}
                 key={socialItem.value}
                 value={socialItem.value}
                 href={socialItem.href}
