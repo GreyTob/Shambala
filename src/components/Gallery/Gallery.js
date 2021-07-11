@@ -1,11 +1,15 @@
 import React, { useState, useCallback } from 'react'
 import Gallery from 'react-photo-gallery'
 import Carousel, { Modal, ModalGateway } from 'react-images'
-import { teachers } from '../../components/Teachers/teachersState'
+import { teachers } from '../Teachers/teachersState'
+import Button from '../UI/Button/Button'
+import { NavHashLink } from 'react-router-hash-link'
+
+import classes from './Gallery.module.scss'
 
 const TeacherGallery = ({ match }) => {
   const teacherPhoto = teachers.filter(
-    (teacher) => teacher.name == match.params.name
+    (teacher) => teacher.name === match.params.name
   )
 
   const [currentImage, setCurrentImage] = useState(0)
@@ -22,7 +26,8 @@ const TeacherGallery = ({ match }) => {
   }
 
   return (
-    <div>
+    <>
+      <h3 className={classes.Gallery}>Фотографии {teacherPhoto[0].name}</h3>
       <Gallery photos={teacherPhoto[0].photos} onClick={openLightbox} />
       <ModalGateway>
         {viewerIsOpen ? (
@@ -38,7 +43,11 @@ const TeacherGallery = ({ match }) => {
           </Modal>
         ) : null}
       </ModalGateway>
-    </div>
+
+      <NavHashLink smooth to="/#teachers">
+        <Button value="Закрыть галерею" />
+      </NavHashLink>
+    </>
   )
 }
 

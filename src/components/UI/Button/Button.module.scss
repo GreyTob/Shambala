@@ -15,16 +15,14 @@ button.buttonns {
 
   display: block;
   width: 220px;
-  // font-family: Open Sans, Sans-serif;
   border-radius: 5px;
-  // font-size: 13px;
   letter-spacing: 4px;
   text-transform: uppercase;
-  // text-shadow: rgb(0, 0, 0) 0px 1px 1px;
+
   line-height: 30px;
   position: relative;
   margin: 20px auto;
-  margin-bottom: 0;
+  // margin-bottom: 0;
   text-align: center;
   opacity: 0.75;
 }
@@ -36,5 +34,4 @@ button.buttonns:hover {
 button.buttonns:active {
   -webkit-box-shadow: inset rgba(0, 0, 0, 0.701961) 0px 7px 12px,
     rgba(0, 0, 0, 0.701961) 0px 2px 12px;
-  // text-shadow: rgb(0, 0, 0) 0px -2px 1px;
 }

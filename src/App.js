@@ -8,7 +8,7 @@ import Cost from './pages/Cost/Cost'
 import Footer from './components/Footer/Footer'
 import ScrollUp from './components/ScrollUp/ScrollUp'
 
-import TeacherGallery from './pages/Gallery/Gallery'
+import TeacherGallery from './components/Gallery/Gallery'
 
 function App() {
   return (
