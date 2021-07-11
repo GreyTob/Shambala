@@ -27,7 +27,9 @@ const TeacherGallery = ({ match }) => {
 
   return (
     <>
-      <h3 className={classes.Gallery}>Фотографии {teacherPhoto[0].name}</h3>
+      <h3 className={classes.Gallery}>
+        Фотогалерея:&nbsp; {teacherPhoto[0].name}
+      </h3>
       <Gallery photos={teacherPhoto[0].photos} onClick={openLightbox} />
       <ModalGateway>
         {viewerIsOpen ? (
