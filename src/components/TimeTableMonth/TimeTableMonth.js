@@ -13,8 +13,12 @@ import {
   time183,
   time1915,
   time193,
+  linkOlga,
+  linkPushka,
+  linkVeronika,
   workout,
 } from './constants'
+
 //
 import { ReactSVG } from 'react-svg'
 import sunbed from '../../pages/TimeTable/assets/sunbed.svg'
@@ -46,20 +50,20 @@ const TimeTableMonth = () => (
           <div className={classes.oneTrain}>
             {workout.zGravity}
             <br />
-            <a href="#">Ольга</a>
+            {linkOlga}
             {time9}
             {iconTel}
           </div>
           <div className={classes.oneTrain}>
             {workout.hatha55}
             <br />
-            <a href="">Наталья</a>
+            <a href="#">Наталья</a>
             {time9}
           </div>
           <div className={classes.oneTrain}>
             {workout.hatha}
             <br />
-            <a href="">Вероника</a>
+            {linkVeronika}
             {time9}
           </div>
         </td>
@@ -68,7 +72,7 @@ const TimeTableMonth = () => (
           <div className={classes.oneTrain}>
             {workout.zGravity}
             <br />
-            <a href="">Ольга</a>
+            {linkOlga}
             {time9}
             {iconTel}
           </div>
@@ -77,7 +81,7 @@ const TimeTableMonth = () => (
             <br />
             для начинающих
             <br />
-            <a href="">Наталья</a>
+            <a href="#">Наталья</a>
             {time9}
           </div>
           <div className={classes.oneTrainEmpty}>
@@ -89,20 +93,20 @@ const TimeTableMonth = () => (
           <div className={classes.oneTrain}>
             {workout.zGravity}
             <br />
-            <a href="">Ольга</a>
+            {linkOlga}
             {time9}
             {iconTel}
           </div>
           <div className={classes.oneTrain}>
             {workout.hatha55}
             <br />
-            <a href="">Наталья</a>
+            <a href="#">Наталья</a>
             {time9}
           </div>
           <div className={classes.oneTrain}>
             {workout.hatha}
             <br />
-            <a href="">Вероника</a>
+            {linkVeronika}
             {time9}
           </div>
         </td>
@@ -111,7 +115,7 @@ const TimeTableMonth = () => (
           <div className={classes.oneTrain}>
             {workout.zGravity}
             <br />
-            <a href="">Ольга</a>
+            {linkOlga}
             {time9}
             {iconTel}
           </div>
@@ -120,7 +124,7 @@ const TimeTableMonth = () => (
             <br />
             для начинающих
             <br />
-            <a href="">Наталья</a>
+            <a href="#">Наталья</a>
             {time9}
           </div>
           <div className={classes.oneTrainEmpty}>
@@ -132,20 +136,20 @@ const TimeTableMonth = () => (
           <div className={classes.oneTrain}>
             {workout.zGravity}
             <br />
-            <a href="">Ольга</a>
+            {linkOlga}
             {time9}
             {iconTel}
           </div>
           <div className={classes.oneTrain}>
             {workout.hatha55}
             <br />
-            <a href="">Наталья</a>
+            <a href="#">Наталья</a>
             {time9}
           </div>
           <div className={classes.oneTrain}>
             {workout.hatha}
             <br />
-            <a href="">Вероника</a>
+            {linkVeronika}
             {time9}
           </div>
         </td>
@@ -154,7 +158,7 @@ const TimeTableMonth = () => (
           <div className={classes.oneTrain}>
             {workout.hatha}
             <br />
-            <a href="">Вероника</a>
+            {linkVeronika}
             {time9}
           </div>
           <div className={classes.oneTrain}>
@@ -162,7 +166,7 @@ const TimeTableMonth = () => (
             <br />
             + гамаки
             <br />
-            <a href="">Анастасия</a>
+            {linkPushka}
             {time9}
           </div>
           <div className={classes.oneTrainEmpty}>
@@ -235,7 +239,7 @@ const TimeTableMonth = () => (
           <div className={classes.oneTrain}>
             {workout.hatha}
             <br />
-            <a href="">Ольга</a>
+            {linkOlga}
             {time103}
           </div>
           <div className={classes.oneTrain}>
@@ -243,7 +247,7 @@ const TimeTableMonth = () => (
             <br />
             в гамаках *
             <br />
-            <a href="">Наталья</a>
+            <a href="#">Наталья</a>
             {time103}
             {iconTel}
           </div>
@@ -259,7 +263,7 @@ const TimeTableMonth = () => (
             <br />
             Пилатес+стрейчинг
             <br />+<abbr title="Миофасциальный релиз">МФР</abbr>
-            <a href="">Анастасия</a>
+            {linkPushka}
             {time11}
           </div>
           <div className={classes.oneTrainEmpty}>
@@ -273,7 +277,7 @@ const TimeTableMonth = () => (
             <br />
             в гамаках 55+ *
             <br />
-            <a href="">Ольга</a>
+            {linkOlga}
             {time11}
             {iconTel}
           </div>
@@ -288,13 +292,13 @@ const TimeTableMonth = () => (
             <br />
             Пилатес+стрейчинг
             <br />+<abbr title="Миофасциальный релиз">МФР</abbr>
-            <a href="">Анастасия</a>
+            {linkPushka}
             {time11}
           </div>
           <div className={classes.oneTrain}>
             {workout.eastDance}
             <br />
-            <a href="">Дарья</a>
+            <a href="#">Дарья</a>
             {time11}
           </div>
         </td>
@@ -305,7 +309,7 @@ const TimeTableMonth = () => (
             <br />
             в гамаках 55+ *
             <br />
-            <a href="">Ольга</a>
+            {linkOlga}
             {time11}
             {iconTel}
           </div>
@@ -318,7 +322,7 @@ const TimeTableMonth = () => (
           <div className={classes.oneTrain}>
             {workout.eastDance}
             <br />
-            <a href="">Дарья</a>
+            <a href="#">Дарья</a>
             {time11}
           </div>
           <div className={classes.oneTrainEmpty}>
@@ -373,7 +377,7 @@ const TimeTableMonth = () => (
           <div className={classes.oneTrain}>
             {workout.plastic}
             <br />
-            <a href="">Лилия</a>
+            <a href="#">Лилия</a>
             {time12}
           </div>
         </td>
@@ -416,7 +420,7 @@ const TimeTableMonth = () => (
           <div className={classes.oneTrain}>
             {workout.acro}
             <br />
-            <a href="">Ольга</a>
+            {linkOlga}
             {time13}
             {iconTel}
           </div>
@@ -434,13 +438,13 @@ const TimeTableMonth = () => (
             <br />
             аппарата
             <br />
-            <a href="">Наталья</a>
+            <a href="#">Наталья</a>
             {time18}
           </div>
           <div className={classes.oneTrain}>
             {workout.zGravity}
             <br />
-            <a href="">Ольга</a>
+            {linkOlga}
             {time18}
             {iconTel}
           </div>
@@ -469,13 +473,13 @@ const TimeTableMonth = () => (
             <br />
             аппарата
             <br />
-            <a href="">Наталья</a>
+            <a href="#">Наталья</a>
             {time18}
           </div>
           <div className={classes.oneTrain}>
             {workout.zGravity}
             <br />
-            <a href="">Ольга</a>
+            {linkOlga}
             {time18}
             {iconTel}
           </div>
@@ -484,7 +488,7 @@ const TimeTableMonth = () => (
             <br />
             по-Восточному
             <br />
-            <a href="">Дарья</a>
+            <a href="#">Дарья</a>
             {time18}
           </div>
         </td>
@@ -493,7 +497,7 @@ const TimeTableMonth = () => (
           <div className={classes.oneTrain}>
             {workout.plastic}
             <br />
-            <a href="">Лилия</a>
+            <a href="#">Лилия</a>
             {time18}
           </div>
           <div className={classes.oneTrainEmpty}>
@@ -512,14 +516,14 @@ const TimeTableMonth = () => (
             <br />
             аппарата
             <br />
-            <a href="">Наталья</a>
+            <a href="#">Наталья</a>
             {time18}
           </div>
 
           <div className={classes.oneTrain}>
             {workout.zGravity}
             <br />
-            <a href="">Ольга</a>
+            {linkOlga}
             {time18}
             {iconTel}
           </div>
@@ -528,7 +532,7 @@ const TimeTableMonth = () => (
             <br />
             по-Восточному
             <br />
-            <a href="">Дарья</a>
+            <a href="#">Дарья</a>
             {time18}
           </div>
         </td>
@@ -559,7 +563,7 @@ const TimeTableMonth = () => (
           <div className={classes.oneTrain}>
             {workout.hatha}
             <br />
-            <a href="">Вероника</a>
+            {linkVeronika}
             {time183}
           </div>
         </td>
@@ -574,7 +578,7 @@ const TimeTableMonth = () => (
           <div className={classes.oneTrain}>
             {workout.hatha}
             <br />
-            <a href="">Вероника</a>
+            {linkVeronika}
             {time183}
           </div>
         </td>
@@ -602,7 +606,7 @@ const TimeTableMonth = () => (
             <br />
             +6 и взрослые
             <br />
-            <a href="">Имя тренера?</a>
+            <a href="#">Имя тренера?</a>
             {time1915}
           </div>
         </td>
@@ -611,7 +615,7 @@ const TimeTableMonth = () => (
           <div className={classes.oneTrain}>
             {workout.slim}
             <br />
-            <a href="">Анастасия</a>
+            {linkPushka}
             {time1915}
           </div>
         </td>
@@ -622,7 +626,7 @@ const TimeTableMonth = () => (
             <br />
             +6 и взрослые
             <br />
-            <a href="">Имя тренера?</a>
+            <a href="#">Имя тренера?</a>
             {time1915}
           </div>
         </td>
@@ -631,7 +635,7 @@ const TimeTableMonth = () => (
           <div className={classes.oneTrain}>
             {workout.slim}
             <br />
-            <a href="">Анастасия</a>
+            {linkPushka}
             {time1915}
           </div>
         </td>
@@ -642,7 +646,7 @@ const TimeTableMonth = () => (
             <br />
             +6 и взрослые
             <br />
-            <a href="">Имя тренера?</a>
+            <a href="#">Имя тренера?</a>
             {time1915}
           </div>
         </td>
@@ -662,7 +666,7 @@ const TimeTableMonth = () => (
           <div className={classes.oneTrain}>
             {workout.hatha}
             <br />
-            <a href="">Ольга</a>
+            {linkOlga}
             {time193}
           </div>
         </td>
@@ -671,7 +675,7 @@ const TimeTableMonth = () => (
           <div className={classes.oneTrain}>
             {workout.zGravity}
             <br />
-            <a href="">Ольга</a>
+            {linkOlga}
             {time193}
             {iconTel}
           </div>
@@ -681,7 +685,7 @@ const TimeTableMonth = () => (
           <div className={classes.oneTrain}>
             {workout.acro}
             <br />
-            <a href="">Ольга</a>
+            {linkOlga}
             {time193}
             {iconTel}
           </div>
@@ -691,7 +695,7 @@ const TimeTableMonth = () => (
           <div className={classes.oneTrain}>
             {workout.zGravity}
             <br />
-            <a href="">Ольга</a>
+            {linkOlga}
             {time193}
             {iconTel}
           </div>
@@ -701,7 +705,7 @@ const TimeTableMonth = () => (
           <div className={classes.oneTrain}>
             {workout.hatha}
             <br />
-            <a href="">Ольга</a>
+            {linkOlga}
             {time193}
           </div>
         </td>

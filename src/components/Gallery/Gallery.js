@@ -31,6 +31,7 @@ const TeacherGallery = ({ match }) => {
         Фотогалерея:&nbsp; {teacherPhoto[0].name}
       </h3>
       <Gallery photos={teacherPhoto[0].photos} onClick={openLightbox} />
+
       <ModalGateway>
         {viewerIsOpen ? (
           <Modal onClose={closeLightbox}>
