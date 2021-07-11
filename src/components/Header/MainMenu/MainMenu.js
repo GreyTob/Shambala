@@ -20,17 +20,20 @@ const MainMenu = ({ menu, social }) => (
         />
       ))}
 
-      <ul>
-        {social.map((socialItem) => (
-          <SocialItems
-            key={socialItem.value}
-            value={socialItem.value}
-            href={socialItem.href}
-            target={socialItem.target}
-            rel={socialItem.rel}
-          />
-        ))}
-      </ul>
+      <li>
+        <ul>
+          {social.map((socialItem) => (
+            <SocialItems
+              aria-label={socialItem.value}
+              key={socialItem.value}
+              value={socialItem.value}
+              href={socialItem.href}
+              target={socialItem.target}
+              rel={socialItem.rel}
+            />
+          ))}
+        </ul>
+      </li>
     </ul>
   </nav>
 )
