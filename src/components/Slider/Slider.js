@@ -1,165 +1,162 @@
-import React from 'react'
+import React, { useRef, useEffect } from 'react'
+import { sliderPhotos } from './sliderPhotos'
 import classes from './Slider.module.scss'
 import container from '../../index.module.scss'
 import { ReactSVG } from 'react-svg'
 
-import img1 from './assets/111.jpg'
-import img2 from './assets/112.jpg'
-import img3 from './assets/113.jpg'
-import img4 from './assets/114.jpg'
-import img5 from './assets/115.jpg'
-import img6 from './assets/116-min.jpg'
-import img7 from './assets/117-min.jpg'
-import img8 from './assets/118-min.jpg'
-
 import chevron from './assets/chevron.svg'
 import leftChevron from './assets/leftChevron.svg'
 
-class Slider extends React.Component {
-  componentDidMount() {
-    //делаю слайдер
-    const images = document.querySelectorAll('#sliderLine img')
-    const sliderLine = document.querySelector('#sliderLine')
-    let count = 0
-    let width
+function Slider() {
+  const sliderLine = useRef()
 
-    const init = () => {
-      //получаем ширину слайдера
-      try {
-        width = document.querySelector('#slider').offsetWidth
-      } catch (e) {
-        console.log(e)
-      }
+  useEffect(() => console.log(sliderLine.current, sliderPhotos))
 
-      //задаем общую ширину sliderLine (ширина всех картинок)
-      sliderLine.getElementsByClassName.width = width * images.length + 'px'
-      //перебираем картинки и присваиваим одинаковую длину
-      images.forEach((item) => {
-        item.style.width = width + 'px'
-        //auto - чтобы сохранилась пропорция картинки
-        item.style.height = 'auto'
-      })
-      //вызываю rollSlider() чтобы изображение встало ровно после изменениея размера экрана
-      rollSlider()
+  return (
+    <section className={classes.Slider}>
+      <div className={container.container}>
+        <div className={classes.SliderBlock}>
+          <div ref={sliderLine} className={classes.sliderLine}>
+            <img src={sliderPhotos[0].image} alt={sliderPhotos[0].alt} />
+            {/* <img src={img2} alt="img2" loading="lazy" />
+            <img src={img3} alt="img3" loading="lazy" />
+            <img src={img4} alt="img4" loading="lazy" />
+            <img src={img5} alt="img5" loading="lazy" />
+            <img src={img6} alt="img6" loading="lazy" />
+            <img src={img7} alt="img7" loading="lazy" />
+            <img src={img8} alt="img8" loading="lazy" /> */}
+          </div>
+
+          <button
+            id="sliderPrev"
+            className={classes.sliderPrev}
+            aria-label="prev"
+          >
+            <ReactSVG src={leftChevron} />
+            {''}
+          </button>
+
+          <button
+            id="sliderNext"
+            className={classes.sliderNext}
+            aria-label="next"
+          >
+            <ReactSVG src={chevron} />
+          </button>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+export default Slider
+
+/*
+componentDidMount() {
+  //делаю слайдер
+  const images = document.querySelectorAll('#sliderLine img')
+  const sliderLine = document.querySelector('#sliderLine')
+  let count = 0
+  let width
+
+  const init = () => {
+    //получаем ширину слайдера
+    try {
+      width = document.querySelector('#slider').offsetWidth
+    } catch (e) {
+      console.log(e)
     }
 
-    //запуск функции при изменение размера окна
-    window.addEventListener('resize', init)
-    init()
-
-    //события на кнопки
-    const sliderNext = () => {
-      count++
-      if (count >= images.length) {
-        count = 0
-      }
-      rollSlider()
-    }
-    const sliderPrev = () => {
-      count--
-      if (count < 0) {
-        count = images.length - 1
-      }
-      rollSlider()
-    }
-
-    document.querySelector('#sliderNext').addEventListener('click', sliderNext)
-
-    document.querySelector('#sliderPrev').addEventListener('click', sliderPrev)
-
-    function rollSlider() {
-      //смещаем слайдер на 1 ширину
-      sliderLine.style.transform = 'translate(-' + count * width + 'px)'
-    }
-
-    //автопереключение
-    setInterval(() => {
-      count++
-      if (count >= images.length) {
-        count = 0
-      }
-      rollSlider()
-    }, 15000)
-
-    //переключение слайда по свайпу
-    let touchX = null
-    let touchY = null
-
-    document
-      .querySelector('#slider')
-      .addEventListener('touchstart', handleTouchStart, false)
-
-    document
-      .querySelector('#slider')
-      .addEventListener('touchmove', handleTouchMove, false)
-
-    function handleTouchStart(e) {
-      //получаю координаты точки касания
-      touchX = e.touches[0].clientX
-      touchY = e.touches[0].clientY
-    }
-
-    function handleTouchMove(e) {
-      //если движения не было то false
-      if (!touchX) {
-        return false
-      }
-      //получаю координаты после движения
-      let touchXmove = e.touches[0].clientX
-      let touchYmove = e.touches[0].clientY
-
-      //смотрю разницу координат до и после по модулю, чтобы узнать в какую сторону движение
-      let divX = touchX - touchXmove
-      let divY = touchY - touchYmove
-      //если divX больше, то движение влево иначе вправо
-      if (Math.abs(divX) > Math.abs(divY)) {
-        //если divX > 0, то движение влево
-        if (divX > 0) {
-          sliderNext()
-        } else sliderPrev()
-      }
-
-      touchX = null
-      touchY = null
-    }
+    //задаем общую ширину sliderLine (ширина всех картинок)
+    sliderLine.getElementsByClassName.width = width * images.length + 'px'
+    //перебираем картинки и присваиваим одинаковую длину
+    images.forEach((item) => {
+      item.style.width = width + 'px'
+      //auto - чтобы сохранилась пропорция картинки
+      item.style.height = 'auto'
+    })
+    //вызываю rollSlider() чтобы изображение встало ровно после изменениея размера экрана
+    rollSlider()
   }
 
-  render() {
-    return (
-      <section className={classes.Slider}>
-        <div className={container.container}>
-          <div id="slider" className={classes.SliderBlock}>
-            <div id="sliderLine" className={classes.sliderLine}>
-              <img src={img1} alt="img1" />
-              <img src={img2} alt="img2" loading="lazy" />
-              <img src={img3} alt="img3" loading="lazy" />
-              <img src={img4} alt="img4" loading="lazy" />
-              <img src={img5} alt="img5" loading="lazy" />
-              <img src={img6} alt="img6" loading="lazy" />
-              <img src={img7} alt="img7" loading="lazy" />
-              <img src={img8} alt="img8" loading="lazy" />
-            </div>
+  //запуск функции при изменение размера окна
+  window.addEventListener('resize', init)
+  init()
 
-            <button
-              id="sliderPrev"
-              className={classes.sliderPrev}
-              aria-label="prev"
-            >
-              <ReactSVG src={leftChevron} />
-              {''}
-            </button>
+  //события на кнопки
+  const sliderNext = () => {
+    count++
+    if (count >= images.length) {
+      count = 0
+    }
+    rollSlider()
+  }
+  const sliderPrev = () => {
+    count--
+    if (count < 0) {
+      count = images.length - 1
+    }
+    rollSlider()
+  }
 
-            <button
-              id="sliderNext"
-              className={classes.sliderNext}
-              aria-label="next"
-            >
-              <ReactSVG src={chevron} />
-            </button>
-          </div>
-        </div>
-      </section>
-    )
+  document.querySelector('#sliderNext').addEventListener('click', sliderNext)
+
+  document.querySelector('#sliderPrev').addEventListener('click', sliderPrev)
+
+  function rollSlider() {
+    //смещаем слайдер на 1 ширину
+    sliderLine.style.transform = 'translate(-' + count * width + 'px)'
+  }
+
+  //автопереключение
+  setInterval(() => {
+    count++
+    if (count >= images.length) {
+      count = 0
+    }
+    rollSlider()
+  }, 15000)
+
+  //переключение слайда по свайпу
+  let touchX = null
+  let touchY = null
+
+  document
+    .querySelector('#slider')
+    .addEventListener('touchstart', handleTouchStart, false)
+
+  document
+    .querySelector('#slider')
+    .addEventListener('touchmove', handleTouchMove, false)
+
+  function handleTouchStart(e) {
+    //получаю координаты точки касания
+    touchX = e.touches[0].clientX
+    touchY = e.touches[0].clientY
+  }
+
+  function handleTouchMove(e) {
+    //если движения не было то false
+    if (!touchX) {
+      return false
+    }
+    //получаю координаты после движения
+    let touchXmove = e.touches[0].clientX
+    let touchYmove = e.touches[0].clientY
+
+    //смотрю разницу координат до и после по модулю, чтобы узнать в какую сторону движение
+    let divX = touchX - touchXmove
+    let divY = touchY - touchYmove
+    //если divX больше, то движение влево иначе вправо
+    if (Math.abs(divX) > Math.abs(divY)) {
+      //если divX > 0, то движение влево
+      if (divX > 0) {
+        sliderNext()
+      } else sliderPrev()
+    }
+
+    touchX = null
+    touchY = null
   }
 }
-export default Slider
+*/
