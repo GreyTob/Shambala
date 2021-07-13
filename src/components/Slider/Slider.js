@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import { sliderPhotos } from './sliderPhotos'
 import classes from './Slider.module.scss'
 import container from '../../index.module.scss'
@@ -8,36 +8,74 @@ import chevron from './assets/chevron.svg'
 import leftChevron from './assets/leftChevron.svg'
 
 function Slider() {
+  const slider = useRef()
   const sliderLine = useRef()
 
-  useEffect(() => console.log(sliderLine.current, sliderPhotos))
+  let count = 0
+  const [widthOnePhoto, setWidthOnePhoto] = useState('100%')
+  const [commonPhotosWidth, setCommonPhotoWidth] = useState()
+
+  useEffect(() => {
+    setWidthOnePhoto(slider.current.offsetWidth)
+    setCommonPhotoWidth(widthOnePhoto * sliderPhotos.length + 'px')
+
+    //присваиваю всем фото одинаковую длину
+    sliderLine.current.querySelectorAll('img').forEach((photo) => {
+      photo.style.width = widthOnePhoto + 'px'
+      // auto - чтобы сохранилась пропорция картинки
+      photo.style.height = 'auto'
+    })
+
+    rollSlider()
+  })
+
+  function rollSlider() {
+    //смещаем слайдер на 1 ширину
+    sliderLine.current.style.transform = `translate(-${
+      count * widthOnePhoto
+    }px)`
+  }
+
+  const onNextSlide = () => {
+    count++
+    if (count >= sliderPhotos.length) {
+      count = 0
+    }
+    rollSlider()
+  }
+
+  const onPrevSlide = () => {
+    count--
+    if (count < 0) {
+      count = sliderPhotos.length - 1
+    }
+    rollSlider()
+  }
 
   return (
     <section className={classes.Slider}>
       <div className={container.container}>
-        <div className={classes.SliderBlock}>
+        <div ref={slider} className={classes.SliderBlock}>
           <div ref={sliderLine} className={classes.sliderLine}>
-            <img src={sliderPhotos[0].image} alt={sliderPhotos[0].alt} />
-            {/* <img src={img2} alt="img2" loading="lazy" />
-            <img src={img3} alt="img3" loading="lazy" />
-            <img src={img4} alt="img4" loading="lazy" />
-            <img src={img5} alt="img5" loading="lazy" />
-            <img src={img6} alt="img6" loading="lazy" />
-            <img src={img7} alt="img7" loading="lazy" />
-            <img src={img8} alt="img8" loading="lazy" /> */}
+            {sliderPhotos.map((photo, index) => (
+              <img
+                key={index + Math.random()}
+                src={photo.image}
+                alt={photo.alt}
+              />
+            ))}
           </div>
 
           <button
-            id="sliderPrev"
+            onClick={onPrevSlide}
             className={classes.sliderPrev}
             aria-label="prev"
           >
             <ReactSVG src={leftChevron} />
-            {''}
           </button>
 
           <button
-            id="sliderNext"
+            onClick={onNextSlide}
             className={classes.sliderNext}
             aria-label="next"
           >
@@ -54,9 +92,9 @@ export default Slider
 /*
 componentDidMount() {
   //делаю слайдер
-  const images = document.querySelectorAll('#sliderLine img')
-  const sliderLine = document.querySelector('#sliderLine')
-  let count = 0
+  const images = document.querySelectorAll('#sliderLine img') == sliderPhotos
+  const sliderLine = document.querySelector('#sliderLine') ==s liderLine
+  let count = 0 == sliderPhotos.length
   let width
 
   const init = () => {
@@ -68,7 +106,7 @@ componentDidMount() {
     }
 
     //задаем общую ширину sliderLine (ширина всех картинок)
-    sliderLine.getElementsByClassName.width = width * images.length + 'px'
+    sliderLine.getElementsByClassName.width = width * images.length + 'px' == commonPhotoWidth
     //перебираем картинки и присваиваим одинаковую длину
     images.forEach((item) => {
       item.style.width = width + 'px'

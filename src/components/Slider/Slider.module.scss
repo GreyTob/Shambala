@@ -15,10 +15,6 @@
 
 .sliderLine {
   display: flex;
-  // background: linear-gradient(90deg, #faf0cd, #fab397);
-  // background-position: center;
-  // background-size: cover;
-  // background-repeat: no-repeat;
   transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
   img {
     object-fit: cover;
@@ -47,14 +43,14 @@
 .sliderPrev {
   background: none;
   position: absolute;
-  top: calc(50% - 20px);
+  top: calc(50% - 17px);
   left: 12px;
 }
 
 .sliderNext {
   background: none;
   position: absolute;
-  top: calc(50% - 20px);
+  top: calc(50% - 17px);
   right: 12px;
 }
 
@@ -66,13 +62,5 @@
   svg {
     width: 25px;
     height: 25px;
-  }
-
-  .sliderPrev {
-    top: calc(50% - 12px);
-  }
-
-  .sliderNext {
-    top: calc(50% - 12px);
   }
 }
