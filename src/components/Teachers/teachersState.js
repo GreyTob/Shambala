@@ -156,8 +156,8 @@ export const teachers = [
       },
       {
         src: olga4,
-        width: 3,
-        height: 4,
+        width: 2,
+        height: 3,
       },
       {
         src: olga5,

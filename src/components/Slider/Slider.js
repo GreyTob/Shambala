@@ -125,6 +125,7 @@ function Slider() {
                 key={index + Math.random()}
                 src={photo.image}
                 alt={photo.alt}
+                loading={photo.loading}
               />
             ))}
           </div>
