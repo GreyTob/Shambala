@@ -1,165 +1,153 @@
-import React from 'react'
+import React, { useState, useRef, useEffect } from 'react'
+import { sliderPhotos } from './sliderPhotos'
 import classes from './Slider.module.scss'
 import container from '../../index.module.scss'
 import { ReactSVG } from 'react-svg'
 
-import img1 from './assets/111.jpg'
-import img2 from './assets/112.jpg'
-import img3 from './assets/113.jpg'
-import img4 from './assets/114.jpg'
-import img5 from './assets/115.jpg'
-import img6 from './assets/116-min.jpg'
-import img7 from './assets/117-min.jpg'
-import img8 from './assets/118-min.jpg'
-
 import chevron from './assets/chevron.svg'
 import leftChevron from './assets/leftChevron.svg'
 
-class Slider extends React.Component {
-  componentDidMount() {
-    //делаю слайдер
-    const images = document.querySelectorAll('#sliderLine img')
-    const sliderLine = document.querySelector('#sliderLine')
-    let count = 0
-    let width
+function Slider() {
+  const slider = useRef()
+  const sliderLine = useRef()
 
-    const init = () => {
-      //получаем ширину слайдера
-      try {
-        width = document.querySelector('#slider').offsetWidth
-      } catch (e) {
-        console.log(e)
-      }
+  let count = 0
 
-      //задаем общую ширину sliderLine (ширина всех картинок)
-      sliderLine.getElementsByClassName.width = width * images.length + 'px'
-      //перебираем картинки и присваиваим одинаковую длину
-      images.forEach((item) => {
-        item.style.width = width + 'px'
-        //auto - чтобы сохранилась пропорция картинки
-        item.style.height = 'auto'
-      })
-      //вызываю rollSlider() чтобы изображение встало ровно после изменениея размера экрана
-      rollSlider()
+  const [widthOnePhoto, setWidthOnePhoto] = useState('100%')
+  console.log(widthOnePhoto)
+
+  useEffect(() => {
+    setWidthOnePhoto(slider.current.offsetWidth)
+
+    //задаю всем фото одинаковую длину
+    sliderLine.current.querySelectorAll('img').forEach(
+      (photo) => {
+        photo.style.width = widthOnePhoto + 'px'
+        // auto - чтобы сохранилась пропорция картинки
+        photo.style.height = 'auto'
+      },
+      [widthOnePhoto]
+    )
+
+    try {
+      window.addEventListener('resize', () =>
+        setWidthOnePhoto(slider.current.offsetWidth)
+      )
+    } catch (e) {
+      console.log(e)
     }
 
-    //запуск функции при изменение размера окна
-    window.addEventListener('resize', init)
-    init()
-
-    //события на кнопки
-    const sliderNext = () => {
-      count++
-      if (count >= images.length) {
-        count = 0
-      }
-      rollSlider()
-    }
-    const sliderPrev = () => {
-      count--
-      if (count < 0) {
-        count = images.length - 1
-      }
-      rollSlider()
-    }
-
-    document.querySelector('#sliderNext').addEventListener('click', sliderNext)
-
-    document.querySelector('#sliderPrev').addEventListener('click', sliderPrev)
-
-    function rollSlider() {
-      //смещаем слайдер на 1 ширину
-      sliderLine.style.transform = 'translate(-' + count * width + 'px)'
-    }
-
-    //автопереключение
+    //автопереключение слайдов
     setInterval(() => {
       count++
-      if (count >= images.length) {
+      if (count >= sliderPhotos.length) {
         count = 0
       }
       rollSlider()
     }, 15000)
 
-    //переключение слайда по свайпу
-    let touchX = null
-    let touchY = null
+    rollSlider()
+  }, [widthOnePhoto])
 
-    document
-      .querySelector('#slider')
-      .addEventListener('touchstart', handleTouchStart, false)
-
-    document
-      .querySelector('#slider')
-      .addEventListener('touchmove', handleTouchMove, false)
-
-    function handleTouchStart(e) {
-      //получаю координаты точки касания
-      touchX = e.touches[0].clientX
-      touchY = e.touches[0].clientY
-    }
-
-    function handleTouchMove(e) {
-      //если движения не было то false
-      if (!touchX) {
-        return false
-      }
-      //получаю координаты после движения
-      let touchXmove = e.touches[0].clientX
-      let touchYmove = e.touches[0].clientY
-
-      //смотрю разницу координат до и после по модулю, чтобы узнать в какую сторону движение
-      let divX = touchX - touchXmove
-      let divY = touchY - touchYmove
-      //если divX больше, то движение влево иначе вправо
-      if (Math.abs(divX) > Math.abs(divY)) {
-        //если divX > 0, то движение влево
-        if (divX > 0) {
-          sliderNext()
-        } else sliderPrev()
-      }
-
-      touchX = null
-      touchY = null
-    }
+  function rollSlider() {
+    //смещаем слайдер на 1 ширину
+    sliderLine.current.style.transform = `translate(-${
+      count * widthOnePhoto
+    }px)`
   }
 
-  render() {
-    return (
-      <section className={classes.Slider}>
-        <div className={container.container}>
-          <div id="slider" className={classes.SliderBlock}>
-            <div id="sliderLine" className={classes.sliderLine}>
-              <img src={img1} alt="img1" />
-              <img src={img2} alt="img2" loading="lazy" />
-              <img src={img3} alt="img3" loading="lazy" />
-              <img src={img4} alt="img4" loading="lazy" />
-              <img src={img5} alt="img5" loading="lazy" />
-              <img src={img6} alt="img6" loading="lazy" />
-              <img src={img7} alt="img7" loading="lazy" />
-              <img src={img8} alt="img8" loading="lazy" />
-            </div>
+  const onNextSlide = () => {
+    count++
+    if (count >= sliderPhotos.length) {
+      count = 0
+    }
 
-            <button
-              id="sliderPrev"
-              className={classes.sliderPrev}
-              aria-label="prev"
-            >
-              <ReactSVG src={leftChevron} />
-              {''}
-            </button>
+    rollSlider()
+  }
 
-            <button
-              id="sliderNext"
-              className={classes.sliderNext}
-              aria-label="next"
-            >
-              <ReactSVG src={chevron} />
-            </button>
+  const onPrevSlide = () => {
+    count--
+    if (count < 0) {
+      count = sliderPhotos.length - 1
+    }
+
+    rollSlider()
+  }
+
+  //переключение слайда по свайпу
+  let touchX = null
+  let touchY = null
+
+  function handleTouchStart(e) {
+    //получаю координаты точки касания
+    console.log('handleTouchStart')
+    touchX = e.touches[0].clientX
+    touchY = e.touches[0].clientY
+  }
+
+  function handleTouchMove(e) {
+    console.log('handleTouchMove')
+    //если движения не было то false
+    if (!touchX) {
+      return false
+    }
+    //получаю координаты после движения
+    let touchXmove = e.touches[0].clientX
+    let touchYmove = e.touches[0].clientY
+
+    //смотрю разницу координат до и после по модулю, чтобы узнать в какую сторону движение
+    let divX = touchX - touchXmove
+    let divY = touchY - touchYmove
+    //если divX больше, то движение влево иначе вправо
+    if (Math.abs(divX) > Math.abs(divY)) {
+      //если divX > 0, то движение влево
+      if (divX > 0) {
+        onNextSlide()
+      } else onPrevSlide()
+    }
+
+    touchX = null
+    touchY = null
+  }
+
+  return (
+    <section className={classes.Slider}>
+      <div className={container.container}>
+        <div
+          ref={slider}
+          onTouchStart={(e) => handleTouchStart(e)}
+          onTouchMove={(e) => handleTouchMove(e)}
+          className={classes.SliderBlock}
+        >
+          <div ref={sliderLine} className={classes.sliderLine}>
+            {sliderPhotos.map((photo, index) => (
+              <img
+                key={index + Math.random()}
+                src={photo.image}
+                alt={photo.alt}
+              />
+            ))}
           </div>
+
+          <button
+            onClick={onPrevSlide}
+            className={classes.sliderPrev}
+            aria-label="prev"
+          >
+            <ReactSVG src={leftChevron} />
+          </button>
+
+          <button
+            onClick={onNextSlide}
+            className={classes.sliderNext}
+            aria-label="next"
+          >
+            <ReactSVG src={chevron} />
+          </button>
         </div>
-      </section>
-    )
-  }
+      </div>
+    </section>
+  )
 }
+
 export default Slider
