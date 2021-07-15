@@ -12,9 +12,9 @@ function Slider() {
   const sliderLine = useRef()
 
   let count = 0
+  let interval = null
 
   const [widthOnePhoto, setWidthOnePhoto] = useState('100%')
-  console.log(widthOnePhoto)
 
   useEffect(() => {
     setWidthOnePhoto(slider.current.offsetWidth)
@@ -37,19 +37,11 @@ function Slider() {
       console.log(e)
     }
 
-    //автопереключение слайдов
-    setInterval(() => {
-      count++
-      if (count >= sliderPhotos.length) {
-        count = 0
-      }
-      rollSlider()
-    }, 15000)
-
     rollSlider()
+    intervalReset()
   }, [widthOnePhoto])
 
-  function rollSlider() {
+  const rollSlider = () => {
     //смещаем слайдер на 1 ширину
     sliderLine.current.style.transform = `translate(-${
       count * widthOnePhoto
@@ -63,6 +55,8 @@ function Slider() {
     }
 
     rollSlider()
+    clearInterval(interval)
+    intervalReset()
   }
 
   const onPrevSlide = () => {
@@ -72,6 +66,19 @@ function Slider() {
     }
 
     rollSlider()
+    clearInterval(interval)
+    intervalReset()
+  }
+
+  //автопереключение слайдов
+  function intervalReset() {
+    interval = setInterval(() => {
+      count++
+      if (count >= sliderPhotos.length) {
+        count = 0
+      }
+      rollSlider()
+    }, 15000)
   }
 
   //переключение слайда по свайпу
@@ -80,13 +87,11 @@ function Slider() {
 
   function handleTouchStart(e) {
     //получаю координаты точки касания
-    console.log('handleTouchStart')
     touchX = e.touches[0].clientX
     touchY = e.touches[0].clientY
   }
 
   function handleTouchMove(e) {
-    console.log('handleTouchMove')
     //если движения не было то false
     if (!touchX) {
       return false
@@ -103,7 +108,13 @@ function Slider() {
       //если divX > 0, то движение влево
       if (divX > 0) {
         onNextSlide()
-      } else onPrevSlide()
+        clearInterval(interval)
+        intervalReset()
+      } else {
+        onPrevSlide()
+        clearInterval(interval)
+        intervalReset()
+      }
     }
 
     touchX = null
