@@ -4,16 +4,16 @@ import './index.module.scss'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
 import { BrowserRouter } from 'react-router-dom'
-import { ParallaxProvider } from 'react-scroll-parallax'
+// import { ParallaxProvider } from 'react-scroll-parallax'
 
 const application = (
-  <ParallaxProvider>
-    <BrowserRouter>
-      <React.StrictMode>
-        <App />
-      </React.StrictMode>
-    </BrowserRouter>
-  </ParallaxProvider>
+  // <ParallaxProvider>
+  <BrowserRouter>
+    <React.Fragment>
+      <App />
+    </React.Fragment>
+  </BrowserRouter>
+  // </ParallaxProvider>
 )
 
 ReactDOM.render(application, document.getElementById('root'))

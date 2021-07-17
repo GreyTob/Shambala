@@ -4,9 +4,9 @@ import TeacherItem from './TeacherItem/TeacherItem'
 import container from '../../index.module.scss'
 import Button from '../UI/Button/Button'
 import { teachers } from './teachersState'
-import { parallaxOneItem, parallaxTwoItem } from './parallax'
+// import { parallaxOneItem, parallaxTwoItem } from './parallax'
 
-import { Parallax } from 'react-scroll-parallax'
+// import { Parallax } from 'react-scroll-parallax'
 
 const Teachers = () => {
   const [teachersToggle, setTeachersToggle] = useState(false)
@@ -52,16 +52,16 @@ const Teachers = () => {
           <div className={classes.block}>
             {!teachersToggle ? (
               <React.Fragment>
-                <Parallax x={parallaxOneItem()}>
-                  <TeacherItem
-                    id={teachers[0].id}
-                    name={teachers[0].name}
-                    direction={teachers[0].direction}
-                    discription={teachers[0].discription}
-                    src={teachers[0].src}
-                    alt={teachers[0].alt}
-                  />
-                </Parallax>
+                {/* <Parallax x={parallaxOneItem()}> */}
+                <TeacherItem
+                  id={teachers[0].id}
+                  name={teachers[0].name}
+                  direction={teachers[0].direction}
+                  discription={teachers[0].discription}
+                  src={teachers[0].src}
+                  alt={teachers[0].alt}
+                />
+                {/* </Parallax> */}
 
                 <TeacherItem
                   name={teachers[1].name}
@@ -71,15 +71,15 @@ const Teachers = () => {
                   alt={teachers[1].alt}
                 />
 
-                <Parallax x={parallaxTwoItem()}>
-                  <TeacherItem
-                    name={teachers[2].name}
-                    direction={teachers[2].direction}
-                    discription={teachers[2].discription}
-                    src={teachers[2].src}
-                    alt={teachers[2].alt}
-                  />
-                </Parallax>
+                {/* <Parallax x={parallaxTwoItem()}> */}
+                <TeacherItem
+                  name={teachers[2].name}
+                  direction={teachers[2].direction}
+                  discription={teachers[2].discription}
+                  src={teachers[2].src}
+                  alt={teachers[2].alt}
+                />
+                {/* </Parallax> */}
 
                 {fourTeacherItems()}
               </React.Fragment>
