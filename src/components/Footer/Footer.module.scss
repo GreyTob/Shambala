@@ -3,7 +3,6 @@
 .Footer {
   padding: 40px 0;
   width: 100wh;
-  // background: $laser-lemon;
   background: linear-gradient(90deg, #faf0cd, #fab397);
 
   .content {
@@ -13,7 +12,7 @@
 
   h2 {
     position: relative;
-    margin-bottom: 30px;
+    // margin-bottom: 30px;
     color: $temptress;
   }
 
@@ -23,13 +22,13 @@
     height: 2px;
     background: $temptress;
     position: absolute;
-    top: 30px;
+    top: 35px;
     left: 0;
     right: 0;
   }
 
   p {
-    margin-top: 10px;
+    margin-bottom: 0.1em;
   }
 
   ul > li {

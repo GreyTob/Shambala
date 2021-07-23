@@ -262,7 +262,8 @@ const TimeTableMonth = () => (
             {workout.bodyMix}
             <br />
             Пилатес+стрейчинг
-            <br />+<abbr title="Миофасциальный релиз">МФР</abbr>
+            <br />
+            <abbr title="Миофасциальный релиз">+ МФР</abbr>
             {linkPushka}
             {time11}
           </div>
@@ -291,7 +292,8 @@ const TimeTableMonth = () => (
             {workout.bodyMix}
             <br />
             Пилатес+стрейчинг
-            <br />+<abbr title="Миофасциальный релиз">МФР</abbr>
+            <br />
+            <abbr title="Миофасциальный релиз">+ МФР</abbr>
             {linkPushka}
             {time11}
           </div>

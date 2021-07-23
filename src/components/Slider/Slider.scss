@@ -1,9 +1,11 @@
-// .ant-carousel .slick-dots li button {
-//   // background: linear-gradient(90deg, #faf0cd, #fab397);
-//   background: white;
-// }
+.ant-carousel .slick-dots li button {
+  // background: linear-gradient(90deg, #faf0cd, #fab397);
+  height: 4px;
+  opacity: 0.5;
+}
 
 .ant-carousel .slick-dots li.slick-active button {
+  height: 5px;
   background: linear-gradient(135deg, #e55d87 0%, #5fc3e4 100%);
 }
 
