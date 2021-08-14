@@ -1,12 +1,28 @@
+import { connect } from 'react-redux'
+
+import { burgerActiveToggle } from '../../../redux/actions/actions'
+
 import classes from './Burger.module.scss'
 
-const Burger = ({ burgerActive, handlerBurgerActiveToggle }) => (
+const Burger = (props) => (
   <div
-    className={burgerActive ? classes.BurgerActive : classes.Burger}
-    onClick={handlerBurgerActiveToggle}
+    className={props.burgerActive ? classes.BurgerActive : classes.Burger}
+    onClick={props.burger}
   >
     <span />
   </div>
 )
 
-export default Burger
+function mapStateToProps(state) {
+  return {
+    burgerActive: state.burgerActive.burgerActive,
+  }
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    burger: () => dispatch(burgerActiveToggle()),
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Burger)

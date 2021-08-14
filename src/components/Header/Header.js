@@ -10,37 +10,44 @@ import { menu, social } from './headerState'
 import classes from './Header.module.scss'
 import contain from '../../index.module.scss'
 
-export default function Header() {
-  const [burgerActive, setBurgerActive] = useState(false)
+import { connect } from 'react-redux'
 
+function Header(props) {
   //тут еще надо доделать
   //отключает прокрутку экрана при раскрытом меню (само меню будет скролится)
-  if (burgerActive) {
+  if (props.burgerActive) {
     document.body.style.overflow = 'hidden'
   } else {
     document.body.style.overflow = 'visible'
   }
 
   return (
-    <header className={burgerActive ? classes.HeaderActive : classes.Header}>
+    <header
+      className={props.burgerActive ? classes.HeaderActive : classes.Header}
+    >
       <div className={contain.container}>
         <div className={classes.contant}>
           <Logo />
 
           <MainMenu menu={menu} social={social} />
 
-          <Burger
-            burgerActive={burgerActive}
-            handlerBurgerActiveToggle={() => setBurgerActive(!burgerActive)}
-          />
+          <Burger />
 
           <BurgerMenu
             menu={menu}
-            burgerActive={burgerActive}
-            handlerBurgerActiveToggle={() => setBurgerActive(!burgerActive)}
+            burgerActive={props.burgerActive}
+            // handlerBurgerActiveToggle={() => setBurgerActive(!burgerActive)}
           />
         </div>
       </div>
     </header>
   )
 }
+
+function mapStateToProps(state) {
+  return {
+    burgerActive: state.burgerActive.burgerActive,
+  }
+}
+
+export default connect(mapStateToProps)(Header)

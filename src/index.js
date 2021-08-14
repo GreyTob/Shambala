@@ -6,13 +6,21 @@ import reportWebVitals from './reportWebVitals'
 import { BrowserRouter } from 'react-router-dom'
 // import { ParallaxProvider } from 'react-scroll-parallax'
 
+import { createStore } from 'redux'
+import { Provider } from 'react-redux'
+import rootReducer from './redux/reducers/rootReducer'
+
+const store = createStore(rootReducer)
+
 const application = (
   // <ParallaxProvider>
-  <BrowserRouter>
-    <React.Fragment>
-      <App />
-    </React.Fragment>
-  </BrowserRouter>
+  <Provider store={store}>
+    <BrowserRouter>
+      <React.Fragment>
+        <App />
+      </React.Fragment>
+    </BrowserRouter>
+  </Provider>
   // </ParallaxProvider>
 )
 

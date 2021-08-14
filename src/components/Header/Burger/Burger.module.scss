@@ -7,6 +7,12 @@
   height: 25px;
   position: relative;
   cursor: pointer;
+
+  @media screen and (min-width: 767px) {
+    & {
+      display: none;
+    }
+  }
 }
 
 .Burger:before {
@@ -61,7 +67,7 @@
   transition: all 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045);
 }
 
-.BurgBurgerActiveer span {
+.BurgerActive span {
   transform: scale(0);
   transition: all 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045);
 }
@@ -76,10 +82,4 @@
   width: 100%;
   background-color: $feta;
   transition: all 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045);
-}
-
-@media screen and (min-width: 767px) {
-  .Burger {
-    display: none;
-  }
 }
