@@ -1,4 +1,3 @@
-import React, { Component } from 'react'
 import classes from './Main.module.scss'
 
 import About from '../../components/About/About'
@@ -8,19 +7,15 @@ import Teachers from '../../components/Teachers/Teachers'
 import Form from '../../components/Form/Form'
 import GoogleMap from '../../components/GoogleMap/GoogleMap'
 
-class Main extends Component {
-  render() {
-    return (
-      <section className={classes.Main}>
-        <About />
-        <Slider />
-        <Teachers />
-        <Contacts />
-        <Form />
-        <GoogleMap />
-      </section>
-    )
-  }
-}
+const Main = () => (
+  <section className={classes.Main}>
+    <About />
+    <Slider />
+    <Teachers />
+    <Contacts />
+    <Form />
+    <GoogleMap />
+  </section>
+)
 
 export default Main
