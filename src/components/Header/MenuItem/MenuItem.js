@@ -1,12 +1,15 @@
+import { connect } from 'react-redux'
+import { burgerActiveToggle } from '../../../redux/actions/actions'
+
 import classes from './MenuItem.module.scss'
 import ScrollUpHandler from '../../ScrollUp/ScrollUpHandler'
 
 import { NavHashLink } from 'react-router-hash-link'
 
-const MenuItem = ({ to, value, id, handlerBurgerActiveToggle }) => {
+const MenuItem = ({ id, to, value, burgerActiveToggle }) => {
   const menuClick = () => {
     if (window.innerWidth < 767) {
-      handlerBurgerActiveToggle()
+      burgerActiveToggle()
       ScrollUpHandler()
     } else if (
       id === 'mainLink' ||
@@ -31,4 +34,9 @@ const MenuItem = ({ to, value, id, handlerBurgerActiveToggle }) => {
     </li>
   )
 }
-export default MenuItem
+
+const mapDispatchToProps = {
+  burgerActiveToggle,
+}
+
+export default connect(null, mapDispatchToProps)(MenuItem)

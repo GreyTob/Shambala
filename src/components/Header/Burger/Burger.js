@@ -1,13 +1,12 @@
 import { connect } from 'react-redux'
-
 import { burgerActiveToggle } from '../../../redux/actions/actions'
 
 import classes from './Burger.module.scss'
 
-const Burger = (props) => (
+const Burger = ({ burgerActive, burgerActiveToggle }) => (
   <div
-    className={props.burgerActive ? classes.BurgerActive : classes.Burger}
-    onClick={props.burger}
+    className={burgerActive ? classes.BurgerActive : classes.Burger}
+    onClick={burgerActiveToggle}
   >
     <span />
   </div>
@@ -15,14 +14,12 @@ const Burger = (props) => (
 
 function mapStateToProps(state) {
   return {
-    burgerActive: state.burgerActive.burgerActive,
+    burgerActive: state.headerReducer.burgerActive,
   }
 }
 
-function mapDispatchToProps(dispatch) {
-  return {
-    burger: () => dispatch(burgerActiveToggle()),
-  }
+const mapDispatchToProps = {
+  burgerActiveToggle,
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Burger)

@@ -1,12 +1,11 @@
-import React from 'react'
+import { connect } from 'react-redux'
 
 import classes from './Footer.module.scss'
 import container from '../../index.module.scss'
 
 import SocialItems from '../SocialItems/SocialItems'
-import { social } from '../Header/headerState'
 
-const Footer = () => (
+const Footer = ({ social }) => (
   <footer className={classes.Footer}>
     <div className={container.container}>
       <div className={classes.content}>
@@ -35,4 +34,10 @@ const Footer = () => (
   </footer>
 )
 
-export default Footer
+function mapStateToProps(state) {
+  return {
+    social: state.headerReducer.social,
+  }
+}
+
+export default connect(mapStateToProps)(Footer)

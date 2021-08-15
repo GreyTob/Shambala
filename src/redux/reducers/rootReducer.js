@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux'
 
-import { burgerActive } from './burgerActive'
+import { headerReducer } from './headerReducer'
 
 export default combineReducers({
-  burgerActive,
+  headerReducer,
 })
