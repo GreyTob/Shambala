@@ -1,5 +1,3 @@
-import { connect } from 'react-redux'
-
 import { ReactSVG } from 'react-svg'
 import classes from './SocialItems.module.scss'
 
