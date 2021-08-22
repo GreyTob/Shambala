@@ -6,7 +6,7 @@ const initialStater = {
     usually: 'Обычный',
     individual: 'Индивидуальное занятие',
   },
-  costs: {
+  abonements: {
     oneLesson: {
       days: 1,
       old: 100,
@@ -46,6 +46,38 @@ const initialStater = {
       morning: 2500,
       usually: 2700,
       individual: 11400,
+    },
+  },
+  clubCards: {
+    oneMonth: {
+      month: 1,
+      pay: '100%',
+      credit: '3500/-',
+      cost: 3500,
+    },
+    threeMonth: {
+      month: 3,
+      pay: '50% + рассрочка 2 месяца',
+      credit: '3750/1875',
+      cost: 7500,
+    },
+    sixMonth: {
+      month: 6,
+      pay: '50% + рассрочка 4 месяца',
+      credit: '6000/1500',
+      cost: 12000,
+    },
+    twelveMonth: {
+      month: 12,
+      pay: '50% + рассрочка 6 месяцев',
+      credit: '10000/1667',
+      cost: 20000,
+    },
+    familyTwelveMonth: {
+      month: 12,
+      pay: '50% + рассрочка 6 месяцев',
+      credit: '15000/2500',
+      cost: 30000,
     },
   },
 }

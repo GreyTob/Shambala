@@ -1,67 +1,113 @@
+import { connect } from 'react-redux'
+
 import classes from './ClubCards.module.scss'
 
 import Tippy from '@tippyjs/react'
 import 'tippy.js/dist/tippy.css'
 
-const ClubCards = () => (
+const ClubCards = ({ clubCards }) => (
   <table className={classes.ClubCards}>
     <caption>Клубные карты</caption>
     <thead>
-      <tr className={classes.noHover}>
-        <th className={classes.noHover}>Срок действия</th>
-        <th className={classes.noHover}>Вариант оплаты</th>
-        <th className={classes.noHover}>Первый взнос/последующие</th>
-        <th className={classes.noHover}>Стоимость, руб</th>
+      <tr>
+        <th>Срок действия</th>
+        <th>Вариант оплаты</th>
+        <th>Первый взнос/последующие</th>
+        <th>Стоимость, руб</th>
       </tr>
     </thead>
     {/* тело */}
     <tbody>
+      {/* 1 месяц*/}
       <tr className={classes.tr}>
-        <td>1 месяц</td>
-        <td>100%</td>
-        <td>3500/-</td>
-        <td>3500</td>
+        <td>{clubCards.oneMonth.month} месяц</td>
+        <td>{clubCards.oneMonth.pay}</td>
+        <td>{clubCards.oneMonth.credit}</td>
+        <td>{clubCards.oneMonth.cost}</td>
       </tr>
-      <Tippy content={<span>Стоимость месяца 2500</span>}>
+
+      {/* 3 месяца */}
+      <Tippy
+        content={
+          <span>
+            Стоимость месяца{' '}
+            {Math.floor(clubCards.threeMonth.cost / clubCards.threeMonth.month)}
+          </span>
+        }
+      >
         <tr className={classes.tr}>
-          <td>3 месяца</td>
-          <td>50% + рассрочка 2 месяца</td>
-          <td>3750/1875</td>
-          <td>7500</td>
+          <td>{clubCards.threeMonth.month} месяца</td>
+          <td>{clubCards.threeMonth.pay}</td>
+          <td>{clubCards.threeMonth.credit}</td>
+          <td>{clubCards.threeMonth.cost}</td>
         </tr>
       </Tippy>
-      <Tippy content={<span>Стоимость месяца 2000</span>}>
+
+      {/* 6 месяцев */}
+      <Tippy
+        content={
+          <span>
+            Стоимость месяца{' '}
+            {Math.floor(clubCards.sixMonth.cost / clubCards.sixMonth.month)}
+          </span>
+        }
+      >
         <tr className={classes.tr}>
-          <td>6 месяцев</td>
-          <td>50% + рассрочка 4 месяца</td>
-          <td>6000/1500</td>
-          <td>12000</td>
+          <td>{clubCards.sixMonth.month} месяцев</td>
+          <td>{clubCards.sixMonth.pay}</td>
+          <td>{clubCards.sixMonth.credit}</td>
+          <td>{clubCards.sixMonth.cost}</td>
         </tr>
       </Tippy>
-      <Tippy content={<span>Стоимость месяца 1670</span>}>
+
+      {/* 12 месяцев */}
+      <Tippy
+        content={
+          <span>
+            Стоимость месяца{' '}
+            {Math.floor(
+              clubCards.twelveMonth.cost / clubCards.twelveMonth.month
+            )}
+          </span>
+        }
+      >
         <tr className={classes.tr}>
-          <td>12 месяцев</td>
-          <td>50% + рассрочка 6 месяца</td>
-          <td>10000/1667</td>
-          <td>20000</td>
+          <td>{clubCards.twelveMonth.month} месяцев</td>
+          <td>{clubCards.twelveMonth.pay}</td>
+          <td>{clubCards.twelveMonth.credit}</td>
+          <td>{clubCards.twelveMonth.cost}</td>
         </tr>
       </Tippy>
-      <Tippy content={<span>Стоимость месяца 2500</span>}>
+
+      {/* семейный 12 месяцев  */}
+      <Tippy
+        content={
+          <span>
+            Стоимость месяца{' '}
+            {Math.floor(
+              clubCards.familyTwelveMonth.cost /
+                clubCards.familyTwelveMonth.month /
+                2
+            )}{' '}
+            на человека
+          </span>
+        }
+      >
         <tr className={classes.tr}>
           <td>
-            12 месяцев
+            {clubCards.familyTwelveMonth.month} месяцев
             <br />
             Семейный на 2х человек
           </td>
-          <td>50% + рассрочка 6 месяца</td>
-          <td>15000/2500</td>
-          <td>30000</td>
+          <td>{clubCards.familyTwelveMonth.pay}</td>
+          <td>{clubCards.familyTwelveMonth.credit}</td>
+          <td>{clubCards.familyTwelveMonth.cost}</td>
         </tr>
       </Tippy>
     </tbody>
     {/* подвал */}
     <tfoot className={classes.tfoot}>
-      <tr className={classes.noHover}>
+      <tr>
         <td colSpan="4">
           Клубная карта позволяет посещать&nbsp;
           <span className={classes.underline}>не более одного</span>&nbsp;
@@ -72,4 +118,11 @@ const ClubCards = () => (
   </table>
 )
 
-export default ClubCards
+function mapStateToProps(state) {
+  console.log(state)
+  return {
+    clubCards: state.costReducer.clubCards,
+  }
+}
+
+export default connect(mapStateToProps)(ClubCards)
