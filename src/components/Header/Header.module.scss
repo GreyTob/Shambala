@@ -3,7 +3,7 @@
 .Header {
   width: 100%;
   position: sticky;
-  top: -235px;
+  top: -225px;
   z-index: 100;
   // background: linear-gradient(360deg, $feta -50%, $dodger-blue 100%);
   background: linear-gradient(135deg, #e55d87 0%, #5fc3e4 100%);
@@ -17,7 +17,7 @@
 }
 
 @media (min-width: 2000px) {
-  .Header {
+  & {
     top: -250px;
   }
 }

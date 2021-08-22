@@ -6,6 +6,7 @@ import Button from '../UI/Button/Button'
 import { NavHashLink } from 'react-router-hash-link'
 
 import classes from './Gallery.module.scss'
+import container from '../../index.module.scss'
 
 const TeacherGallery = ({ match }) => {
   const teacherPhoto = teachers.filter(
@@ -30,8 +31,9 @@ const TeacherGallery = ({ match }) => {
       <h3 className={classes.Gallery}>
         Фотогалерея:&nbsp; {teacherPhoto[0].name}
       </h3>
-      <Gallery photos={teacherPhoto[0].photos} onClick={openLightbox} />
-
+      <div className={container.container}>
+        <Gallery photos={teacherPhoto[0].photos} onClick={openLightbox} />
+      </div>
       <ModalGateway>
         {viewerIsOpen ? (
           <Modal onClose={closeLightbox}>
