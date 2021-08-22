@@ -1,9 +1,11 @@
+import { connect } from 'react-redux'
+
 import classes from './Abonements.module.scss'
 
 import Tippy from '@tippyjs/react'
 import 'tippy.js/dist/tippy.css'
 
-const Abonements = (props) => (
+const Abonements = ({ type, costs }) => (
   <table className={classes.Abonements}>
     <caption>Абонементы</caption>
     <thead>
@@ -17,138 +19,240 @@ const Abonements = (props) => (
     <tbody>
       {/* 1 занятие */}
       <tr>
-        <td rowSpan="6">1</td>
+        <td rowSpan="6">{costs.oneLesson.days}</td>
         <td className={classes.none}></td>
         <td className={classes.none}></td>
       </tr>
       <tr className={classes.tr}>
-        <td>{props.old}</td>
-        <td>100</td>
+        <td>{type.old}</td>
+        <td>{costs.oneLesson.old}</td>
       </tr>
       <tr className={classes.tr}>
-        <td>{props.yang}</td>
-        <td>250</td>
+        <td>{type.yang}</td>
+        <td>{costs.oneLesson.yang}</td>
       </tr>
       <tr className={classes.tr}>
-        <td>{props.morning}</td>
-        <td>300</td>
+        <td>{type.morning}</td>
+        <td>{costs.oneLesson.morning}</td>
       </tr>
       <tr className={classes.tr}>
-        <td>{props.usually}</td>
-        <td>350</td>
+        <td>{type.usually}</td>
+        <td>{costs.oneLesson.usually}</td>
       </tr>
       <tr className={classes.tr}>
-        <td>{props.individual}</td>
-        <td>1200</td>
+        <td>{type.individual}</td>
+        <td>{costs.oneLesson.individual}</td>
       </tr>
       {/* 4 занятия */}
       <tr className={classes.even}>
-        <td rowSpan="4">4</td>
+        <td rowSpan="4">{costs.fourLessons.days}</td>
         <td className={classes.none}></td>
         <td className={classes.none}></td>
       </tr>
 
-      <Tippy content={<span>Стоимость занятия 275</span>}>
+      <Tippy
+        content={
+          <span>
+            Стоимость занятия{' '}
+            {Math.floor(costs.fourLessons.morning / costs.fourLessons.days)}
+          </span>
+        }
+      >
         <tr className={(classes.even, classes.tr)}>
-          <td>{props.morning}</td>
+          <td>{type.morning}</td>
 
-          <td>1100</td>
+          <td>{costs.fourLessons.morning}</td>
         </tr>
       </Tippy>
-      <Tippy content={<span>Стоимость занятия 300</span>}>
+      <Tippy
+        content={
+          <span>
+            Стоимость занятия{' '}
+            {Math.floor(costs.fourLessons.usually / costs.fourLessons.days)}
+          </span>
+        }
+      >
         <tr className={(classes.even, classes.tr)}>
-          <td>{props.usually}</td>
-          <td>1200</td>
+          <td>{type.usually}</td>
+          <td>{costs.fourLessons.usually}</td>
         </tr>
       </Tippy>
-      <Tippy content={<span>Стоимость занятия 1150</span>}>
+      <Tippy
+        content={
+          <span>
+            Стоимость занятия{' '}
+            {Math.floor(costs.fourLessons.individual / costs.fourLessons.days)}
+          </span>
+        }
+      >
         <tr className={(classes.even, classes.tr)}>
-          <td>{props.individual}</td>
-          <td>4600</td>
+          <td>{type.individual}</td>
+          <td>{costs.fourLessons.individual}</td>
         </tr>
       </Tippy>
       {/* 8 занятий */}
       <tr>
-        <td rowSpan="4">8</td>
+        <td rowSpan="4">{costs.eightLessons.days}</td>
         <td className={classes.none}></td>
         <td className={classes.none}></td>
       </tr>
-      <Tippy content={<span>Стоимость занятия 250</span>}>
+      <Tippy
+        content={
+          <span>
+            Стоимость занятия{' '}
+            {Math.floor(costs.eightLessons.morning / costs.eightLessons.days)}
+          </span>
+        }
+      >
         <tr className={classes.tr}>
-          <td>{props.morning}</td>
-          <td>2000</td>
+          <td>{type.morning}</td>
+          <td>{costs.eightLessons.morning}</td>
         </tr>
       </Tippy>
-      <Tippy content={<span>Стоимость занятия 275</span>}>
+      <Tippy
+        content={
+          <span>
+            Стоимость занятия{' '}
+            {Math.floor(costs.eightLessons.usually / costs.eightLessons.days)}
+          </span>
+        }
+      >
         <tr className={classes.tr}>
-          <td>{props.usually}</td>
-          <td>2200</td>
+          <td>{type.usually}</td>
+          <td>{costs.eightLessons.usually}</td>
         </tr>
       </Tippy>
-      <Tippy content={<span>Стоимость занятия 1050</span>}>
+      <Tippy
+        content={
+          <span>
+            Стоимость занятия{' '}
+            {Math.floor(
+              costs.eightLessons.individual / costs.eightLessons.days
+            )}
+          </span>
+        }
+      >
         <tr className={classes.tr}>
-          <td>{props.individual}</td>
-          <td>8400</td>
+          <td>{type.individual}</td>
+          <td>{costs.eightLessons.individual}</td>
         </tr>
       </Tippy>
       {/* 10 занятий */}
       <tr className={classes.even}>
-        <td rowSpan="6">10</td>
+        <td rowSpan="6">{costs.tenLessons.days}</td>
         <td className={classes.none}></td>
         <td className={classes.none}></td>
       </tr>
-      <Tippy content={<span>Стоимость занятия 90</span>}>
+      <Tippy
+        content={
+          <span>
+            Стоимость занятия{' '}
+            {Math.floor(costs.tenLessons.old / costs.tenLessons.days)}
+          </span>
+        }
+      >
         <tr className={(classes.even, classes.tr)}>
-          <td>{props.old}</td>
-          <td>900</td>
+          <td>{type.old}</td>
+          <td>{costs.tenLessons.old}</td>
         </tr>
       </Tippy>
-      <Tippy content={<span>Стоимость занятия 200</span>}>
+      <Tippy
+        content={
+          <span>
+            Стоимость занятия{' '}
+            {Math.floor(costs.tenLessons.yang / costs.tenLessons.days)}
+          </span>
+        }
+      >
         <tr className={(classes.even, classes.tr)}>
-          <td>{props.yang}</td>
-          <td>2000</td>
+          <td>{type.yang}</td>
+          <td>{costs.tenLessons.yang}</td>
         </tr>
       </Tippy>
-      <Tippy content={<span>Стоимость занятия 230</span>}>
+      <Tippy
+        content={
+          <span>
+            Стоимость занятия{' '}
+            {Math.floor(costs.tenLessons.morning / costs.tenLessons.days)}
+          </span>
+        }
+      >
         <tr className={(classes.even, classes.tr)}>
-          <td>{props.morning}</td>
-          <td>2300</td>
+          <td>{type.morning}</td>
+          <td>{costs.tenLessons.morning}</td>
         </tr>
       </Tippy>
-      <Tippy content={<span>Стоимость занятия 250</span>}>
+      <Tippy
+        content={
+          <span>
+            Стоимость занятия{' '}
+            {Math.floor(costs.tenLessons.usually / costs.tenLessons.days)}
+          </span>
+        }
+      >
         <tr className={(classes.even, classes.tr)}>
-          <td>{props.usually}</td>
-          <td>2500</td>
+          <td>{type.usually}</td>
+          <td>{costs.tenLessons.usually}</td>
         </tr>
       </Tippy>
-      <Tippy content={<span>Стоимость занятия 1000</span>}>
+      <Tippy
+        content={
+          <span>
+            Стоимость занятия{' '}
+            {Math.floor(costs.tenLessons.individual / costs.tenLessons.days)}
+          </span>
+        }
+      >
         <tr className={(classes.even, classes.tr)}>
-          <td>{props.individual}</td>
-          <td>10000</td>
+          <td>{type.individual}</td>
+          <td>{costs.tenLessons.individual}</td>
         </tr>
       </Tippy>
       {/* 12 занятий */}
       <tr>
-        <td rowSpan="4">12</td>
+        <td rowSpan="4">{costs.twelveLessons.days}</td>
         <td className={classes.none}></td>
         <td className={classes.none}></td>
       </tr>
-      <Tippy content={<span>Стоимость занятия 208</span>}>
+      <Tippy
+        content={
+          <span>
+            Стоимость занятия{' '}
+            {Math.floor(costs.twelveLessons.morning / costs.twelveLessons.days)}
+          </span>
+        }
+      >
         <tr className={classes.tr}>
-          <td>{props.morning}</td>
-          <td>2500</td>
+          <td>{type.morning}</td>
+          <td>{costs.twelveLessons.morning}</td>
         </tr>
       </Tippy>
-      <Tippy content={<span>Стоимость занятия 225</span>}>
+      <Tippy
+        content={
+          <span>
+            Стоимость занятия{' '}
+            {Math.floor(costs.twelveLessons.usually / costs.twelveLessons.days)}
+          </span>
+        }
+      >
         <tr className={classes.tr}>
-          <td>{props.usually}</td>
-          <td>2700</td>
+          <td>{type.usually}</td>
+          <td>{costs.twelveLessons.usually}</td>
         </tr>
       </Tippy>
-      <Tippy content={<span>Стоимость занятия 950</span>}>
+      <Tippy
+        content={
+          <span>
+            Стоимость занятия{' '}
+            {Math.floor(
+              costs.twelveLessons.individual / costs.twelveLessons.days
+            )}
+          </span>
+        }
+      >
         <tr className={classes.tr}>
-          <td>{props.individual}</td>
-          <td>11400</td>
+          <td>{type.individual}</td>
+          <td>{costs.twelveLessons.individual}</td>
         </tr>
       </Tippy>
     </tbody>
@@ -177,4 +281,11 @@ const Abonements = (props) => (
   </table>
 )
 
-export default Abonements
+function mapStateTotype(state) {
+  return {
+    type: state.costReducer.type,
+    costs: state.costReducer.costs,
+  }
+}
+
+export default connect(mapStateTotype)(Abonements)
